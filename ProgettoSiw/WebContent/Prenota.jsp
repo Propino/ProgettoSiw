@@ -701,8 +701,8 @@
 						disabled>
 
 					<c:if test="${user != null}">
-						<input type="submit" id="prosegui_pagamento"
-							value="Prosegui con il Pagamento">
+						<input type="button" id="prosegui_pagamento"
+							onclick="functione_pay()" value="Prosegui con il Pagamento">
 					</c:if>
 					<c:if test="${user == null}">
 						<input type="button" onclick="functione()" id="prosegui_pagamento"
@@ -725,33 +725,134 @@
 			<input type="password" id="pass_login_popup"
 				placeholder="inserisci la tua password"> <input
 				type="button" id="pass_popup_login_show" onclick="show_log()"
-				value="show"> <input type="button" id="submit_popup_login"
-				value="Invia">
+				value="show"> <input type="button" onclick="functione_pay()"
+				id="submit_popup_login" value="Invia">
 			<p id="link_login">
 				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
 			</p>
 
 		</div>
 	</div>
+	<div id="myModal2" class="modal2">
+		<!-- Modal content -->
+		<div class="modal-content2">
+			<span class="close">&times;</span>
+
+			<div class="container">
+				<div class="row">
+					<!-- You can make it whatever width you want. I'm making it full width
+on <= small devices and 4/12 page width on >= medium devices -->
+					<div class="col-xs-12 col-md-4">
+
+
+						<!-- CREDIT CARD FORM STARTS HERE -->
+						<div class="panel panel-default credit-card-box">
+							<div class="panel-heading display-table">
+								<div class="row display-tr">
+									<h3 class="panel-title display-td">Payment Details</h3>
+									<div class="display-td">
+										<img class="img-responsive pull-right"
+											src="http://i76.imgup.net/accepted_c22e0.png">
+									</div>
+								</div>
+							</div>
+							<div class="panel-body">
+								<form role="form" id="payment-form">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="form-group">
+												<label for="cardNumber">CARD NUMBER</label>
+												<div class="input-group">
+													<input type="tel" class="form-control" name="cardNumber"
+														placeholder="Valid Card Number" autocomplete="cc-number"
+														required autofocus /> <span class="input-group-addon"><i
+														class="fa fa-credit-card"></i></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-7 col-md-7">
+											<div class="form-group">
+												<label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span
+													class="visible-xs-inline">EXP</span> DATE</label> <input type="tel"
+													class="form-control" name="cardExpiry"
+													placeholder="MM / YY" autocomplete="cc-exp" required />
+											</div>
+										</div>
+										<div class="col-xs-5 col-md-5 pull-right">
+											<div class="form-group">
+												<label for="cardCVC">CV CODE</label> <input type="tel"
+													class="form-control" name="cardCVC" placeholder="CVC"
+													autocomplete="cc-csc" required />
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<button class="btn btn-success btn-lg btn-block"
+												type="submit">Paga!</button>
+										</div>
+									</div>
+									<div class="row" style="display: none;">
+										<div class="col-xs-12">
+											<p class="payment-errors"></p>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- CREDIT CARD FORM ENDS HERE -->
+
+
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 
 	<script>
-// When the user clicks the button, open the modal 
-function functione() {
-	document.getElementById('myModal').style.display = "block";
-}
+		// When the user clicks the button, open the modal 
+		function functione() {
+			document.getElementById('myModal').style.display = "block";
+		}
 
-// When the user clicks on <span> (x), close the modal
-document.getElementsByClassName("close")[0].onclick = function() {
-	document.getElementById('myModal').style.display = "none";
-}
+		// When the user clicks on <span> (x), close the modal
+		document.getElementsByClassName("close")[0].onclick = function() {
+			document.getElementById('myModal').style.display = "none";
+		}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == document.getElementById('myModal')) {
-	  document.getElementById('myModal').style.display = "none";
-  }
-}
-</script>
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == document.getElementById('myModal')) {
+				document.getElementById('myModal').style.display = "none";
+			}
+		}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		function functione_pay() {
+			document.getElementById('myModal2').style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		document.getElementsByClassName("close")[0].onclick = function() {
+			document.getElementById('myModal2').style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == document.getElementById('myModal2')) {
+				document.getElementById('myModal2').style.display = "none";
+			}
+		}
+	</script>
 
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/global.js"></script>

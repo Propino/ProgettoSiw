@@ -610,7 +610,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 /* Modal Content */
 .modal-content {
 	width: 30%;
-	background-image: radial-gradient(circle,  rgb(251, 249, 200),yellow,#33ccff);
+	background-image: radial-gradient(circle, rgb(251, 249, 200), yellow,
+		#33ccff);
 	margin: auto;
 	/*background-image: url("../img/sfondo_popup.jpg");
 	background-repeat: no-repeat;
@@ -680,4 +681,99 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 
 #link_login {
 	text-decoration: underline;
+}
+
+.modal2 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content2 {
+	width: 30%;
+	background-image: radial-gradient(circle, rgb(251, 249, 200), yellow,
+		#33ccff);
+	margin: auto;
+	/*background-image: url("../img/sfondo_popup.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+/
+.close2 {
+	color: #aaaaaa;
+	float: right;
+	padding-right: 2%;
+	font-size: 28px;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.close2:hover, .close2:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-content2 p {
+	text-align: center;
+	color: red;
+	padding: 2% 30%;
+	font-style: italic;
+}
+
+.credit-card-box .panel-title {
+	display: inline;
+	font-weight: bold;
+}
+
+.credit-card-box .form-control.error {
+	border-color: red;
+	outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+		rgba(255, 0, 0, 0.6);
+}
+
+.credit-card-box label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.credit-card-box .payment-errors {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.credit-card-box label {
+	display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+	display: table;
+}
+
+.credit-card-box .display-tr {
+	display: table-row;
+}
+
+.credit-card-box .display-td {
+	display: table-cell;
+	vertical-align: middle;
+	width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+	min-width: 180px;
 }
