@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Ombrellone;
+import model.Prenotazione;
 import model.Utente;
 
 public class PrenotazioneDAOJDBC {
@@ -40,6 +41,32 @@ public class PrenotazioneDAOJDBC {
 			}
 		}
 	
+	public ArrayList<String> getPrenotazioniPerUtente(String username) {
+		Connection connection = this.dataSource.getConnection();
+		ArrayList<String> prenotazioni = new ArrayList<String>();
+		String query = "select data,posto from prenotazione where utente=? ";
+		ResultSet rs = null;
+		try {
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1,username);
+			rs = statement.executeQuery();
+			while(rs.next()) {
+					String p = rs.getString("data") + " " + rs.getInt("posto");
+					prenotazioni.add(p);
+				}
+				
+		} catch (Exception e) {
+			
+		} finally {
+			try {
+				connection.close();
+				rs.close();
+			} catch (Exception e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+		return prenotazioni;
+	}
 	
 	public Ombrellone[] getOmbrelloniPrenotati(String data) {
 		Ombrellone[] ombrelloniPrenotati = new Ombrellone[57];

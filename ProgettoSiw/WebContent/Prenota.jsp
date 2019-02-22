@@ -81,12 +81,10 @@
 					</div>
 				</form>
 				<c:if test="${dataview != null}">
-
 					<p id="data_Selezionata">Data selezionata: ${dataview}</p>
 				</c:if>
 			</div>
 			<c:if test="${user == null}">
-
 				<p style="color: red">
 					<italic>Devi essere loggato per effettuare una
 					prenotazione</italic>
@@ -98,7 +96,7 @@
 	</div>
 	<div class="row" style="margin-right: 0px">
 		<div class="col-sm-1"></div>
-		<form action="PrenotaPosti" method="Post">
+		<form>
 			<div class="col-sm-5">
 				<div id="mappa_prenotabile" name="mappa_prenotabile">
 					<div class="ombrelloni">
@@ -708,13 +706,12 @@
 						disabled>
 						
 					<c:if test="${user != null}">
-
-						<input type="submit" id="prosegui_pagamento"
-							value="Prosegui con il Pagamento" href="ProseguiPagamento">
+						<input type="button" id="prosegui_pagamento"
+							value="Prosegui con il Pagamento">
 					</c:if>
 					<c:if test="${user == null}">
-					<input type="submit" id="prosegui_pagamento"
-							value="Prosegui con il Pagamento" href="ProseguiPagamento">
+					<input type="button" id="prosegui_pagamento"
+							value="Prosegui con il Pagamento">
 					</c:if>
 
 

@@ -99,16 +99,16 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 								<div class="col-xs-6">
-									<label for="first_name"><h4>Nome</h4></label> <p class="campi_profilo"> Nome_utente</p>
+									<label for="first_name"><h4>Nome</h4></label> <p class="campi_profilo">${user.getNome()}</p>
 								</div>
 								<div class="col-xs-6">
-									<label for="last_name"><h4>Cognome</h4></label> <p class="campi_profilo"> Cognome_utente</p>
+									<label for="last_name"><h4>Cognome</h4></label> <p class="campi_profilo"> ${user.getCognome()}</p>
 								</div>
 								<div class="col-xs-6">
-									<label for="mobile"><h4>Telefono</h4></label> <p class="campi_profilo"> Cellulare_utente</p>
+									<label for="mobile"><h4>Telefono</h4></label> <p class="campi_profilo"> ${user.getTelefono()}</p>
 								</div>
 								<div class="col-xs-6">
-									<label for="email"><h4>Email</h4></label> <p class="campi_profilo"> Email_utente</p>
+									<label for="email"><h4>Email</h4></label> <p class="campi_profilo"> ${user.getEmail()}</p>
 								</div>
 								<div class="col-xs-6">
 									<label for="password"><h4>Password</h4></label> <p class="campi_profilo"> ${user.getPassword()}</p>
@@ -119,22 +119,17 @@
 							<div class="col-xs-3 log_intestazione">
 								<ul class="list-group">
 								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Data</li>
-								  <li class="list-group-item">13-06-2019</li>
-								  <li class="list-group-item">15-08-2019</li>
-								  <li class="list-group-item">&nbsp</li>
-								  <li class="list-group-item">&nbsp</li>
-								  <li class="list-group-item">24-08-2018</li>
-
+								  <c:forEach items="${date}" var="date">
+								  	<li class="list-group-item">${date}</li>
+								  </c:forEach> 
 								</ul>							
 							</div>
 							<div class="col-xs-9 log_intestazione">
 							<ul class="list-group">
 								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Ombrelloni Prenotati</li>
-								  <li class="list-group-item">Ombrellone N°1</li>
-								  <li class="list-group-item">Ombrellone N°13</li>
-								  <li class="list-group-item">Ombrellone N°14</li>
-								  <li class="list-group-item">Ombrellone N°15</li>
-								  <li class="list-group-item">Ombrellone N°29</li> 
+								  <c:forEach items="${posti}" var="posti">
+								  	<li class="list-group-item">Ombrellone N° ${posti}</li>
+								  </c:forEach>
 								</ul>
 							</div>
 							

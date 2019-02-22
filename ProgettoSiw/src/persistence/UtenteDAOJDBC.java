@@ -61,6 +61,11 @@ public class UtenteDAOJDBC  {
 			 else if (check) {
 	            String us = rs.getString("username");
 	            String psw = rs.getString("password");
+	            utente.setNome(rs.getString("nome"));
+	            utente.setCognome(rs.getString("cognome"));
+	            utente.setEmail(rs.getString("email"));
+	            utente.setData(rs.getString("data"));
+	            utente.setTelefono(rs.getString("telefono"));
 	            utente.seteLoggato(true);
 			}
 		}  catch (Exception ex) {

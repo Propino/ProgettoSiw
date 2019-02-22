@@ -50,7 +50,7 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="Profilo.jsp">Benvenuto,${user.getUsername()}!</a></h5>
+						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
