@@ -15,12 +15,12 @@ public class EliminaPosto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EliminaPosto() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public EliminaPosto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,14 +38,21 @@ public class EliminaPosto extends HttpServlet {
 		response.getOutputStream().println("<br>");
 		response.getOutputStream().println("<h3>Totale : &#8364 "+ totale +"</h3>");
 		response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+ totale +">");
+		response.getOutputStream().println("<c:if test=\"${user != null}\">");
 		response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+		response.getOutputStream().println("</c:if>");
+		response.getOutputStream().println("<c:if test=\"${user == null}\">");
+		response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+		response.getOutputStream().println("</c:if>");
 
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -701,7 +701,7 @@
 						disabled>
 
 					<c:if test="${user != null}">
-						<input type="button" id="prosegui_pagamento"
+						<input type="submit" id="prosegui_pagamento"
 							value="Prosegui con il Pagamento">
 					</c:if>
 					<c:if test="${user == null}">
@@ -718,7 +718,7 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<p>Devi essere loggato per effettuare il pagamento!</p>
+			<p>Devi essere loggato prima!</p>
 			<h5>Username :</h5>
 			<input type="text" placeholder="inserisci il tuo username">
 			<h5>Password :</h5>

@@ -610,8 +610,11 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 /* Modal Content */
 .modal-content {
 	width: 30%;
-	background: linear-gradient(to bottom left, black, grey);
+	background-image: radial-gradient(circle,  rgb(251, 249, 200),yellow,#33ccff);
 	margin: auto;
+	/*background-image: url("../img/sfondo_popup.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;*/
 }
 
 .modal-content p {
@@ -643,7 +646,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 .close {
 	color: #aaaaaa;
 	float: right;
-	padding-right: 2%; font-size : 28px;
+	padding-right: 2%;
+	font-size: 28px;
 	font-weight: bold;
 	font-size: 28px;
 }
@@ -664,15 +668,16 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	margin-top: 5%;
 	margin-left: 32%;
 	width: 36%;
-	background-color : transparent;
-	border:2px solid rgb(46,96,138);
-	color : white;
-	transition:600ms;
+	background-color: transparent;
+	border: 2px solid rgb(46, 96, 138);
+	color: black;
+	transition: 600ms;
 }
+
 #submit_popup_login:hover {
-	background: rgb(46,96,138);
-	color : white;
+	background: rgb(46, 96, 138);
 }
-#link_login{
-	text-decoration:underline;
+
+#link_login {
+	text-decoration: underline;
 }

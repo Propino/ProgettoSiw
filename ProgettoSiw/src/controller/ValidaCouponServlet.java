@@ -40,7 +40,12 @@ public class ValidaCouponServlet extends HttpServlet {
 			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
 			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
+			response.getOutputStream().println("<c:if test=\"${user != null}\">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
+			response.getOutputStream().println("<c:if test=\"${user == null}\">");
+			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
 		}
 		else if(c.validaCoupon(couponDaValidare)) {
 			prezzoTotale -= 5;
@@ -50,7 +55,12 @@ public class ValidaCouponServlet extends HttpServlet {
 			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
 			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
+			response.getOutputStream().println("<c:if test=\"${user != null}\">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
+			response.getOutputStream().println("<c:if test=\"${user == null}\">");
+			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
 		} else {
 			response.getOutputStream().println("<p id = coupon> <font color = red> Coupon non valido. </font> </p>");
 			response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");
@@ -58,7 +68,12 @@ public class ValidaCouponServlet extends HttpServlet {
 			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
 			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
+			response.getOutputStream().println("<c:if test=\"${user != null}\">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
+			response.getOutputStream().println("<c:if test=\"${user == null}\">");
+			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("</c:if>");
 			}
 		}
 	/**
