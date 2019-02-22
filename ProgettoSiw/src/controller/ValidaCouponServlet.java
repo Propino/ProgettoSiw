@@ -43,7 +43,7 @@ public class ValidaCouponServlet extends HttpServlet {
 			if(request.getSession().getAttribute("user")!=null) {
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 			} else {
-			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+				response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione()\" value=\"Prosegui con il Pagamento\">");
 			}
 		}
 		else if(c.validaCoupon(couponDaValidare)) {
@@ -57,8 +57,7 @@ public class ValidaCouponServlet extends HttpServlet {
 			if(request.getSession().getAttribute("user")!=null) {
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 			} else {
-			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
-			response.getOutputStream().println("</c:if>");
+				response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione()\" value=\"Prosegui con il Pagamento\">");
 			}
 		} else {
 			response.getOutputStream().println("<p id = coupon> <font color = red> Coupon non valido. </font> </p>");
@@ -70,7 +69,7 @@ public class ValidaCouponServlet extends HttpServlet {
 			if(request.getSession().getAttribute("user")!=null) {
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 			} else {
-			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+				response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione()\" value=\"Prosegui con il Pagamento\">");
 			}
 			}
 		}
