@@ -49,12 +49,11 @@ public class GetPrezzoPosto extends HttpServlet {
 		response.getOutputStream().println("<br>");
 		response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
 		response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
-		response.getOutputStream().println("<c:if test=\"${user != null}\">");
+		if(request.getSession().getAttribute("user")!=null) {
 		response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
-		response.getOutputStream().println("</c:if>");
-		response.getOutputStream().println("<c:if test=\"${user == null}\">");
+		} else {
 		response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
-		response.getOutputStream().println("</c:if>");		response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
+		}
 
 	}
 }
