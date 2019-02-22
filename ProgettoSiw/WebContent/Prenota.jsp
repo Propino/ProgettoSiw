@@ -721,15 +721,18 @@
 			<p>Devi essere loggato per effettuare il pagamento!</p>
 			<h5>Username :</h5>
 			<input type="text" placeholder="inserisci il tuo username">
-
 			<h5>Password :</h5>
 			<input type="password" id="pass_login_popup"
 				placeholder="inserisci la tua password"> <input
 				type="button" id="pass_popup_login_show" onclick="show_log()"
 				value="show">
+				<input
+				type="button" id="submit_popup_login"
+				value="Invia">
 			<p id="link_login">
 				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
 			</p>
+			
 		</div>
 	</div>
 
