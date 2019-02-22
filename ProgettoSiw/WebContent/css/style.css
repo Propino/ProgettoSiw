@@ -1,0 +1,593 @@
+body, html {
+	font-family: 'Open Sans', serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	color: #777;
+	font-weight: 400;
+	width: 100% !important;
+	height: 100% !important;
+	background-color: white;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 38px;
+	text-transform: uppercase;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding-bottom: 20px;
+}
+
+h2::after {
+	position: absolute;
+	content: "";
+	background: #d43031;
+	height: 2px;
+	width: 70px;
+	bottom: 0;
+	margin-left: -35px;
+	left: 50%;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	color: #333;
+}
+
+h4 {
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #333;
+}
+
+h5 {
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 20px;
+}
+
+p {
+	font-size: 15px;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: #222;
+}
+
+ul, ol {
+	padding: 0;
+	webkit-padding: 0;
+	moz-padding: 0;
+}
+
+.btn:active, .btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
+	.btn:active.focus, .btn.active.focus {
+	outline: none;
+	outline-offset: none;
+}
+/* Navigation */
+.navbar .navbar-nav {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+	text-align: center;
+}
+
+#menu {
+	padding-top: 10px;
+	padding-bottom: 4px;
+}
+
+#menu.navbar-default {
+	background-color: black;
+	border-color: black;
+}
+
+#menu.navbar-default .navbar-nav>li>a {
+	text-transform: uppercase;
+	color: #eee;
+	font-weight: 400;
+	font-size: 15px;
+	padding: 5px 0;
+	border: 2px solid transparent;
+	letter-spacing: 0.5px;
+	margin: 0 40px 0 40px;
+}
+
+#menu.navbar-default .navbar-nav>li>a:hover {
+	color: #d43031;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	color: #d43031 !important;
+	background-color: transparent;
+}
+
+.navbar-toggle {
+	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+	{
+	background-color: #d43031;
+	border-color: #d43031;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #FFF;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: black;
+}
+
+.navbar-default .navbar-toggle:hover>.icon-bar {
+	background-color: #FFF;
+}
+
+#intestazione {
+	margin-bottom: 70px;
+}
+
+.btn-custom {
+	text-transform: uppercase;
+	color: #777;
+	background-color: transparent;
+	border: 2px solid #777;
+	padding: 14px 20px;
+	margin: 0;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	border-radius: 0;
+	margin-top: 20px;
+	transition: all 0.3s;
+}
+
+.btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active,
+	.btn-custom.active {
+	color: #ddd;
+	border: 2px solid #d43031;
+	background-color: #d43031;
+}
+/* Header Section */
+#img_iniziale {
+	width: 100%;
+	background: url(../img/intro.jpg) center center no-repeat;
+	background-size: cover;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	padding-top: 200px;
+	padding-bottom: 50px;
+	text-align: center;
+	padding-top: 200px;
+}
+
+#img_iniziale h1 {
+	font-family: 'Rochester', cursive;
+	color: #fff;
+	font-size: 8em;
+	font-weight: 400;
+	margin-top: 0;
+}
+/* Features Section */
+#features {
+	padding: 120px 0;
+	text-align: center;
+}
+
+#features .features-item {
+	margin: 0 20px;
+}
+
+#features img {
+	margin: 30px auto 20px;
+}
+
+#features .about-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	left: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#features p {
+	line-height: 24px;
+	margin: 15px 0 30px;
+}
+/* About Section */
+#about {
+	padding: 0;
+	/*background: #D1D1D1;*/
+	background: white;
+}
+
+#about h2::after {
+	bottom: 0;
+	margin-left: 0;
+	left: 0;
+}
+
+#about .about-text {
+	padding: 80px 0;
+}
+
+#about .about-img {
+	height: 570px;
+}
+/* Contact Section */
+@media screen and (min-width: 1000px) {
+	#contact {
+		padding: 80px 0;
+		background: #333;
+	}
+}
+
+@media screen and (max-width: 999px) {
+	#contact {
+		padding: 80px 0;
+		background: #333;
+	}
+}
+
+#contact .contact-item p {
+	font-size: 15px;
+	color: #777;
+}
+
+#contact h3 {
+	position: relative;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 400;
+	color: #aaa;
+	padding: 20px 0;
+}
+
+#contact .contact-item {
+	margin: 20px 0 40px 0;
+}
+
+#footer {
+	background: #262626;
+	padding: 40px 0 20px 0;
+}
+
+#footer .social {
+	margin-top: -5px;
+	text-align: center;
+}
+
+#footer .social ul li {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+#footer .social .fa {
+	font-size: 24px;
+	padding: 4px;
+	transition: all 0.3s;
+	padding-top: 1px;
+	color: transparent;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,
+		#d6249f 60%, #285AEB 90%);
+	background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+		#fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+#footer .social .fa:hover {
+	background: radial-gradient(circle at 30% 107%, #285AEB 0%, #d6249f 5%, #fd5949 45%,
+		#fdf497 60%, #fdf497 90%);
+	background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+		#fd5949 45%, #d6249f 60%, #285AEB 90%);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+.bandiere {
+	width: 30px;
+	height: 100%;
+}
+
+#footer p {
+	font-size: 14px;
+	color: #666;
+}
+
+#welcome {
+	color: white;
+}
+
+#logout {
+	border-radius: 8px;
+	background-color: transparent;
+	color: white;
+	border-color: transparent;
+	margin-top: 7px;
+	margin-left: 30px;
+	border: 2px solid #333;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#logout:hover {
+	background-color: #333;
+	color: white;
+}
+
+#google-maps {
+	position: relative;
+	margin-top: 100px;
+	overflow: hidden;
+	height: 570px;
+	background-color: #333;
+	border: solid 2px white;
+}
+
+#mappa_contatti {
+	width: 100%;
+	height: 100%;
+	padding: 100px 0;
+}
+
+#mappa_prenotabile {
+	margin-top: 5%;
+	width: 100%;
+	overflow: auto;
+	height: 600px;
+	margin-bottom: 10%;
+	padding-top: 30%;
+	border-style: solid;
+	border-color: white;
+	background-image: url("../img/sfondomappa.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#payment {
+	position: relative;
+	height: 490px;
+	overflow: auto;
+	margin-top: 7%;
+	padding-bottom: 110px;
+	background: linear-gradient(to bottom left, black, grey);
+	opacity: 0.8;
+}
+
+#column_payment {
+	padding: 0px;
+	margin: 0px 5% 30px 5%;
+}
+
+#scrittaa {
+	border-top: solid 2px white;
+	width: 100%;
+	height: 110px;
+	background: linear-gradient(to bottom, grey 0%, #1a1a1a 70%);
+	position: relative;
+}
+
+#prosegui_pagamento {
+	float: right;
+	margin-right: 2%; 
+	display : inline;
+	border-radius: 8px;
+	background-color: transparent;
+	color: white;
+	border-color: transparent;
+	border: 2px solid #333;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	text-transform: uppercase;
+	display: inline;
+}
+
+#prosegui_pagamento:hover {
+	background-color: #333;
+	color: white;
+}
+
+#scrittaa h3 {
+	display: inline;
+	padding-left: 3%;
+	color: white;
+	text-transform: none;
+}
+
+#payment h1 {
+	color: white;
+	text-transform: none;
+}
+
+#payment h2 {
+	color: white;
+	text-transform: none;
+}
+
+#payment h3 {
+	padding-left: 3%;
+	color: white;
+	text-transform: none;
+}
+
+#payment h4 {
+	color: white;
+	text-transform: none;
+}
+
+#payment h5 {
+	color: white;
+	text-transform: none !important;
+}
+
+#payment h6 {
+	color: white;
+	text-transform: none;
+}
+
+#sezionemappa {
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+	border-bottom: solid 3px;
+}
+
+#scritta_in_cima_alla_mappa {
+	margin-top: 15%;
+	text-align: center;
+}
+
+#data_Selezionata {
+	text-align: left;
+	color: black;
+	font-style: italic;
+	margin-top: 5%;
+	width: 40%;
+	border-bottom: 2px solid rgb(251, 249, 200);
+	border-top: 2px solid #33ccff;
+}
+
+#hotel {
+	visibility: hidden;
+}
+
+#submit_button_data_mappa {
+	display: inline;
+	float: right;
+	border-radius: 20%;
+	background-color: white;
+	padding: 1% 2%;
+	border: solid 1px #ccc;
+}
+
+#input_data {
+	display: inline;
+	max-width: 40%;
+	text-align: center;
+}
+
+#img_ilido_sec_lastruttura {
+	overflow: hidden;
+	height: 600px;
+	padding-top: 20%;
+	background-image: url("../img/illido.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#img_ilristorante_sec_lastruttura {
+	overflow: hidden;
+	height: 600px;
+	padding-top: 20%;
+	background-image: url("../img/ilristorante.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#img_ilbar_sec_lastruttura {
+	overflow: hidden;
+	height: 600px;
+	padding-top: 20%;
+	background-image: url("../img/ilbar.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#back_data_submit_prenota {
+	background: linear-gradient(to bottom, #33ccff 0%, rgb(251, 249, 200)
+		70%);
+	padding: 2% 1% 2% 1%;
+}
+
+#input_coupon {
+	width: 30%;
+	display: inline;
+	margin-bottom: 2%;
+	margin-left: 2%;
+}
+
+#button_input_coupon {
+	display: inline;
+	margin-bottom: 2%;
+	float: right;
+	margin-right: 2%;
+}
+
+#coupon {
+	color: white;
+	text-decoration: underline;
+	margin-left: 2%;
+}
+
+@media screen and (min-width: 1000px) {
+	.riquadri_contatti {
+		border: 2px solid grey;
+		margin-right: 3%;
+		width: 30%;
+		float: left;
+	}
+}
+
+@media screen and (max-width: 999px) {
+	.riquadri_contatti {
+		border: 2px solid grey;
+		margin: 5% 25%;
+		width: 50%;
+	}
+}
+
+#wel {
+	color: white;
+}
+
+#wel:hover {
+	color: white;
+}
+
+#home h4 {
+	color: rgb(119, 119, 119);
+}
+
+.campi_profilo {
+	font-style: italic;
+	border-bottom: 1px solid rgb(221, 221, 221);
+	color: #333;
+	font-size: 18px;
+}
+
+.log_intestazione {
+	text-align: center;
+	padding: 2px;
+	margin: 2% 0px;
+}
+
+.log_lista {
+	border: 1px solid #333;
+	text-align: center;
+	padding: 2px;
+}
