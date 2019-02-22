@@ -17,17 +17,18 @@ function validaData() {
 	var d = document.getElementById("input_data").value;
 	var b = d.split("-");
 	if(b[0] != 2019) {
-		document.getElementById("data_Selezionata").innerHTML = 'Inserisci una data valida.';
+		document.getElementById("erroreData").innerHTML = 'Inserisci una data valida.';
 		return false;
 	}
 	else if((b[0] == 2019) && (b[1] < 5 || b[1] > 9)) {
-		document.getElementById("data_Selezionata").innerHTML = 'Inserisci una data valida.';
+		document.getElementById("erroreData").innerHTML = 'Inserisci una data valida.';
 		return false;
 	}
 	else if(b[0] == 2019 && b[1] == 5 && b[2] < 15) {
-		document.getElementById("data_Selezionata").innerHTML = 'Inserisci una data valida.';
+		document.getElementById("erroreData").innerHTML = 'Inserisci una data valida.';
 		return false;
 	}
+	document.getElementById("erroreData").innerHTML ='';
 }
 
 /*funzione che controlla tramite chiamata Ajax se in fase di registrazione l'username è già utilizzato*/

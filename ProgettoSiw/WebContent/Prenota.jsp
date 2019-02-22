@@ -76,7 +76,7 @@
 					onsubmit="return validaData()">
 					<div id="back_data_submit_prenota">
 						<input type="date" name="input_data" id="input_data"
-							class="form-control" required> <input type="submit"
+							class="form-control" required><p id = "erroreData"></p><input type="submit"
 							value="Cerca" id="submit_button_data_mappa" href="MappaServlet">
 					</div>
 				</form>
