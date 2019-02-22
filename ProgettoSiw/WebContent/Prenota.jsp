@@ -76,22 +76,17 @@
 					onsubmit="return validaData()">
 					<div id="back_data_submit_prenota">
 						<input type="date" name="input_data" id="input_data"
-							class="form-control" required><p id = "erroreData"></p><input type="submit"
-							value="Cerca" id="submit_button_data_mappa" href="MappaServlet">
+							class="form-control" required>
+						<p style="display: inline; color: red; margin-left: 1%;"
+							id="erroreData"></p>
+						<input type="submit" value="Cerca" id="submit_button_data_mappa"
+							href="MappaServlet">
 					</div>
 				</form>
 				<c:if test="${dataview != null}">
 					<p id="data_Selezionata">Data selezionata: ${dataview}</p>
 				</c:if>
 			</div>
-			<c:if test="${user == null}">
-				<p style="color: red">
-					<italic>Devi essere loggato per effettuare una
-					prenotazione</italic>
-				</p>
-			</c:if>
-
-
 		</div>
 	</div>
 	<div class="row" style="margin-right: 0px">
@@ -704,22 +699,67 @@
 					<h3>Totale &nbsp : &nbsp &#8364;0</h3>
 					<input type=text style="display: none" id=tott name=tott value=0
 						disabled>
-						
+
 					<c:if test="${user != null}">
 						<input type="button" id="prosegui_pagamento"
 							value="Prosegui con il Pagamento">
 					</c:if>
 					<c:if test="${user == null}">
-					<input type="button" id="prosegui_pagamento"
+						<input type="button" id="prosegui_pagamento"
 							value="Prosegui con il Pagamento">
 					</c:if>
-
-
-
 				</div>
 			</div>
 		</form>
 	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Devi essere loggato per effettuare il pagamento!</p>
+			<h5>Username :</h5>
+			<input type="text" placeholder="inserisci il tuo username">
+
+			<h5>Password :</h5>
+			<input type="password" id="pass_login_popup"
+				placeholder="inserisci la tua password"> <input
+				type="button" id="pass_popup_login_show" onclick="show_log()"
+				value="show">
+			<p id="link_login">
+				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
+			</p>
+		</div>
+	</div>
+
+	<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("prosegui_pagamento");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/global.js"></script>

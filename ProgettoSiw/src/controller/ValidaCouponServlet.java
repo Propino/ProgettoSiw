@@ -36,25 +36,28 @@ public class ValidaCouponServlet extends HttpServlet {
 		if(prezzoTotale == 0) {
 			response.getOutputStream().println("<p id = coupon> <font color = red> Seleziona almeno un posto e/o inserisci un coupon. </font> </p>");
 			response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");
-			response.getOutputStream().println("<input type=\"button\" value=\"Inserisci\"onclick=\"controllaCoupon()\">");
+			response.getOutputStream().println("<input type=\"button\" value=\"Inserisci\"id=\"button_input_coupon\" onclick=\"controllaCoupon()\">");
+			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
-			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+ prezzoTotale +">");
+			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 		}
 		else if(c.validaCoupon(couponDaValidare)) {
 			prezzoTotale -= 5;
 			response.getOutputStream().println("<p id =\"coupon\"> <font color = green> Coupon valido. </font> </p>");
 			response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");
-			response.getOutputStream().println("<input type=\"button\" disabled value=\"Inserisci\">");
+			response.getOutputStream().println("<input type=\"button\" disabled id=\"button_input_coupon\" value=\"Inserisci\">");
+			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
 			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 		} else {
 			response.getOutputStream().println("<p id = coupon> <font color = red> Coupon non valido. </font> </p>");
 			response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");
-			response.getOutputStream().println("<input type=\"button\" value=\"Inserisci\"onclick=\"controllaCoupon()\">");
+			response.getOutputStream().println("<input type=\"button\" value=\"Inserisci\" id=\"button_input_coupon\" onclick=\"controllaCoupon()\">");
+			response.getOutputStream().println("<br>");
 			response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
-			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+ prezzoTotale +">");
+			response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
 			response.getOutputStream().println("<input type =\"submit\" id=\"prosegui_pagamento\" value=\"Prosegui con il Pagamento\">");
 			}
 		}

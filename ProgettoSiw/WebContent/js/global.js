@@ -1,4 +1,18 @@
+/*funzione show password in Prenota.jsp per mostrare la password e cambiare il testo del bottone nel popup del login*/
+function show_log(){
+	
+	if (pass_login_popup.type == "password")
+		pass_login_popup.type = "text";
+	else
+		pass_login_popup.type =  "password";
+	
+	if (pass_popup_login_show.value == 'show')
+		pass_popup_login_show.value = 'hide';
+	else
+		pass_popup_login_show.value =  'show';
+}
 /*funzione show password in Registrati.jsp  e Login.jsp per mostrare la password e cambiare il testo del bottone*/
+
 function show(){
 	
 	if (input_password.type == "password")
@@ -223,11 +237,3 @@ function extractFilename(path) {
 	    return path.substr(x+1);
 	  return path; // just the file name
 }
-
-var input = document.getElementById("pass");
-input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-   event.preventDefault();
-   document.getElementById("submit").click();
-  }
-});
