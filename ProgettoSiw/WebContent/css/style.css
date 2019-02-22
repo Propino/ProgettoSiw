@@ -672,5 +672,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 #submit_popup_login:hover {
 	background: rgb(46,96,138);
 	color : white;
-	
+}
+#link_login{
+	text-decoration:underline;
 }

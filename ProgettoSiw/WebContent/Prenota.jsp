@@ -725,14 +725,12 @@
 			<input type="password" id="pass_login_popup"
 				placeholder="inserisci la tua password"> <input
 				type="button" id="pass_popup_login_show" onclick="show_log()"
-				value="show">
-				<input
-				type="button" id="submit_popup_login"
+				value="show"> <input type="button" id="submit_popup_login"
 				value="Invia">
 			<p id="link_login">
 				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
 			</p>
-			
+
 		</div>
 	</div>
 
