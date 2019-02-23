@@ -28,8 +28,8 @@ public class PrenotazioneDAOJDBC {
 				statement.setInt(3, i.getNumeroPosto());
 				statement.executeUpdate();
 			}
-		} catch(Exception e) {
-			//
+		} catch(SQLException e) {
+			throw new PersistenceException(e.getMessage());
 		} finally {
 
 				try {
