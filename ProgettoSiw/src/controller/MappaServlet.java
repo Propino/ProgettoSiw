@@ -29,7 +29,7 @@ public class MappaServlet extends HttpServlet {
 		Ombrellone[] ombrelloniPrenotati = p.getOmbrelloniPrenotati(data);
 		//HttpSession session = request.getSession();
 		request.setAttribute("dataview",data);
-		request.getSession().setAttribute("data",data);
+		//request.getSession().setAttribute("data",data);
 		request.setAttribute("posti", ombrelloniPrenotati);
 		RequestDispatcher rd = request.getRequestDispatcher("Prenota.jsp");
 		rd.forward(request, response);

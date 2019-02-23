@@ -126,7 +126,6 @@ function controllaLogin() {
 	}
 }
 function loginPopup() {
-	alert("Script chiamato");
 	var user = $("#user_login_popup").val();
 	var pws = $("#pass_login_popup").val();
 	if(user == "" || pws == "") {
@@ -146,6 +145,35 @@ function loginPopup() {
 					$("#pulsante").empty();
 					$("#pulsante").html("<input type='button' onclick='functione_pay()'id='submit_popup_login' value='Paga'>");
 				}
+			}
+		});
+	}
+}
+function prenotazione(d) {
+	var dat = d;
+	if(dat == "") {
+		$("#ErrorePagamento").empty();
+		$("#ErrorePagamento").html("Devi selezionare una data");
+	}
+	var postiSelezionati = [];
+	$.each($("input[name='posto']:checked"), function(){            
+        postiSelezionati.push($(this).val());
+    })
+	if(postiSelezionati.length < 1) {
+		$("#ErrorePagamento").empty();
+		$("#ErrorePagamento").html("Devi selezionare almeno un posto");
+	} else if(dat != "" && postiSelezionati.length >= 1){
+		$("#ErrorePagamento").empty();
+		var arrayStringa = "";
+		for (var i = 0; i < postiSelezionati.length; i++) {
+				arrayStringa += postiSelezionati[i] +"|";
+			}
+		$.ajax({
+			type:"POST",
+			url: "PrenotaPosti",
+			data: {data:dat,posto:arrayStringa},
+			success:function(data) {
+				$(location).attr('href','ConfirmedPrenotazione.jsp');
 			}
 		});
 	}

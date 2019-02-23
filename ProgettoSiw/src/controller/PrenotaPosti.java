@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,19 +34,18 @@ public class PrenotaPosti extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		 		String data = (String) request.getSession().getAttribute("data");
-				String []  posti  =  request.getParameterValues("posto");
+	{			
 				ArrayList<Ombrellone> postii = new ArrayList<Ombrellone>();
-				for(int i = 0; i < posti.length; i++) {
-					postii.add(new Ombrellone(Integer.parseInt(posti[i])));
+		 		String data =  request.getParameter("data");
+				String posti  =  request.getParameter("posto");
+				StringTokenizer st = new StringTokenizer(posti,"|");
+				while(st.hasMoreTokens()) {
+					postii.add(new Ombrellone(Integer.parseInt(st.nextToken())));
 				}
 				PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
 				Utente u = (Utente)request.getSession().getAttribute("user");
 				p.inserisciPrenotazione(u, data, postii);
-				request.getSession().removeAttribute("data");
-				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-				rd.forward(request, response);
+				//request.getSession().removeAttribute("data");
 	        }
 
 

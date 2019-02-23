@@ -53,9 +53,7 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome" class="nav_text_button">
-								<a id="wel" href="Profilo.jsp">Benvenuto,${user.getUsername()}!</a>
-							</h5>
+						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -758,6 +756,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
 							</div>
 							<div class="panel-body">
 								<!--  <form role="form" id="payment-form"> -->
+								<p id = "ErrorePagamento"></p>
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="form-group">
@@ -791,7 +790,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
 									<div class="row">
 										<div class="col-xs-12">
 											<button class="btn btn-success btn-lg btn-block"
-												type="submit">Paga!</button>
+												type="button" onclick='var d="${dataview}"; prenotazione(d);'>Paga</button>
 										</div>
 									</div>
 									<div class="row" style="display: none;">
