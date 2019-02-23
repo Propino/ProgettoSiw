@@ -2,9 +2,11 @@ package persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Recensione;
+import model.Utente;
 
 public class RecensioneDAOJDBC {
 	
@@ -31,5 +33,28 @@ public class RecensioneDAOJDBC {
 			}
 		}
 	}
-	
+	public String numeroRecensioniPerUtente(Utente u) {
+		Connection connection = this.dataSource.getConnection();
+		ResultSet rs = null;
+		int cont = 0;
+		try {
+			String query = "select * from recensione where utente = ?";
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1,u.getUsername());
+			rs = statement.executeQuery();
+			while(rs.next()) {
+				cont++;
+			}
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	return Integer.toString(cont);
+	}
 }

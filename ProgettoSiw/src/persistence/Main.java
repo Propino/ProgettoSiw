@@ -1,13 +1,23 @@
-
-//package persistence;
-
 /*
+package persistence;
+
+import model.Recensione;
+import model.Utente;
+
 public class Main {
 	public static void main(String[] args) {
 		try {
 			
-				UtenteDAOJDBC u = new UtenteDAOJDBC();
-				u.cerca("zar");
+				Utente u = new Utente();
+				u.setUsername("zarols");
+				
+				Recensione r = new Recensione();
+				r.setUtente(u);
+				r.setTesto("Posto molto suggestivo anche se troppo movimentato");
+				r.setStelle(3);
+				
+				RecensioneDAOJDBC rc = new RecensioneDAOJDBC();
+				System.out.println(rc.numeroRecensioniPerUtente(u));
 				
 				
 		} catch (Exception e) {

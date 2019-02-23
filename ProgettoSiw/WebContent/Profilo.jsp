@@ -84,7 +84,7 @@
 					<li class="list-group-item text-muted">Attività <i
 						class="fa fa-dashboard fa-1x"></i></li>
 					<li class="list-group-item text-right"><span class="pull-left"><strong>Recensioni</strong></span>
-						125</li>
+						${recensioni}</li>
 				</ul>
 
 			</div>
