@@ -128,9 +128,7 @@ function controllaLogin() {
 function loginPopup() {
 	alert("Script chiamato");
 	var user = $("#user_login_popup").val();
-	alert(user);
 	var pws = $("#pass_login_popup").val();
-	alert(pws);
 	if(user == "" || pws == "") {
 		$("#errore").html("Completa tutti i campi");
 	} else {
@@ -145,7 +143,8 @@ function loginPopup() {
 				} else {
 					$("#errore").empty();
 					$("#errore").html("<font color = green>Login Effettuato!</font>");
-					
+					$("#pulsante").empty();
+					$("#pulsante").html("<input type='button' onclick='functione_pay()'id='submit_popup_login' value='Paga'>");
 				}
 			}
 		});

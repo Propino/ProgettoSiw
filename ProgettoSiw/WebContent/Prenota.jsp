@@ -710,13 +710,14 @@
 					</c:if>
 				</div>
 			</div>
+			</form>
 	</div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<p>Devi essere loggato prima!</p>
+			<p>Esegui il Login</p>
 			<p id="errore"></p>
 			<h5>Username :</h5>
 			<input type="text" placeholder="inserisci il tuo username" id="user_login_popup">
@@ -724,8 +725,8 @@
 			<input type="password" id="pass_login_popup"
 				placeholder="inserisci la tua password"> <input
 				type="button" id="pass_popup_login_show" onclick="show_log()"
-				value="show"> <input type="button" onclick="loginPopup()"
-				id="submit_popup_login" value="Invia">
+				value="show"><div id = "pulsante"><input type="button" onclick="loginPopup()"
+				id="submit_popup_login" value="Invia"> </div>
 			<p id="link_login">
 				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
 			</p>
@@ -807,7 +808,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
 			</div>
 		</div>
 	</div>
-</form>
+
 
 
 
