@@ -125,7 +125,32 @@ function controllaLogin() {
 		});
 	}
 }
-
+function loginPopup() {
+	alert("Script chiamato");
+	var user = $("#user_login_popup").val();
+	alert(user);
+	var pws = $("#pass_login_popup").val();
+	alert(pws);
+	if(user == "" || pws == "") {
+		$("#errore").html("Completa tutti i campi");
+	} else {
+		$.ajax({
+			type: "POST",
+			url: "LoginServlet",
+			data: {input_username: user, input_password: pws},
+			success: function(data) {
+				if(data != "True") {
+					$("#errore").empty();
+					$("#errore").html("Username e/o password errate!");
+				} else {
+					$("#errore").empty();
+					$("#errore").html("<font color = green>Login Effettuato!</font>");
+					
+				}
+			}
+		});
+	}
+}
 function controllaCoupon() {
 	var totale = $("#tott").val();
 	var coupon = $("#input_coupon").val();

@@ -710,22 +710,21 @@
 					</c:if>
 				</div>
 			</div>
-		</form>
 	</div>
-
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<p>Devi essere loggato prima!</p>
+			<p id="errore"></p>
 			<h5>Username :</h5>
-			<input type="text" placeholder="inserisci il tuo username">
+			<input type="text" placeholder="inserisci il tuo username" id="user_login_popup">
 			<h5>Password :</h5>
 			<input type="password" id="pass_login_popup"
 				placeholder="inserisci la tua password"> <input
 				type="button" id="pass_popup_login_show" onclick="show_log()"
-				value="show"> <input type="button" onclick="functione_pay()"
+				value="show"> <input type="button" onclick="loginPopup()"
 				id="submit_popup_login" value="Invia">
 			<p id="link_login">
 				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
@@ -757,7 +756,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
 								</div>
 							</div>
 							<div class="panel-body">
-								<form role="form" id="payment-form">
+								<!--  <form role="form" id="payment-form"> -->
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="form-group">
@@ -799,22 +798,16 @@ on <= small devices and 4/12 page width on >= medium devices -->
 											<p class="payment-errors"></p>
 										</div>
 									</div>
-								</form>
+						
 							</div>
 						</div>
 						<!-- CREDIT CARD FORM ENDS HERE -->
-
-
 					</div>
-
-
-
 				</div>
 			</div>
 		</div>
 	</div>
-
-
+</form>
 
 
 
