@@ -53,9 +53,7 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome" class="nav_text_button">
-								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
-							</h5>
+						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -710,7 +708,7 @@
 					</c:if>
 				</div>
 			</div>
-		</form>
+			</form>
 	</div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
@@ -724,10 +722,8 @@ on <= small devices and 4/12 page width on >= medium devices -->
 			<!-- CREDIT CARD FORM STARTS HERE -->
 			<div class="panel panel-default credit-card-box">
 				<div class="panel-heading display-table">
-					<div class="row display-tr">
-						<h3 class="panel-title display-td text-center">Effettua il
+					<h3 class="panel-title display-td text-center">Effettua il
 							login</h3>
-					</div>
 				</div>
 				<div class="panel-body">
 					<!--  <form role="form" id="payment-form"> -->

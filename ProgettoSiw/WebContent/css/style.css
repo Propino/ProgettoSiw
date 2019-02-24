@@ -7,8 +7,6 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 	background-color: white;
-	perspective: 600px;
-	
 }
 
 h1, h2, h3, h4 {
@@ -602,10 +600,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	padding-top: 100px; /* Location of the box */
 	left: 0;
 	top: 0;
+	overflow: auto; /* Enable scroll if needed */
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
-	border-color: linear-gradient(to right, red, yellow);
 }
 
 /* Modal Content */
@@ -641,33 +639,6 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	text-decoration: underline;
 }
 
-.modal2 {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
-	border-color: linear-gradient(to right, red, yellow);
-}
-
-/* Modal Content */
-.modal-content2 {
-	width: 30%;
-	background-color: white;
-	margin: auto;
-}
-
-.modal-content2 p {
-	text-align: center;
-	color: red;
-	padding: 2% 30%;
-	font-style: italic;
-}
-
 .credit-card-box .panel-title {
 	display: inline;
 	font-weight: bold;
@@ -697,50 +668,56 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 .credit-card-box label {
 	display: block;
 }
+
 .credit-card-box .display-tr {
 	display: table-row;
 }
-.credit-card-box .display-td {
-	display: table-cell;
-	vertical-align: middle;
-	width: 40%;
-}
-/* Just looks nicer */
-.credit-card-box .panel-heading img {
-	min-width: 180px;
-}
-.panel {
-margin : 6%;
-}
-.show_button {
-	width:100%;
-}
-#imageUpload
-{
-    display: none;
+
+@media screen and (max-width: 1022) {
+	.credit-card-box .display-td {
+		display: none;
+	}
 }
 
-#profileImage
-{
-    cursor: pointer;
+@media screen and (min-width: 1023) {
+	.credit-card-box .display-td {
+		display: table-cell;
+		vertical-align: middle;
+		width: 40%;
+	}
+}
+
+.panel {
+	margin: 6%;
+}
+
+.show_button {
+	width: 100%;
+}
+
+#imageUpload {
+	display: none;
+}
+
+#profileImage {
+	cursor: pointer;
 }
 
 #profile-container {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-left:19%;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-left: 19%;
 }
 
 #profile-container img {
-    width: 150px;
-    height: 150px;
+	width: 150px;
+	height: 150px;
 }
 
-
 .rbd-review-slider {
-
+	
 }
 
 .rbd-review-slider .rbd-preloader {
@@ -750,18 +727,18 @@ margin : 6%;
 }
 
 .rbd-review-slider .rbd-review.rbd-prev {
-	transform: translate3d(-100px,0,-50px);
+	transform: translate3d(-100px, 0, -50px);
 	display: inline-block;
 }
 
 .rbd-review-slider .rbd-review.rbd-next {
-	transform: translate3d(100px,0,-50px);
+	transform: translate3d(100px, 0, -50px);
 	display: inline-block;
 }
 
 .rbd-review-slider .rbd-review.rbd-curr {
 	z-index: 10;
-	transform: translate3d(0,0,0) scale(1);
+	transform: translate3d(0, 0, 0) scale(1);
 	opacity: 1;
 	display: inline-block;
 }
@@ -771,8 +748,7 @@ margin : 6%;
 	font-size: 18px;
 	line-height: 1.612;
 	border-radius: 4px;
-	box-shadow: 0 10px 30px -8px rgba(0,0,0,.5);
-	
+	box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .5);
 	display: none;
 	vertical-align: top;
 	transition: opacity .35s ease-out, transform .35s ease-out;;
@@ -783,7 +759,6 @@ margin : 6%;
 	margin: 0 auto;
 	overflow: hidden;
 	opacity: 0;
-	
 	background: #fff;
 	max-width: 600px;
 }
@@ -811,12 +786,12 @@ margin : 6%;
 }
 
 .rbd-review-slider .rbd-gravatar {
-  border-radius: 100%;
-  width: 100px;
-  float: left;
-  margin-right: 15px;
+	border-radius: 100%;
+	width: 100px;
+	float: left;
+	margin-right: 15px;
 	border: 6px solid transparent;
-	box-shadow: 0 3px 12px -2px rgba(0,0,0,.35);
+	box-shadow: 0 3px 12px -2px rgba(0, 0, 0, .35);
 }
 
 .rbd-footing {
@@ -824,11 +799,21 @@ margin : 6%;
 	text-align: center;
 }
 
-@keyframes round{   
-  25%{
-    opacity:1;
-  }
-  40%{
-    opacity:0;
-  }
-} 
+@
+keyframes round { 25%{
+	opacity: 1;
+}
+40%{
+opacity
+
+
+
+
+:
+
+
+
+
+0;
+}
+}

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -30,13 +30,12 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="nav_collassata">
+			<div class="collapse navbar-collapse" id ="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a class="nav_text_button" href="LaStruttura.jsp">La
@@ -51,9 +50,7 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome" class="nav_text_button">
-								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
-							</h5>
+						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -98,6 +95,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">
@@ -223,7 +221,7 @@
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="footer.jsp"></jsp:include>
 
-	<script type="text/javascript" src="js/global.js"></script>
+
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>

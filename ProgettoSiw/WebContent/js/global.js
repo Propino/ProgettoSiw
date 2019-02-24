@@ -1,4 +1,4 @@
-﻿/*funzione show password in Prenota.jsp per mostrare la password e cambiare il testo del bottone nel popup del login*/
+/*funzione show password in Prenota.jsp per mostrare la password e cambiare il testo del bottone nel popup del login*/
 function show_log(){
 	if (pass_login_popup.type == "password")
 		pass_login_popup.type = "text";
