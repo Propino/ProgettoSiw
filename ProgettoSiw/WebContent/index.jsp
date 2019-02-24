@@ -98,54 +98,33 @@
 			</div>
 		</div>
 	</div>
+	<h2>Le recensioni dei nostri clienti</h2>
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">
 				<div class="rbd-review-container">
 					<div class="rbd-review review1.1 rbd-curr">
-						<h3 class="rbd-heading">Extremely Professional</h3>
-						<i class="fa fa-star fa-fw" data-icon="star" data-repeat="5"></i>
+						<h3 class="rbd-heading">${recensioni.get(0).getUtente().getUsername()}</h3>
+						<c:forEach var = "i" begin = "1" end = "${recensioni.get(0).getStelle()}">
+						<i class="fa fa-star fa-fw" data-icon="star"></i>
+						</c:forEach>
 						<div class="rbd-content">
 							<img class="rbd-gravatar"
-							src="img/avatar.png">Materials
-							are top notch. People are top notch... they knew exactly how to
-							handle my ignorance and turn it to a positive working business…
+							src="img/avatar.png">${recensioni.get(0).getTesto()}
 						</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Mark P. on Feb. 18,
-							2018</div>
 					</div>
-					<div class="rbd-review review1.2 rbd-next">
-						<h3 class="rbd-heading">Test Company Marketing Delivers Such
-							Great Service!</h3>
-						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
-						<div class="rbd-content">
-							<img class="rbd-gravatar"
-								src="https://www.gravatar.com/avatar/ee304528491d860812f73d7d5cd0dc72?s=256">I'm
-							a big fan of this test company. They really do the best work
-							around, and their prices just can't be beat! I hear that Alex is
-							a pretty cool guy…
+					<c:forEach items="${recensioni}" var="value" begin = "1">
+						<div class="rbd-review review1.2 rbd-next">
+							<h3 class="rbd-heading">${value.getUtente().getUsername()}</h3>
+							<c:forEach var = "i" begin = "1" end = "${value.getStelle()}">
+							<i class="fa fa-star fa-fw" data-icon="star"></i>
+							</c:forEach>
+							<div class="rbd-content">
+								<img class="rbd-gravatar"
+									src="img/avatar.png">${value.getTesto()}
+							</div>
 						</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Alex D. on Feb. 19,
-							2018</div>
-					</div>
-					<div class="rbd-review review1.3">
-						<h3 class="rbd-heading">Test Review</h3>
-						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
-						<div class="rbd-content">No Gravatar but here's a review…No
-							Gravatar but here's a review…No Gravatar but here's a review…No
-							Gravatar but here's a review…</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Anonymous. on Feb.
-							18, 2018</div>
-					</div>
+					 </c:forEach>
 				</div>
 			</div>
 		</div>

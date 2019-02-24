@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Recensione;
 import model.Utente;
@@ -56,5 +57,35 @@ public class RecensioneDAOJDBC {
 			}
 		}
 	return Integer.toString(cont);
+	}
+	
+	public ArrayList<Recensione> getAll() {
+		ArrayList<Recensione> recensioni = new ArrayList<Recensione>();
+		Connection connection = this.dataSource.getConnection();
+		ResultSet rs = null;
+		try {
+			String query = "select * from recensione";
+			PreparedStatement statement = connection.prepareStatement(query);
+			rs = statement.executeQuery();
+			while(rs.next()) {
+				Recensione temp = new Recensione();
+				Utente u = new Utente();
+				u.setUsername(rs.getString("utente"));
+				temp.setUtente(u);
+				temp.setTesto(rs.getString("testo"));
+				temp.setStelle(rs.getInt("stelle"));
+				recensioni.add(temp);
+			}
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	return recensioni;
 	}
 }
