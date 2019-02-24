@@ -1,4 +1,5 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -23,7 +24,6 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Rochester"
 	rel="stylesheet">
-
 </head>
 <body>
 
@@ -61,7 +61,7 @@
 							<ul class="dropdown-menu">
 								<li><a id="to_profilo" href="ProfiloServlet">Vai al
 										profilo utente</a></li>
-										<li class="divider"></li>
+								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i
 											class="fa fa-sign-out-alt"></i>
@@ -73,9 +73,9 @@
 			</div>
 		</div>
 	</nav>
-	
+
 	<hr>
-	<div class="container" style ="margin-bottom:10%;margin-top:3%;">
+	<div class="container" style="margin-bottom: 10%; margin-top: 3%;">
 		<div class="row">
 			<div class="col-sm-3 text-center">
 				<h1>${user.getUsername()}</h1>
@@ -85,14 +85,16 @@
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
-					<img src="img/avatar.png" class="avatar img-circle img-thumbnail" id="avatar_img" alt="avatar" style ="height:50%;width:50%;">
-					<input type="file" onchange="newAvatar(this.value)" class="text-center center-block file-upload">
+					<img src="img/avatar.png" class="avatar img-circle img-thumbnail"
+						id="avatar_img" alt="avatar" style="height: 50%; width: 50%;">
+					<input type="file" onchange="newAvatar(this.value)"
+						class="text-center center-block file-upload">
 				</div>
 
 				<br>
-					<hr></hr>
-					<hr></hr>
-				
+				<hr></hr>
+				<hr></hr>
+
 				<ul class="list-group">
 					<li class="list-group-item text-muted">Attività <i
 						class="fa fa-dashboard fa-1x"></i></li>
@@ -106,53 +108,95 @@
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 					<li><a data-toggle="tab" href="#log">Prenotazioni</a></li>
+					<li><a data-toggle="tab" href="#recensioni">Recensioni</a></li>
+
 				</ul>
 
 
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
-								<div class="col-xs-6">
-									<label for="first_name"><h4>Nome</h4></label> <p class="campi_profilo">${user.getNome()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="last_name"><h4>Cognome</h4></label> <p class="campi_profilo"> ${user.getCognome()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="mobile"><h4>Telefono</h4></label> <p class="campi_profilo"> ${user.getTelefono()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="email"><h4>Email</h4></label> <p class="campi_profilo"> ${user.getEmail()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="password"><h4>Password</h4></label> <p class="campi_profilo"> ${user.getPassword()}</p>
-								</div>
+						<div class="col-xs-6">
+							<label for="first_name"><h4>Nome</h4></label>
+							<p class="campi_profilo">${user.getNome()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="last_name"><h4>Cognome</h4></label>
+							<p class="campi_profilo">${user.getCognome()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="mobile"><h4>Telefono</h4></label>
+							<p class="campi_profilo">${user.getTelefono()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="email"><h4>Email</h4></label>
+							<p class="campi_profilo">${user.getEmail()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="password"><h4>Password</h4></label>
+							<p class="campi_profilo">${user.getPassword()}</p>
+						</div>
 						<hr>
 					</div>
-					<div class="tab-pane" id="log">	
-							<div class="col-xs-3 log_intestazione">
-								<ul class="list-group">
-								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Data</li>
-								  <c:forEach items="${date}" var="date">
-								  	<li class="list-group-item">${date}</li>
-								  </c:forEach> 
-								</ul>							
-							</div>
-							<div class="col-xs-9 log_intestazione">
+					<div class="tab-pane" id="log">
+						<div class="col-xs-3 log_intestazione">
 							<ul class="list-group">
-								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Ombrelloni Prenotati</li>
-								  <c:forEach items="${posti}" var="posti">
-								  	<li class="list-group-item">Ombrellone N° ${posti}</li>
-								  </c:forEach>
-								</ul>
-							</div>
-							
-					</div>
+								<li class="list-group-item"
+									style="font-weight: bold; font-style: italic;">Data</li>
+								<c:forEach items="${date}" var="date">
+									<li class="list-group-item">${date}</li>
+								</c:forEach>
+							</ul>
+						</div>
+						<div class="col-xs-9 log_intestazione">
+							<ul class="list-group">
+								<li class="list-group-item"
+									style="font-weight: bold; font-style: italic;">Ombrelloni
+									Prenotati</li>
+								<c:forEach items="${posti}" var="posti">
+									<li class="list-group-item">Ombrellone N° ${posti}</li>
+								</c:forEach>
+							</ul>
+						</div>
 
+					</div>
+					<div class="tab-pane" id="recensioni">
+						<div class="col-md-6">
+							<div class="well well-sm" style="margin-top: 5%;">
+								<div class="text-center">
+									<a class="btn btn-success btn-green" href="#reviews-anchor"
+										id="open-review-box">Scrivi una recensione!</a>
+								</div>
+								<div class="row" id="post-review-box" style="display: none;">
+									<div class="col-md-12">
+										<form accept-charset="UTF-8" action="" method="post">
+											<input id="ratings-hidden" name="rating" type="hidden">
+											<textarea class="form-control animated" cols="50"
+												id="new-review" name="comment"
+												placeholder="Inserisci la tua recensione..." rows="5"></textarea>
+
+											<div class="col-md-6">
+												<div class=" starrr" data-rating="0"></div>
+											</div>
+
+											<div class="col-md-6">
+
+												<button class="btn btn-warning btn-red rew"
+													id="close-review-box">Chiudi</button>
+												<button class="btn btn-success btn-green rew">Invia!</button>
+
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12"><h2>IPOTETICO LOG PRENOTAZIONI</h2></div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>	
-	
+	</div>
+
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -161,6 +205,5 @@
 	<script type="text/javascript" src="js/contact_me.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/global.js"></script>
-	
 </body>
 </html>

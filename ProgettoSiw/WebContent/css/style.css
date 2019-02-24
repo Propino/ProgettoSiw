@@ -607,15 +607,16 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 #home h4 {
 	color: rgb(119, 119, 119);
 }
-#div_youtube{
 
+#div_youtube {
 	width: 100%;
 }
+
 #video_youtube {
 	width: 42%;
 	height: 314px;
 	margin-top: 4%;
-	margin-left:29%;
+	margin-left: 29%;
 	margin-bottom: 4%;
 	border: 10px outset grey;
 }
@@ -850,37 +851,22 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 keyframes round { 25%{
 	opacity: 1;
 }
+
 40%{
 opacity
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 0;
 }
+}
+.starrr {
+	margin: 20px 0;
+	font-size: 24px;
+	color: yellow;
+}
+
+.rew{
+	margin: 20px 0;
+}
+#new-review{
+	resize:none;
 }
