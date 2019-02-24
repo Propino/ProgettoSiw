@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -30,12 +30,13 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id ="nav_collassata">
+			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a class="nav_text_button" href="LaStruttura.jsp">La
@@ -50,7 +51,9 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
+						<li><h5 id="welcome" class="nav_text_button">
+								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
+							</h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -95,55 +98,33 @@
 			</div>
 		</div>
 	</div>
-	
+	<h2>Le recensioni dei nostri clienti</h2>
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">
 				<div class="rbd-review-container">
 					<div class="rbd-review review1.1 rbd-curr">
-						<h3 class="rbd-heading">Extremely Professional</h3>
-						<i class="fa fa-star fa-fw" data-icon="star" data-repeat="5"></i>
+						<h3 class="rbd-heading">${recensioni.get(0).getUtente().getUsername()}</h3>
+						<c:forEach var = "i" begin = "1" end = "${recensioni.get(0).getStelle()}">
+						<i class="fa fa-star fa-fw" data-icon="star"></i>
+						</c:forEach>
 						<div class="rbd-content">
 							<img class="rbd-gravatar"
-							src="img/avatar.png">Materials
-							are top notch. People are top notch... they knew exactly how to
-							handle my ignorance and turn it to a positive working business…
+							src="img/avatar.png">${recensioni.get(0).getTesto()}
 						</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Mark P. on Feb. 18,
-							2018</div>
 					</div>
-					<div class="rbd-review review1.2 rbd-next">
-						<h3 class="rbd-heading">Test Company Marketing Delivers Such
-							Great Service!</h3>
-						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
-						<div class="rbd-content">
-							<img class="rbd-gravatar"
-								src="https://www.gravatar.com/avatar/ee304528491d860812f73d7d5cd0dc72?s=256">I'm
-							a big fan of this test company. They really do the best work
-							around, and their prices just can't be beat! I hear that Alex is
-							a pretty cool guy…
+					<c:forEach items="${recensioni}" var="value" begin = "1">
+						<div class="rbd-review review1.2 rbd-next">
+							<h3 class="rbd-heading">${value.getUtente().getUsername()}</h3>
+							<c:forEach var = "i" begin = "1" end = "${value.getStelle()}">
+							<i class="fa fa-star fa-fw" data-icon="star"></i>
+							</c:forEach>
+							<div class="rbd-content">
+								<img class="rbd-gravatar"
+									src="img/avatar.png">${value.getTesto()}
+							</div>
 						</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Alex D. on Feb. 19,
-							2018</div>
-					</div>
-					<div class="rbd-review review1.3">
-						<h3 class="rbd-heading">Test Review</h3>
-						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
-						<div class="rbd-content">No Gravatar but here's a review…No
-							Gravatar but here's a review…No Gravatar but here's a review…No
-							Gravatar but here's a review…</div>
-						<div class="rbd-footing">
-							<a class="rbd-button rbd-small" href="#">Read More</a>
-						</div>
-						<div class="rbd-review-meta">Written by Anonymous. on Feb.
-							18, 2018</div>
-					</div>
+					 </c:forEach>
 				</div>
 			</div>
 		</div>
@@ -154,7 +135,6 @@
 			'speed' : 3000,
 			'pause' : true,
 		}
-
 		window
 				.addEventListener(
 						'DOMContentLoaded',
@@ -164,7 +144,6 @@
 							let slides = slider.querySelectorAll('.rbd-review');
 							let total = slides.length;
 							let pause = false;
-
 							function pauseSlide() {
 								slider.onmouseleave = function() {
 									pause = false;
@@ -174,19 +153,15 @@
 								};
 								return pause;
 							}
-
 							function slide() {
 								if (options.pause && pauseSlide())
 									return;
-
 								let activeSlide = document
 										.querySelector('.rbd-review-slider .rbd-review.rbd-curr');
 								let prev, curr, next, soon;
-
 								curr = activeSlide;
 								prev = activeSlide.previousElementSibling;
 								next = activeSlide.nextElementSibling;
-
 								if (next != null) {
 									soon = next.nextElementSibling == null ? slides[0]
 											: next.nextElementSibling;
@@ -194,7 +169,6 @@
 									next = slides[0];
 									soon = slides[1];
 								}
-
 								if (prev != null)
 									prev.classList.remove('rbd-prev',
 											'rbd-curr', 'rbd-next');
@@ -211,7 +185,6 @@
 											'rbd-curr', 'rbd-next');
 								soon.classList.add('rbd-next');
 							}
-
 							let slideTimer = setInterval(function() {
 								slide();
 							}, options.speed);
@@ -221,7 +194,7 @@
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="footer.jsp"></jsp:include>
 
-
+	<script type="text/javascript" src="js/global.js"></script>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>

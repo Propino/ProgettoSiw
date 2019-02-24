@@ -38,7 +38,7 @@
 
 			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="index.jsp">Home</a></li>
+					<li><a href="indexServlet">Home</a></li>
 					<li><a class="nav_text_button" href="LaStruttura.jsp">La
 							Struttura</a></li>
 					<li><a class="nav_text_button" href="Prenota.jsp">Prenota</a></li>

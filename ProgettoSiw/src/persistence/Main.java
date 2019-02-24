@@ -9,15 +9,15 @@ public class Main {
 		try {
 			
 				Utente u = new Utente();
-				u.setUsername("zarols");
+				u.setUsername("Paolo");
 				
 				Recensione r = new Recensione();
 				r.setUtente(u);
-				r.setTesto("Posto molto suggestivo anche se troppo movimentato");
-				r.setStelle(3);
+				r.setTesto("Mare bellissimo!");
+				r.setStelle(5);
 				
 				RecensioneDAOJDBC rc = new RecensioneDAOJDBC();
-				System.out.println(rc.numeroRecensioniPerUtente(u));
+				rc.aggiungiRecensione(r);
 				
 				
 		} catch (Exception e) {
