@@ -124,7 +124,7 @@
 	</div>
 	<div id="youtube_video" style="width: 100%";>
 		<iframe
-			style="width: 560px; height: 315px; margin-left: 30%; margin-top: 4%; margin-bottom: 4%; border: 10px outset grey"
+			style="width: 560px; height: 314px; margin-left: 30%; margin-top: 4%; margin-bottom: 4%; border: 10px outset grey"
 			src="https://www.youtube.com/embed/KGClXTb-Tss" frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>
