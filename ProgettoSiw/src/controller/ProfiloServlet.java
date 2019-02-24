@@ -36,7 +36,7 @@ public class ProfiloServlet extends HttpServlet {
 		PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
 		Utente username = (Utente) request.getSession().getAttribute("user");
 		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
-		//String recensioni = r.numeroRecensioniPerUtente(username);
+		String recensioni = r.numeroRecensioniPerUtente(username);
 		ArrayList<String> prenotazioni = p.getPrenotazioniPerUtente(username.getUsername());
 		ArrayList<String> date = new ArrayList<String>();
 		ArrayList<String> posti = new ArrayList<String>();
