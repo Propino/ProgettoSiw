@@ -98,7 +98,7 @@
 			</div>
 		</div>
 	</div>
-	<h2>Le recensioni dei nostri clienti</h2>
+	<h2 class=text-center>Le recensioni dei nostri clienti</h2>
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">
