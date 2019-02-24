@@ -29,6 +29,7 @@ public class UtenteDAOJDBC  {
 			statement.setString(6, utente.getData());
 			statement.setString(7, utente.getTelefono());
 			statement.executeUpdate();
+			MailUtility.mailRegistrazione(utente.getEmail(),utente.getUsername());
 		}catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
 		} finally {

@@ -50,7 +50,10 @@ function validaData() {
 	}
 	document.getElementById("erroreData").innerHTML ='';
 }
-
+function inviaRecensione() {
+	
+	
+}
 /*
  * funzione che controlla tramite chiamata Ajax se in fase di registrazione
  * l'username è già utilizzato

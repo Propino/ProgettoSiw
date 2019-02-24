@@ -159,6 +159,7 @@
 						</div>
 
 					</div>
+					<p id="avviso"></p>
 					<div class="tab-pane" id="recensioni">
 						<div class="col-md-6">
 							<div class="well well-sm" style="margin-top: 5%;">
@@ -182,7 +183,7 @@
 
 												<button class="btn btn-warning btn-red rew"
 													id="close-review-box">Chiudi</button>
-												<button class="btn btn-success btn-green rew">Invia!</button>
+												<button class="btn btn-success btn-green rew" type = "button" onclick="inviaRecensione()">Invia!</button>
 
 											</div>
 										</form>
@@ -217,7 +218,6 @@
 			</div>
 		</div>
 	</div>
-
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>

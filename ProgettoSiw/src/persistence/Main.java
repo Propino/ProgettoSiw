@@ -8,16 +8,8 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 			
-				Utente u = new Utente();
-				u.setUsername("Paolo");
-				
-				Recensione r = new Recensione();
-				r.setUtente(u);
-				r.setTesto("Mare bellissimo!");
-				r.setStelle(5);
-				
-				RecensioneDAOJDBC rc = new RecensioneDAOJDBC();
-				rc.aggiungiRecensione(r);
+				MailUtility m = new MailUtility();
+				m.sendMail("giovanni_zarola@libero.it","flamingobeachclub@libero.it","Conferma registrazione.","Benvenuto nel portale del Flamingo Beach Club!");
 				
 				
 		} catch (Exception e) {

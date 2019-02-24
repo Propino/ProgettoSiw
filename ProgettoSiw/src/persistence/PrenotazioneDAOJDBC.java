@@ -27,6 +27,7 @@ public class PrenotazioneDAOJDBC {
 				statement.setString(2, data);
 				statement.setInt(3, i.getNumeroPosto());
 				statement.executeUpdate();
+				MailUtility.mailPrenotazione(utente.getEmail());
 			}
 		} catch(SQLException e) {
 			throw new PersistenceException(e.getMessage());
