@@ -15,6 +15,8 @@
 	href="fonts/font-awesome/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
+<link rel="stylesheet"
+	href="https://cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
 <!-- Font ================================================== -->
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
@@ -176,14 +178,30 @@
 												placeholder="Inserisci la tua recensione..." rows="5"></textarea>
 
 											<div class="col-md-6">
-												<div class=" starrr" data-rating="0"></div>
+												<div class="rating-css hover-effect">
+													<input type="radio" value="1" id="rating1" name="rating3" checked> 
+													<label for="rating1"class="mdi mdi-star"></label> 
+													
+													<input type="radio" value="2" id="rating2" name="rating3"> 
+													<label for="rating2" class="mdi mdi-star"></label> 
+													
+													<input type="radio" value="3" id="rating3" name="rating3">
+													<label for="rating3" class="mdi mdi-star"></label>
+													
+													<input type="radio" value="4" id="rating4" name="rating3">
+													<label for="rating4" class="mdi mdi-star"></label> 
+													
+													<input type="radio" value="5" id="rating5" name="rating3">
+													<label for="rating5" class="mdi mdi-star"></label>
+												</div>
 											</div>
 
 											<div class="col-md-6">
 
 												<button class="btn btn-warning btn-red rew"
 													id="close-review-box">Chiudi</button>
-												<button class="btn btn-success btn-green rew" type = "button" onclick="inviaRecensione()">Invia!</button>
+												<button class="btn btn-success btn-green rew" type="button"
+													onclick="inviaRecensione()">Invia!</button>
 
 											</div>
 										</form>
@@ -191,7 +209,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
+						<!-- <div class="col-md-12">
 							<h2 class=text-center>Le mie recensioni</h2>
 							<ul class="list-group" id="recensione_log">
 								<li class="list-group-item text-muted" id="intestazione_review"><span
@@ -212,7 +230,7 @@
 								<li class="list-group-item text-right" id="corpo_review"><span
 									class="pull-left"><strong>Test_recensione</strong></span></li>
 							</ul>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

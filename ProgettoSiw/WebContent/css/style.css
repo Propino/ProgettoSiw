@@ -862,10 +862,36 @@ opacity
 0;
 }
 }
-.starrr {
-	margin: 20px 0;
-	font-size: 24px;
-	color: rgb(240,173,78);
+
+.rating-css {
+  cursor: pointer;
+  height: 30px;
+  font-size: 0;
+  margin: 20px 0;
+}
+
+.rating-css input {
+  display: none;
+}
+
+.rating-css input + label {
+  text-align: center;
+  font-size: 24px;
+  color: #FFC107;
+  cursor: pointer;
+}
+
+.rating-css input:checked + label ~ label {
+  color: #555;
+}
+
+.rating-css.hover-effect input:checked + label ~ label,
+.rating-css.hover-effect:hover input:hover + label ~ label {
+  opacity: 0.5;
+}
+
+.rating-css.hover-effect:hover input + label ~ label {
+  opacity: 1;
 }
 
 .rew {
