@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Prenotazione;
 import model.Utente;
 import persistence.PrenotazioneDAOJDBC;
+import persistence.RecensioneDAOJDBC;
 
 /**
  * Servlet implementation class ProfiloServlet
@@ -34,19 +35,28 @@ public class ProfiloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
 		Utente username = (Utente) request.getSession().getAttribute("user");
+		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		String recensioni = r.numeroRecensioniPerUtente(username);
 		ArrayList<String> prenotazioni = p.getPrenotazioniPerUtente(username.getUsername());
 		ArrayList<String> date = new ArrayList<String>();
 		ArrayList<String> posti = new ArrayList<String>();
 		for(String s : prenotazioni) {
 			String data = s.substring(0,10);
-			String posto = s.substring(11,13);
 			date.add(data);
-			posti.add(posto);
+			if (s.length()==12) {
+				String posto = s.substring(11,12);
+				posti.add(posto);
+			} else if (s.length()==13) {
+				String posto = s.substring(11,13);
+				posti.add(posto);
+			}
+			
 		}
 		request.setAttribute("date",date);
 		request.setAttribute("posti",posti);
+		request.setAttribute("recensioni",recensioni);
 		request.getRequestDispatcher("Profilo.jsp").forward(request, response);
-	}
+	}	 
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

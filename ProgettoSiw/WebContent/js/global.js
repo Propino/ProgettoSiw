@@ -165,6 +165,7 @@ function loginPopup() {
 }
 function prenotazione(d) {
 	var dat = d;
+	$("#ErrorePagamento").empty();
 	if(dat == "") {
 		$("#ErrorePagamento").empty();
 		$("#ErrorePagamento").html("<font color = red>Devi selezionare una data.</font>");
