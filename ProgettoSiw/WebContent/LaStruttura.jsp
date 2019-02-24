@@ -30,12 +30,13 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id ="nav_collassata">
+			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="nav_text_button"><a href="index.jsp">Home</a></li>
 					<li class="active"><a href="#">La Struttura</a></li>
@@ -49,7 +50,9 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
+						<li><h5 id="welcome" class="nav_text_button">
+								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
+							</h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -119,19 +122,22 @@
 			</div>
 		</div>
 	</div>
+	<div id="youtube_video" style="width: 100%";>
+		<iframe
+			style="width: 560px; height: 315px; margin-left: 30%; margin-top: 4%; margin-bottom: 4%; border: 10px outset grey"
+			src="https://www.youtube.com/embed/KGClXTb-Tss" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
+	<script type="text/javascript"
+		src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script type="text/javascript"
+		src="https://www.amcharts.com/lib/3/pie.js"></script>
+	<script type="text/javascript"
+		src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
 
 	<div class="col-sm-6">
 		<h3 style="color: white;">AFFLUENZA MEDIA MENSILE</h3>
-		<!-- amCharts javascript sources -->
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/pie.js"></script>
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
-
-
-		<!-- amCharts javascript code -->
 		<script type="text/javascript">
 			AmCharts
 					.makeChart(
@@ -221,8 +227,10 @@
 		<div id="chartdiv1"
 			style="width: 100%; height: 400px; background-color: #282828;"></div>
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
 
+
+	<jsp:include page="footer.jsp"></jsp:include>
+	<script type="text/javascript" src="js/global.js"></script>
 
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>

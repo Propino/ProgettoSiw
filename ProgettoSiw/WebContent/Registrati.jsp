@@ -43,8 +43,8 @@
 						<input type="password" name="input_password" id="input_password"
 							placeholder="Inserisci la password" class="form-control">
 					</div>
-					<div class="col-xs-2">
-						<input type="button" id="show_hide" onclick="show()" value="show">
+					<div class="col-xs-2">							<input type="button" id="show_hide" onclick="show()" value="show">
+
 					</div>
 				</div>
 			</div>
@@ -125,12 +125,12 @@
 							<a href="Login.jsp">Hai già un account? Accedi!</a>
 						</p>
 					</div>
-						<div class="col-xs-6 da_alzare">
-							<input type="button" id="submit" value="Invia"
-								onclick="validaRegistrazione()">
-						</div>
+					<div class="col-xs-6 da_alzare">
+						<input type="button" id="submit" value="Invia"
+							onclick="validaRegistrazione()">
 					</div>
 				</div>
+			</div>
 		</form>
 	</div>
 	<script src="js/global.js"></script>

@@ -7,6 +7,8 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 	background-color: white;
+	perspective: 600px;
+	
 }
 
 h1, h2, h3, h4 {
@@ -602,59 +604,29 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	top: 0;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+	border-color: linear-gradient(to right, red, yellow);
 }
 
 /* Modal Content */
 .modal-content {
 	width: 30%;
-	background-image: radial-gradient(circle, rgb(251, 249, 200), yellow,
-		#33ccff);
+	background-color: white;
 	margin: auto;
-	/*background-image: url("../img/sfondo_popup.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;*/
-}
-
-.modal-content p {
-	text-align: center;
-	color: red;
-	padding: 2% 30%;
-	font-style: italic;
-}
-
-.modal-content h5 {
-	text-transform: none;
-	text-align: center;
-}
-
-.modal-content input[type="text"] {
-	margin-left: 32%;
-	width: 36%;
-}
-
-#pass_login_popup {
-	margin-left: 32%;
-	width: 36%;
-}
-
-.modal-content input[type="button"] {
-	width: 12%;
 }
 /* The Close Button */
 .close {
-	color: #aaaaaa;
+	color: black;
 	float: right;
 	padding-right: 2%;
 	font-size: 28px;
 	font-weight: bold;
 	font-size: 28px;
+	opacity: 1;
 }
 
-.close:hover, .close:focus {
-	color: #000;
+.close:hover {
+	color: #333;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -663,20 +635,6 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	color: black;
 	font-size: 13px;
 	font-style: italic;
-}
-
-#submit_popup_login {
-	margin-top: 5%;
-	margin-left: 32%;
-	width: 36%;
-	background-color: transparent;
-	border: 2px solid rgb(46, 96, 138);
-	color: black;
-	transition: 600ms;
-}
-
-#submit_popup_login:hover {
-	background: rgb(46, 96, 138);
 }
 
 #link_login {
@@ -692,35 +650,15 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	top: 0;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+	border-color: linear-gradient(to right, red, yellow);
 }
 
 /* Modal Content */
 .modal-content2 {
 	width: 30%;
-	background-image: radial-gradient(circle, rgb(251, 249, 200), yellow,
-		#33ccff);
+	background-color: white;
 	margin: auto;
-	/*background-image: url("../img/sfondo_popup.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;*/
-}
-/
-.close2 {
-	color: #aaaaaa;
-	float: right;
-	padding-right: 2%;
-	font-size: 28px;
-	font-weight: bold;
-	font-size: 28px;
-}
-
-.close2:hover, .close2:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
 }
 
 .modal-content2 p {
@@ -759,21 +697,138 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 .credit-card-box label {
 	display: block;
 }
-/* The old "center div vertically" hack */
-.credit-card-box .display-table {
-	display: table;
-}
-
 .credit-card-box .display-tr {
 	display: table-row;
 }
-
 .credit-card-box .display-td {
 	display: table-cell;
 	vertical-align: middle;
-	width: 50%;
+	width: 40%;
 }
 /* Just looks nicer */
 .credit-card-box .panel-heading img {
 	min-width: 180px;
 }
+.panel {
+margin : 6%;
+}
+.show_button {
+	width:100%;
+}
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left:19%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}
+
+
+.rbd-review-slider {
+
+}
+
+.rbd-review-slider .rbd-preloader {
+	width: 36px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+.rbd-review-slider .rbd-review.rbd-prev {
+	transform: translate3d(-100px,0,-50px);
+	display: inline-block;
+}
+
+.rbd-review-slider .rbd-review.rbd-next {
+	transform: translate3d(100px,0,-50px);
+	display: inline-block;
+}
+
+.rbd-review-slider .rbd-review.rbd-curr {
+	z-index: 10;
+	transform: translate3d(0,0,0) scale(1);
+	opacity: 1;
+	display: inline-block;
+}
+
+.rbd-review-slider .rbd-review {
+	padding: 20px 30px;
+	font-size: 18px;
+	line-height: 1.612;
+	border-radius: 4px;
+	box-shadow: 0 10px 30px -8px rgba(0,0,0,.5);
+	
+	display: none;
+	vertical-align: top;
+	transition: opacity .35s ease-out, transform .35s ease-out;;
+	opacity: 1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	opacity: 0;
+	
+	background: #fff;
+	max-width: 600px;
+}
+
+.rbd-review-slider .rbd-review.rbd-first {
+	display: block;
+}
+
+.rbd-review-slider .rbd-heading {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.rbd-review-slider svg {
+	fill: #ffbb58;
+	width: 24px;
+	margin-right: 1px;
+}
+
+.rbd-review-slider .rbd-review-meta {
+	font-size: 12px;
+	color: #565656;
+	margin-top: 12px;
+	text-align: center;
+}
+
+.rbd-review-slider .rbd-gravatar {
+  border-radius: 100%;
+  width: 100px;
+  float: left;
+  margin-right: 15px;
+	border: 6px solid transparent;
+	box-shadow: 0 3px 12px -2px rgba(0,0,0,.35);
+}
+
+.rbd-footing {
+	margin: 20px 0 0;
+	text-align: center;
+}
+
+@keyframes round{   
+  25%{
+    opacity:1;
+  }
+  40%{
+    opacity:0;
+  }
+} 

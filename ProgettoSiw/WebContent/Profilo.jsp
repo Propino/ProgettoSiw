@@ -1,4 +1,5 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -60,9 +61,9 @@
 			</div>
 		</div>
 	</nav>
-	
+
 	<hr>
-	<div class="container" style ="margin-bottom:10%;margin-top:3%;">
+	<div class="container" style="margin-bottom: 10%; margin-top: 3%;">
 		<div class="row">
 			<div class="col-sm-3 text-center">
 				<h1>${user.getUsername()}</h1>
@@ -71,15 +72,16 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<!--left col-->
-				<div class="text-center">
-					<img src="img/avatar.png" class="avatar img-circle img-thumbnail" id="avatar_img" alt="avatar" style ="height:50%;width:50%;">
-					<input type="file" onchange="newAvatar(this.value)" class="text-center center-block file-upload">
-				</div>
+					<div id="profile-container">
+						<img id="profileImage" src="img/avatar.png" />
+					</div>
+					<input id="imageUpload" type="file" name="profile_photo"
+						placeholder="Photo" required="" capture>
 
 				<br>
-					<hr></hr>
-					<hr></hr>
-				
+				<hr></hr>
+				<hr></hr>
+
 				<ul class="list-group">
 					<li class="list-group-item text-muted">Attività <i
 						class="fa fa-dashboard fa-1x"></i></li>
@@ -98,48 +100,56 @@
 
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
-								<div class="col-xs-6">
-									<label for="first_name"><h4>Nome</h4></label> <p class="campi_profilo">${user.getNome()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="last_name"><h4>Cognome</h4></label> <p class="campi_profilo"> ${user.getCognome()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="mobile"><h4>Telefono</h4></label> <p class="campi_profilo"> ${user.getTelefono()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="email"><h4>Email</h4></label> <p class="campi_profilo"> ${user.getEmail()}</p>
-								</div>
-								<div class="col-xs-6">
-									<label for="password"><h4>Password</h4></label> <p class="campi_profilo"> ${user.getPassword()}</p>
-								</div>
+						<div class="col-xs-6">
+							<label for="first_name"><h4>Nome</h4></label>
+							<p class="campi_profilo">${user.getNome()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="last_name"><h4>Cognome</h4></label>
+							<p class="campi_profilo">${user.getCognome()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="mobile"><h4>Telefono</h4></label>
+							<p class="campi_profilo">${user.getTelefono()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="email"><h4>Email</h4></label>
+							<p class="campi_profilo">${user.getEmail()}</p>
+						</div>
+						<div class="col-xs-6">
+							<label for="password"><h4>Password</h4></label>
+							<p class="campi_profilo">${user.getPassword()}</p>
+						</div>
 						<hr>
 					</div>
-					<div class="tab-pane" id="log">	
-							<div class="col-xs-3 log_intestazione">
-								<ul class="list-group">
-								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Data</li>
-								  <c:forEach items="${date}" var="date">
-								  	<li class="list-group-item">${date}</li>
-								  </c:forEach> 
-								</ul>							
-							</div>
-							<div class="col-xs-9 log_intestazione">
+					<div class="tab-pane" id="log">
+						<div class="col-xs-3 log_intestazione">
 							<ul class="list-group">
-								  <li class="list-group-item" style ="font-weight: bold;font-style: italic;">Ombrelloni Prenotati</li>
-								  <c:forEach items="${posti}" var="posti">
-								  	<li class="list-group-item">Ombrellone N° ${posti}</li>
-								  </c:forEach>
-								</ul>
-							</div>
-							
+								<li class="list-group-item"
+									style="font-weight: bold; font-style: italic;">Data</li>
+								<c:forEach items="${date}" var="date">
+									<li class="list-group-item">${date}</li>
+								</c:forEach>
+							</ul>
+						</div>
+						<div class="col-xs-9 log_intestazione">
+							<ul class="list-group">
+								<li class="list-group-item"
+									style="font-weight: bold; font-style: italic;">Ombrelloni
+									Prenotati</li>
+								<c:forEach items="${posti}" var="posti">
+									<li class="list-group-item">Ombrellone N° ${posti}</li>
+								</c:forEach>
+							</ul>
+						</div>
+
 					</div>
 
 				</div>
 			</div>
 		</div>
-	</div>	
-	
+	</div>
+
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -148,6 +158,6 @@
 	<script type="text/javascript" src="js/contact_me.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/global.js"></script>
-	
+
 </body>
 </html>

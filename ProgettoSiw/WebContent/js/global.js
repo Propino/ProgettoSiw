@@ -1,17 +1,23 @@
-/*funzione show password in Prenota.jsp per mostrare la password e cambiare il testo del bottone nel popup del login*/
+﻿/*funzione show password in Prenota.jsp per mostrare la password e cambiare il testo del bottone nel popup del login*/
 function show_log(){
-	
 	if (pass_login_popup.type == "password")
 		pass_login_popup.type = "text";
 	else
 		pass_login_popup.type =  "password";
 	
-	if (pass_popup_login_show.value == 'show')
-		pass_popup_login_show.value = 'hide';
-	else
-		pass_popup_login_show.value =  'show';
+	if ( $('#pass_popup_login_show').hasClass('fa fa-eye')){
+		$('#pass_popup_login_show').removeClass('fa fa-eye');
+		$('#pass_popup_login_show').addClass('fa fa-eye-slash');
+	}
+	else{
+		$('#pass_popup_login_show').removeClass('fa fa-eye-slash');
+		$('#pass_popup_login_show').addClass('fa fa-eye');
+	}
 }
-/*funzione show password in Registrati.jsp  e Login.jsp per mostrare la password e cambiare il testo del bottone*/
+/*
+ * funzione show password in Registrati.jsp e Login.jsp per mostrare la password
+ * e cambiare il testo del bottone
+ */
 
 function show(){
 	
@@ -26,7 +32,7 @@ function show(){
 		show_hide.value =  'show';
 }
 
-/*funzione che controlla la data inserita nella pagina prenota */
+/* funzione che controlla la data inserita nella pagina prenota */
 function validaData() {
 	var d = document.getElementById("input_data").value;
 	var b = d.split("-");
@@ -45,7 +51,10 @@ function validaData() {
 	document.getElementById("erroreData").innerHTML ='';
 }
 
-/*funzione che controlla tramite chiamata Ajax se in fase di registrazione l'username è già utilizzato*/
+/*
+ * funzione che controlla tramite chiamata Ajax se in fase di registrazione
+ * l'username è già utilizzato
+ */
 function controllaUtente() {
 	var user = $("#input_username").val();
 	if(user == " ") {
@@ -63,7 +72,7 @@ function controllaUtente() {
 	});
 	}
 }
-/* script per validazione form registrazione con jQuery e Ajax*/
+/* script per validazione form registrazione con jQuery e Ajax */
 function validaRegistrazione() {
 	var user = $("#input_username").val();
 	var pws = $("#input_password").val();
@@ -103,7 +112,7 @@ function validaRegistrazione() {
 	
 }
 
-/*funzione per eseguire il login tramite ajax */
+/* funzione per eseguire il login tramite ajax */
 function controllaLogin() {
 	var user = $('#input_username').val();
 	var pws = $('#input_password').val();
@@ -142,8 +151,13 @@ function loginPopup() {
 				} else {
 					$("#errore").empty();
 					$("#errore").html("<font color = green>Login Effettuato!</font>");
+					$("#user_log_pop").empty();
+					$("#user_log_pop").html("<input type=\"text\" class=\"form-control\" name=\"cardExpiry\" placeholder=\"user\" disabled id=\"user_login_popup\" />");
+					$("#pass_log_pop").empty();
+					$("#pass_log_pop").html("<input type=\"password\" class=\"form-control\" name=\"cardExpiry\" placeholder=\"pws\" id=\"pass_login_popup\" disabled />");
+					
 					$("#pulsante").empty();
-					$("#pulsante").html("<input type='button' onclick='functione_pay()'id='submit_popup_login' value='Paga'>");
+					$("#pulsante").html("<button class=\"btn btn-success btn-lg btn-block\" type=\"button\" onclick=\"functione_pay()\" id=\"submit_popup_login\">Paga</button>");
 				}
 			}
 		});
@@ -153,7 +167,7 @@ function prenotazione(d) {
 	var dat = d;
 	if(dat == "") {
 		$("#ErrorePagamento").empty();
-		$("#ErrorePagamento").html("Devi selezionare una data");
+		$("#ErrorePagamento").html("<font color = red>Devi selezionare una data.</font>");
 	}
 	var postiSelezionati = [];
 	$.each($("input[name='posto']:checked"), function(){            
@@ -161,7 +175,7 @@ function prenotazione(d) {
     })
 	if(postiSelezionati.length < 1) {
 		$("#ErrorePagamento").empty();
-		$("#ErrorePagamento").html("Devi selezionare almeno un posto");
+		$("#ErrorePagamento").html("<font color = red>Devi selezionare almeno un posto.</font>");
 	} else if(dat != "" && postiSelezionati.length >= 1){
 		$("#ErrorePagamento").empty();
 		var arrayStringa = "";
@@ -192,7 +206,7 @@ function controllaCoupon() {
 	});
 }
 
-/*Funzione per mostrare la lista di hotel presente in Contatti.jsp*/
+/* Funzione per mostrare la lista di hotel presente in Contatti.jsp */
 function showHotel(){
 	if (hotel.style.visibility == "hidden")
 		hotel.style.visibility = "visible";
@@ -200,7 +214,10 @@ function showHotel(){
 		hotel.style.visibility =  "hidden";
 }
 
-/*funziona che tramite chiamata Ajax aggiorna il prezzo totale  prendendo il prezzo dal database*/
+/*
+ * funziona che tramite chiamata Ajax aggiorna il prezzo totale prendendo il
+ * prezzo dal database
+ */
 function check(num_ombrellone) {
 		var input = document.getElementById(num_ombrellone).htmlFor;
 		if(document.getElementById(input).disabled == false){
@@ -289,3 +306,38 @@ function extractFilename(path) {
 	    return path.substr(x+1);
 	  return path; // just the file name
 }
+
+function functione() {
+	document.getElementById('myModal').style.display = "block";
+}
+
+function functione_pay() {
+	$("#ErrorePagamento").empty();
+	document.getElementById('myModal').style.display = "none";
+	document.getElementById('myModal2').style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+function close_popup_login() {
+	document.getElementById('myModal').style.display = "none";
+}
+function close_popup_payment() {
+	document.getElementById('myModal2').style.display = "none";
+}
+
+
+
+//carica la foto nell'avatar 
+$("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});

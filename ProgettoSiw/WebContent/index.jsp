@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -30,12 +30,13 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id ="nav_collassata">
+			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a class="nav_text_button" href="LaStruttura.jsp">La
@@ -50,7 +51,9 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
+						<li><h5 id="welcome" class="nav_text_button">
+								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
+							</h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -75,7 +78,7 @@
 					<div class="features-item">
 						<h3>FACILE</h3>
 						<img src="img/ombrellone1.png" class="img-responsive" alt="">
-						<p>Scegli direttamente dalla mappa il posto che pi� ti piace.</p>
+						<p>Scegli direttamente dalla mappa il posto che più ti piace.</p>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4">
@@ -95,9 +98,132 @@
 			</div>
 		</div>
 	</div>
+	<div>
+		<div class="rbd-core-ui">
+			<div class="rbd-review-slider">
+				<div class="rbd-review-container">
+					<div class="rbd-review review1.1 rbd-curr">
+						<h3 class="rbd-heading">Extremely Professional</h3>
+						<i class="fa fa-star fa-fw" data-icon="star" data-repeat="5"></i>
+						<div class="rbd-content">
+							<img class="rbd-gravatar"
+							src="img/avatar.png">Materials
+							are top notch. People are top notch... they knew exactly how to
+							handle my ignorance and turn it to a positive working business…
+						</div>
+						<div class="rbd-footing">
+							<a class="rbd-button rbd-small" href="#">Read More</a>
+						</div>
+						<div class="rbd-review-meta">Written by Mark P. on Feb. 18,
+							2018</div>
+					</div>
+					<div class="rbd-review review1.2 rbd-next">
+						<h3 class="rbd-heading">Test Company Marketing Delivers Such
+							Great Service!</h3>
+						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
+						<div class="rbd-content">
+							<img class="rbd-gravatar"
+								src="https://www.gravatar.com/avatar/ee304528491d860812f73d7d5cd0dc72?s=256">I'm
+							a big fan of this test company. They really do the best work
+							around, and their prices just can't be beat! I hear that Alex is
+							a pretty cool guy…
+						</div>
+						<div class="rbd-footing">
+							<a class="rbd-button rbd-small" href="#">Read More</a>
+						</div>
+						<div class="rbd-review-meta">Written by Alex D. on Feb. 19,
+							2018</div>
+					</div>
+					<div class="rbd-review review1.3">
+						<h3 class="rbd-heading">Test Review</h3>
+						<i class="renderSVG" data-icon="star" data-repeat="5"></i>
+						<div class="rbd-content">No Gravatar but here's a review…No
+							Gravatar but here's a review…No Gravatar but here's a review…No
+							Gravatar but here's a review…</div>
+						<div class="rbd-footing">
+							<a class="rbd-button rbd-small" href="#">Read More</a>
+						</div>
+						<div class="rbd-review-meta">Written by Anonymous. on Feb.
+							18, 2018</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let options = {
+			'speed' : 3000,
+			'pause' : true,
+		}
+
+		window
+				.addEventListener(
+						'DOMContentLoaded',
+						function() {
+							let slider = document
+									.querySelector('.rbd-review-slider');
+							let slides = slider.querySelectorAll('.rbd-review');
+							let total = slides.length;
+							let pause = false;
+
+							function pauseSlide() {
+								slider.onmouseleave = function() {
+									pause = false;
+								};
+								slider.onmouseenter = function() {
+									pause = true;
+								};
+								return pause;
+							}
+
+							function slide() {
+								if (options.pause && pauseSlide())
+									return;
+
+								let activeSlide = document
+										.querySelector('.rbd-review-slider .rbd-review.rbd-curr');
+								let prev, curr, next, soon;
+
+								curr = activeSlide;
+								prev = activeSlide.previousElementSibling;
+								next = activeSlide.nextElementSibling;
+
+								if (next != null) {
+									soon = next.nextElementSibling == null ? slides[0]
+											: next.nextElementSibling;
+								} else {
+									next = slides[0];
+									soon = slides[1];
+								}
+
+								if (prev != null)
+									prev.classList.remove('rbd-prev',
+											'rbd-curr', 'rbd-next');
+								if (curr != null)
+									curr.classList.remove('rbd-prev',
+											'rbd-curr', 'rbd-next');
+								curr.classList.add('rbd-prev');
+								if (next != null)
+									next.classList.remove('rbd-prev',
+											'rbd-curr', 'rbd-next');
+								next.classList.add('rbd-curr');
+								if (soon != null)
+									soon.classList.remove('rbd-prev',
+											'rbd-curr', 'rbd-next');
+								soon.classList.add('rbd-next');
+							}
+
+							let slideTimer = setInterval(function() {
+								slide();
+							}, options.speed);
+						}, true);
+	</script>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="footer.jsp"></jsp:include>
 
-
+	<script type="text/javascript" src="js/global.js"></script>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>

@@ -53,7 +53,9 @@
 							href="Registrati.jsp">Registrati</a></li>
 					</c:if>
 					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
+						<li><h5 id="welcome" class="nav_text_button">
+								<a id="wel" href="ProfiloServlet">Benvenuto,${user.getUsername()}!</a>
+							</h5>
 						<li><form method="get" action="LogoutServlet">
 								<input type="submit" id="logout" value="LOGOUT">
 							</form></li>
@@ -708,145 +710,138 @@
 					</c:if>
 				</div>
 			</div>
-			</form>
+		</form>
 	</div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
-			<span class="close">&times;</span>
-			<p>Esegui il Login</p>
-			<p id="errore"></p>
-			<h5>Username :</h5>
-			<input type="text" placeholder="inserisci il tuo username" id="user_login_popup">
-			<h5>Password :</h5>
-			<input type="password" id="pass_login_popup"
-				placeholder="inserisci la tua password"> <input
-				type="button" id="pass_popup_login_show" onclick="show_log()"
-				value="show"><div id = "pulsante"><input type="button" onclick="loginPopup()"
-				id="submit_popup_login" value="Invia"> </div>
-			<p id="link_login">
-				<a href="Registrati.jsp">Non hai ancora un account ? Registrati!</a>
-			</p>
-
-		</div>
-	</div>
-	<div id="myModal2" class="modal2">
-		<!-- Modal content -->
-		<div class="modal-content2">
-			<span class="close">&times;</span>
-
-			<div class="container">
-				<div class="row">
-					<!-- You can make it whatever width you want. I'm making it full width
+			<span onclick="close_popup_login()" class="close">&times;</span>
+			<!-- You can make it whatever width you want. I'm making it full width
 on <= small devices and 4/12 page width on >= medium devices -->
-					<div class="col-xs-12 col-md-4">
 
 
-						<!-- CREDIT CARD FORM STARTS HERE -->
-						<div class="panel panel-default credit-card-box">
-							<div class="panel-heading display-table">
-								<div class="row display-tr">
-									<h3 class="panel-title display-td">Payment Details</h3>
-									<div class="display-td">
-										<img class="img-responsive pull-right"
-											src="http://i76.imgup.net/accepted_c22e0.png">
-									</div>
-								</div>
-							</div>
-							<div class="panel-body">
-								<!--  <form role="form" id="payment-form"> -->
-								<p id = "ErrorePagamento"></p>
-									<div class="row">
-										<div class="col-xs-12">
-											<div class="form-group">
-												<label for="cardNumber">CARD NUMBER</label>
-												<div class="input-group">
-													<input type="tel" class="form-control" name="cardNumber"
-														placeholder="Valid Card Number" autocomplete="cc-number"
-														required autofocus /> <span class="input-group-addon"><i
-														class="fa fa-credit-card"></i></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-7 col-md-7">
-											<div class="form-group">
-												<label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span
-													class="visible-xs-inline">EXP</span> DATE</label> <input type="tel"
-													class="form-control" name="cardExpiry"
-													placeholder="MM / YY" autocomplete="cc-exp" required />
-											</div>
-										</div>
-										<div class="col-xs-5 col-md-5 pull-right">
-											<div class="form-group">
-												<label for="cardCVC">CV CODE</label> <input type="tel"
-													class="form-control" name="cardCVC" placeholder="CVC"
-													autocomplete="cc-csc" required />
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-12">
-											<button class="btn btn-success btn-lg btn-block"
-												type="button" onclick='var d="${dataview}"; prenotazione(d);'>Paga</button>
-										</div>
-									</div>
-									<div class="row" style="display: none;">
-										<div class="col-xs-12">
-											<p class="payment-errors"></p>
-										</div>
-									</div>
-						
-							</div>
-						</div>
-						<!-- CREDIT CARD FORM ENDS HERE -->
+			<!-- CREDIT CARD FORM STARTS HERE -->
+			<div class="panel panel-default credit-card-box">
+				<div class="panel-heading display-table">
+					<div class="row display-tr">
+						<h3 class="panel-title display-td text-center">Effettua il
+							login</h3>
 					</div>
 				</div>
+				<div class="panel-body">
+					<!--  <form role="form" id="payment-form"> -->
+					<p id="errore"></p>
+					<div class="row">
+
+						<div class="col-xs-12">
+							<div class="form-group">
+								<span class="hidden-xs">Username</span>
+								<div id="user_log_pop">
+
+									<input type="text" class="form-control" name="cardExpiry"
+										placeholder="valid password" required id="user_login_popup" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<span class="hidden-xs">Password</span>
+								<div id="pass_log_pop">
+									<input type="password" class="form-control" name="cardExpiry"
+										placeholder="valid password" id="pass_login_popup" required /><button onclick="show_log()"
+										class="input-group-addon show_button"><i class="fa fa-eye" id="pass_popup_login_show"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="pulsante">
+								<button class="btn btn-success btn-lg btn-block" type="button"
+									onclick="loginPopup()" id="submit_popup_login">Invia</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
+			<!-- CREDIT CARD FORM ENDS HERE -->
 		</div>
 	</div>
 
+	<div id="myModal2" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+
+			<span onclick="close_popup_payment()" class="close">&times;</span>
+			<!-- You can make it whatever width you want. I'm making it full width
+on <= small devices and 4/12 page width on >= medium devices -->
 
 
+			<!-- CREDIT CARD FORM STARTS HERE -->
+			<div class="panel panel-default credit-card-box">
+				<div class="panel-heading display-table">
+					<div class="row display-tr">
+						<h3 class="panel-title display-td">Payment Details</h3>
+						<div class="display-td">
+							<img class="img-responsive pull-right"
+								src="http://i76.imgup.net/accepted_c22e0.png">
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<!--  <form role="form" id="payment-form"> -->
+					<p id="ErrorePagamento"></p>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label for="cardNumber">CARD NUMBER</label>
+								<div class="input-group">
+									<input type="tel" class="form-control" name="cardNumber"
+										placeholder="Valid Card Number" autocomplete="cc-number"
+										required autofocus /> <span class="input-group-addon"><i
+										class="fa fa-credit-card"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-7 col-md-7">
+							<div class="form-group">
+								<label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span
+									class="visible-xs-inline">EXP</span> DATE</label> <input type="tel"
+									class="form-control" name="cardExpiry" placeholder="MM / YY"
+									autocomplete="cc-exp" required />
+							</div>
+						</div>
+						<div class="col-xs-5 col-md-5 pull-right">
+							<div class="form-group">
+								<label for="cardCVC">CV CODE</label> <input type="tel"
+									class="form-control" name="cardCVC" placeholder="CVC"
+									autocomplete="cc-csc" required />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<button class="btn btn-success btn-lg btn-block" type="button"
+								onclick='var d="${dataview}"; prenotazione(d);'>Paga</button>
+						</div>
+					</div>
+					<div class="row" style="display: none;">
+						<div class="col-xs-12">
+							<p class="payment-errors"></p>
+						</div>
+					</div>
 
-
-	<script>
-		// When the user clicks the button, open the modal 
-		function functione() {
-			document.getElementById('myModal').style.display = "block";
-		}
-
-		// When the user clicks on <span> (x), close the modal
-		document.getElementsByClassName("close")[0].onclick = function() {
-			document.getElementById('myModal').style.display = "none";
-		}
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == document.getElementById('myModal')) {
-				document.getElementById('myModal').style.display = "none";
-			}
-		}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		function functione_pay() {
-			document.getElementById('myModal2').style.display = "block";
-		}
-
-		// When the user clicks on <span> (x), close the modal
-		document.getElementsByClassName("close")[0].onclick = function() {
-			document.getElementById('myModal2').style.display = "none";
-		}
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == document.getElementById('myModal2')) {
-				document.getElementById('myModal2').style.display = "none";
-			}
-		}
-	</script>
-
+				</div>
+			</div>
+			<!-- CREDIT CARD FORM ENDS HERE -->
+		</div>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="js/global.js"></script>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
