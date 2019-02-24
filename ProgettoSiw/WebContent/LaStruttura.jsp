@@ -42,21 +42,33 @@
 					<li><a class="nav_text_button" href="Prenota.jsp">Prenota</a></li>
 					<li><a class="nav_text_button" href="Contatti.jsp">Contatti</a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<c:if test="${user == null}">
+				<c:if test="${user == null}">
+					<ul class="nav navbar-nav navbar-right">
 						<li><a class="nav_bar_button_text_login" href="Login.jsp">Login</a></li>
 						<li><a class="nav_bar_button_text_login"
 							href="Registrati.jsp">Registrati</a></li>
-					</c:if>
-					<c:if test="${user != null}">
-						<li><h5 id="welcome"class="nav_text_button"><a id ="wel" href ="ProfiloServlet">Benvenuto,${user.getUsername()}!</a></h5>
-						<li><form method="get" action="LogoutServlet">
-								<input type="submit" id="logout" value="LOGOUT">
-							</form></li>
-					</c:if>
-				</ul>
+					</ul>
+				</c:if>
+				<c:if test="${user != null}">
+					<div class="nav navbar-nav navbar-right">
+						<div class="dropdown">
+							<button id="welcome" class="btn btn-primary dropdown-toggle"
+								type="button" data-toggle="dropdown" aria-expanded="true">
+								Benvenuto,${user.getUsername()}! <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a id="to_profilo" href="ProfiloServlet">Vai al
+										profilo utente</a></li>
+										<li class="divider"></li>
+								<li><form method="get" action="LogoutServlet">
+										<input id="logout" type="submit" value="Logout"><i
+											class="fa fa-sign-out-alt"></i>
+									</form></li>
+							</ul>
+						</div>
+					</div>
+				</c:if>
 			</div>
-			<!-- /.navbar-collapse -->
 		</div>
 	</nav>
 	<div id="about">
@@ -120,9 +132,8 @@
 		</div>
 	</div>
 
-	<div id="youtube_video" style="width: 100%";>
-		<iframe
-			style="width: 560px; height: 314px; margin-left: 30%; margin-top: 4%; margin-bottom: 4%; border: 10px outset grey"
+	<div id="div_youtube">
+		<iframe id="video_youtube"
 			src="https://www.youtube.com/embed/KGClXTb-Tss" frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>

@@ -168,6 +168,56 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	border: 2px solid #d43031;
 	background-color: #d43031;
 }
+
+.dropdown-menu {
+	background-color: black;
+	border-radius: 8px;
+	border: 2px solid #333;
+}
+
+@media ( max-width : 767px) {
+	.navbar-nav .open .dropdown-menu {
+		border-radius: 8px;
+		border: 2px solid #333;
+	}
+}
+
+.dropdown-menu {
+	min-width: 100%;
+	margin-top: 1%;
+	border-top: none;
+}
+
+@media ( min-width : 1000px) {
+	.navbar-right .dropdown-menu {
+		left: 0;
+		right: auto;
+	}
+}
+
+#to_profilo {
+	color: white;
+	padding: 3px 1px;
+	width: 100%;
+	text-align: center;
+}
+
+#to_profilo:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#logout {
+	width: 100%;
+	text-transform: none;
+	border: none;
+	background-color: black;
+	color: white;
+	padding: 3px 1px;
+}
+
+#logout:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
 /* Header Section */
 #img_iniziale {
 	width: 100%;
@@ -321,22 +371,15 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 }
 
 #welcome {
-	color: white;
-}
-
-#logout {
 	border-radius: 8px;
+	border: 2px solid #333;
 	background-color: transparent;
 	color: white;
-	border-color: transparent;
-	margin-top: 7px;
-	margin-left: 30px;
-	border: 2px solid #333;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 }
 
-#logout:hover {
+#welcome:hover {
 	background-color: #333;
 	color: white;
 }
@@ -561,16 +604,20 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	}
 }
 
-#wel {
-	color: white;
-}
-
-#wel:hover {
-	color: white;
-}
-
 #home h4 {
 	color: rgb(119, 119, 119);
+}
+#div_youtube{
+
+	width: 100%;
+}
+#video_youtube {
+	width: 42%;
+	height: 314px;
+	margin-top: 4%;
+	margin-left:29%;
+	margin-bottom: 4%;
+	border: 10px outset grey;
 }
 
 .campi_profilo {
@@ -809,7 +856,27 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
 
 
 
