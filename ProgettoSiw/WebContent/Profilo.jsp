@@ -170,6 +170,8 @@
 
 					</div>
 					<div class="tab-pane" id="recensioni">
+						<div class="col-md-3"></div>
+
 						<div class="col-md-6">
 							<div class="well well-sm" style="margin-top: 5%;">
 								<div class="text-center">
@@ -211,35 +213,41 @@
 							</div>
 							<p id="avviso"></p>
 						</div>
+						<div class="col-md-3"></div>
 
 						<div class="col-md-12">
 							<h2 class=text-center>Le mie recensioni</h2>
 						</div>
 						<c:forEach items="${recensioniUtente}" var="value">
 							<div class="col-md-12">
-								<ul class="list-group" id="recensione_log">
-									<li class="list-group-item text-muted" id="intestazione_review">
-										<span class="nome_recensitore">${value.getUtente().getUsername()}</span>
-										<div id="stelline">
-											<c:forEach begin="1" end="5" varStatus="loop">
-												<input type="radio">
-												<c:choose>
-													<c:when test="${loop.index <= value.getStelle()}">
-														<label class="mdi mdi-star piene"></label>
-													</c:when>
-													<c:otherwise>
-														<label class="mdi mdi-star vuote"></label>
-													</c:otherwise>
-												</c:choose>
-											</c:forEach>
-										</div>
-									</li>
-									<li class="list-group-item text-right" id="corpo_review">
-										<span class="pull-left">${value.getTesto()}</span>
-									</li>
-								</ul>
-								<hr>
+
+								<div class="col-md-1"></div>
+								<div class="col-md-10 box_log">
+									<ul class="list-group" id="recensione_log">
+										<li class="list-group-item text-muted"
+											id="intestazione_review"><span class="nome_recensitore">${value.getUtente().getUsername()}</span>
+											<div id="stelline">
+												<c:forEach begin="1" end="5" varStatus="loop">
+													<input type="radio">
+													<c:choose>
+														<c:when test="${loop.index <= value.getStelle()}">
+															<label class="mdi mdi-star piene"></label>
+														</c:when>
+														<c:otherwise>
+															<label class="mdi mdi-star vuote"></label>
+														</c:otherwise>
+													</c:choose>
+												</c:forEach>
+											</div></li>
+										<li class="list-group-item text-right" id="corpo_review">
+											<span class="pull-left">${value.getTesto()}</span>
+										</li>
+									</ul>
+									<hr>
+								</div>
+								<div class="col-md-1"></div>
 							</div>
+
 						</c:forEach>
 					</div>
 				</div>
