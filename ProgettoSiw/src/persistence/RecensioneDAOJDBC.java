@@ -51,7 +51,9 @@ public class RecensioneDAOJDBC {
 		} finally {
 			try {
 				connection.close();
+				if(rs!= null) {
 				rs.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
