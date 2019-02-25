@@ -56,7 +56,8 @@ public class RecensioneDAOJDBC {
 				e.printStackTrace();
 			}
 		}
-	return Integer.toString(cont);
+	String c = Integer.toString(cont);
+	return c;
 	}
 	
 	public ArrayList<Recensione> getAll() {
@@ -88,4 +89,36 @@ public class RecensioneDAOJDBC {
 		}
 	return recensioni;
 	}
+	
+	public ArrayList<Recensione> recensioniPerUtente(Utente u) { 
+		ArrayList<Recensione> recensioni = new ArrayList<Recensione>();
+		Connection connection = this.dataSource.getConnection();
+		ResultSet rs = null;
+		try {
+			String query = "select * from recensione where utente = ?";
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1,u.getUsername());
+			rs = statement.executeQuery();
+			while(rs.next()) {
+				Recensione temp = new Recensione();
+				Utente ut = new Utente();
+				ut.setUsername(rs.getString("utente"));
+				temp.setUtente(ut);
+				temp.setTesto(rs.getString("testo"));
+				temp.setStelle(rs.getInt("stelle"));
+				recensioni.add(temp);
+			}
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	return recensioni;
+	}
 }
+

@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Recensione;
 import model.Utente;
+import persistence.RecensioneDAOJDBC;
 
 /**
  * Servlet implementation class InserisciRecensione
@@ -39,7 +41,12 @@ public class InserisciRecensione extends HttpServlet {
 		Utente u = (Utente) request.getSession().getAttribute("user");
 		String testo = request.getParameter("testo");
 		String stelle = request.getParameter("stelle");
-		
+		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		Recensione re = new Recensione();
+		re.setUtente(u);
+		re.setTesto(testo);
+		re.setStelle(Integer.parseInt(stelle));
+		r.aggiungiRecensione(re);
 		response.getOutputStream().println("<font color = green>Recensione inserita.</font>");
 	}
 

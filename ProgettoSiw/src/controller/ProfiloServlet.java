@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Prenotazione;
+import model.Recensione;
 import model.Utente;
 import persistence.PrenotazioneDAOJDBC;
 import persistence.RecensioneDAOJDBC;
@@ -37,6 +38,7 @@ public class ProfiloServlet extends HttpServlet {
 		Utente username = (Utente) request.getSession().getAttribute("user");
 		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
 		String recensioni = r.numeroRecensioniPerUtente(username);
+		ArrayList<Recensione> recensioniUtente = r.recensioniPerUtente(username);
 		ArrayList<String> prenotazioni = p.getPrenotazioniPerUtente(username.getUsername());
 		ArrayList<String> date = new ArrayList<String>();
 		ArrayList<String> posti = new ArrayList<String>();
@@ -55,6 +57,7 @@ public class ProfiloServlet extends HttpServlet {
 		request.setAttribute("date",date);
 		request.setAttribute("posti",posti);
 		request.setAttribute("recensioni",recensioni);
+		request.setAttribute("recensioniUtente",recensioniUtente);
 		request.getRequestDispatcher("Profilo.jsp").forward(request, response);
 	}	 
 
