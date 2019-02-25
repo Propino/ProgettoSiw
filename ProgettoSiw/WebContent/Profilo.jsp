@@ -95,7 +95,7 @@
 						<img src="img/avatar.png" class="avatar img-circle img-thumbnail"
 						id="avatar_img" alt="avatar" style="height: 50%; width: 50%;">
 					</c:if>
-						<p>Scegli la tua immagine del profilo</p>
+						<p>Scegli la tua immagine del profilo </p>
 						<input id="search" type="text" placeholder="Cerca con Flikr" />
 						<button id="submit" type="button" onclick="JavaScriptFetch()">Cerca</button>
 						<div id="outputDiv"></div>
