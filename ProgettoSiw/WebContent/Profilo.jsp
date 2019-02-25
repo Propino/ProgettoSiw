@@ -97,7 +97,7 @@
 						<p>Scegli la tua immagine del profilo </p>
 						<input id="search" type="text" placeholder="Cerca con Flikr" />
 						<button id="submit" type="button" onclick="JavaScriptFetch()">Cerca</button>
-						<div id="outputDiv"></div>
+						<div style="overflow:auto;max-height: 210px;" id="outputDiv"></div>
 				</div>
 
 				<br>
