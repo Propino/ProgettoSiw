@@ -213,7 +213,7 @@
 						<c:forEach items="${recensioniUtente}" var="value">
 							<div class="col-md-12">
 
-								<div class="col-md-1">&nbsp</div>
+								<div class="col-md-1"></div>
 								<div class="col-md-10 box_log">
 									<ul class="list-group" id="recensione_log">
 										<li class="list-group-item text-muted"
@@ -237,7 +237,7 @@
 									</ul>
 									<hr>
 								</div>
-								<div class="col-md-1">&nbsp</div>
+								<div class="col-md-1"></div>
 							</div>
 
 						</c:forEach>
