@@ -919,7 +919,7 @@ opacity
 }
 #stelline{
 	display:inline;
-	padding-left:71%;
+	float:right;
 }
 .piene {
 	text-align: center;
