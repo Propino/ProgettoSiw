@@ -87,7 +87,7 @@
 					<label class="mdi mdi-star piene"></label>
 				</c:forEach>
 				<input type="button" value="5" id="5s"><label class="filtri"
-					for="5s">5 stelle</label>
+					for="5s" onclick="cerca(this.id)">5 stelle</label>
 			</div>
 			<div id="4stelle" class="stelle_nel_filtro">
 				<c:forEach begin="1" end="4">
@@ -143,32 +143,31 @@
 	</div>
 
 
-	<c:forEach begin="1" end="4" varStatus="it">
 		<div class="col-md-12 recensioni_in_page">
 			<div class="col-md-3"></div>
 			<div class="col-md-6 box_log">
-				<ul class="list-group" id="recensione_log">
-					<li class="list-group-item text-muted" id="intestazione_review"><span
-						class="nome_recensitore">Nome_utente</span>
-						<div id="stelline">
-							<c:forEach begin="1" end="5" varStatus="loop">
-								<c:choose>
-									<c:when test="">
-										<label class="mdi mdi-star piene"></label>
-									</c:when>
-									<c:otherwise>
-										<label class="mdi mdi-star vuote"></label>
-									</c:otherwise>
-								</c:choose>
-							</c:forEach>
-						</div></li>
-					<li class="list-group-item text-right" id="corpo_review"><span
-						class="pull-left">TEsto recensione</span></li>
-				</ul>
+			<c:if test="${rec != null }">
+				<c:forEach items="${rec}" var="value">
+					<ul class="list-group" id="recensione_log">
+						<li class="list-group-item text-muted" id="intestazione_review"><span
+							class="nome_recensitore">${value.getUtente().getUsername()}</span>
+							<div id="stelline">
+								<c:forEach begin="1" end="${value.getStelle()}" varStatus="loop">
+											<label class="mdi mdi-star piene"></label>
+								</c:forEach>
+								<c:forEach begin="${value.getStelle()}" end="4" varStatus="loop">
+											<label class="mdi mdi-star vuote"></label>
+								</c:forEach>
+							</div></li>
+						<li class="list-group-item text-right" id="corpo_review"><span
+							class="pull-left">${value.getTesto()}</span></li>
+					</ul>
+					</c:forEach>
+			</c:if>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
-	</c:forEach>
+	
 
 	<script type="text/javascript" src="js/global.js"></script>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>

@@ -14,6 +14,7 @@ function show_log(){
 		$('#pass_popup_login_show').addClass('fa fa-eye');
 	}
 }
+
 /*
  * funzione show password in Registrati.jsp e Login.jsp per mostrare la password
  * e cambiare il testo del bottone

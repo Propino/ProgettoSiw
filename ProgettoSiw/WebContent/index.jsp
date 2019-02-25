@@ -109,7 +109,7 @@
 		</div>
 	</div>
 	<h2 class=text-center>
-		<a href="recensioni.jsp">Le recensioni dei nostri clienti</a>
+		<a href="paginaRecensioni">Le recensioni dei nostri clienti</a>
 	</h2>
 	<c:if test="${recensioni!=null}">
 	<div>

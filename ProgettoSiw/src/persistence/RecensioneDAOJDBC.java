@@ -57,7 +57,16 @@ public class RecensioneDAOJDBC {
 		}
 	return recensioni;
 	}
-	
+	public ArrayList<Recensione> cercaPerStelle(int s) {
+		ArrayList<Recensione> r = getAll();
+		ArrayList<Recensione> recensioni = new ArrayList<Recensione>();
+		for(Recensione x : r) {
+			if(x.getStelle() == s) {
+				recensioni.add(x);
+			}
+		}
+		return recensioni;
+	}
 	public String numeroRecensioniPerUtente(Utente u) {
 		Connection connection = this.dataSource.getConnection();
 		ResultSet rs = null;
