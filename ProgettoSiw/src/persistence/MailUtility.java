@@ -26,7 +26,7 @@ public class MailUtility {
 
 	     	   Message message = new MimeMessage(session);
 	     	   try {
-	     	   message.setText("Benvenuto" + user + "e grazie per esserti iscritto al sito del Flamingo Beach Club! "
+	     	   message.setText("Benvenuto " + user + " e grazie per esserti iscritto al sito del Flamingo Beach Club! "
 	     	   		+ "non aspettare e guarda quanto è semplice scegliere il tuo posto al mare.");
 	     	   message.setSubject(destinatario);
 	     	   message.setFrom(new InternetAddress(from));
