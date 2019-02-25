@@ -9,6 +9,7 @@ public class Utente {
 	private String cognome ;
 	private String data ;
 	private String telefono ;
+	private String immagineProfilo;
 	boolean eLoggato;
 	
 	public Utente(String username, String password, String email, String nome, String cognome, String data, String telefono ) {
@@ -75,6 +76,14 @@ public class Utente {
 
 	public void seteLoggato(boolean eLoggato) {
 		this.eLoggato = eLoggato;
+	}
+
+	public String getImmagineProfilo() {
+		return immagineProfilo;
+	}
+
+	public void setImmagineProfilo(String immagineProfilo) {
+		this.immagineProfilo = immagineProfilo;
 	}	
 	
 }
