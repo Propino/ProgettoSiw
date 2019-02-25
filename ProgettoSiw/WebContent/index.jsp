@@ -129,6 +129,9 @@
 							<c:forEach var="i" begin="1" end="${value.getStelle()}">
 								<i class="fa fa-star fa-fw" data-icon="star"></i>
 							</c:forEach>
+							<c:forEach var="i" begin="1" end="${5-value.getStelle()}">
+								<i class="fa fa-star-o fa-fw" data-icon="star"></i>
+							</c:forEach>
 							<div class="rbd-content">
 								<img class="rbd-gravatar" src="img/avatar.png">${value.getTesto()}
 							</div>
