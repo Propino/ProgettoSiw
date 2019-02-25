@@ -87,17 +87,17 @@
 				<!--left col-->
 				<div class="text-center">
 					<c:if test="${user.getImmagineProfilo() != null}">
-						<img src="${user.getImmagineProfilo()}" class="avatar img-circle img-thumbnail"
-						id="avatar_img" alt="avatar" style="height: 50%; width: 50%;">
+						<img src="${user.getImmagineProfilo()}" class="avatar img-circle img-thumbnail propic"
+						id="avatar_img" alt="avatar">
 					</c:if>
 					<c:if test="${user.getImmagineProfilo() == null}">
-						<img src="img/avatar.png" class="avatar img-circle img-thumbnail"
-						id="avatar_img" alt="avatar" style="height: 50%; width: 50%;">
+						<img src="img/avatar.png" class="avatar img-circle img-thumbnail propic"
+						id="avatar_img" alt="avatar">
 					</c:if>
 						<p>Scegli la tua immagine del profilo </p>
 						<input id="search" type="text" placeholder="Cerca con Flikr" />
 						<button id="submit" type="button" onclick="JavaScriptFetch()">Cerca</button>
-						<div style="overflow:auto;max-height: 210px;" id="outputDiv"></div>
+						<div id="outputDiv"></div>
 				</div>
 
 				<br>

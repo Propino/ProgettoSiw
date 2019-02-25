@@ -854,7 +854,11 @@ keyframes round { 25%{
 
 40%{
 opacity
+
+
 :
+
+
 0;
 }
 }
@@ -881,7 +885,7 @@ opacity
 }
 
 .rating-css.hover-effect input:checked+label ~ label, .rating-css.hover-effect:hover input:hover+label 
-	~ label {
+	 ~ label {
 	opacity: 0.5;
 }
 
@@ -900,7 +904,7 @@ opacity
 #intestazione_review {
 	width: 100%;
 	height: 40px;
-	padding-bottom:4%;
+	padding-bottom: 4%;
 }
 
 #recensione_log {
@@ -917,55 +921,77 @@ opacity
 .nome_recensitore {
 	font-weight: bold;
 }
-#stelline{
-	display:inline;
-	float:right;
+
+#stelline {
+	display: inline;
+	float: right;
 }
+
 .piene {
 	text-align: center;
 	font-size: 18px;
 	color: #FFC107;
 }
-.vuote{
+
+.vuote {
 	text-align: center;
 	font-size: 18px;
 	color: #555;
 }
-#stelline input{
-	display:none;
+
+#stelline input {
+	display: none;
 }
-.filtri{
-	padding-left:10px;
-	display:inline;
-	text-decoration:underline;
-	cursor:pointer;
+
+.filtri {
+	padding-left: 10px;
+	display: inline;
+	text-decoration: underline;
+	cursor: pointer;
 }
-.filtro_stelle{
-	margin-bottom:2%;
-	padding-left:0px;
+
+.filtro_stelle {
+	margin-bottom: 2%;
+	padding-left: 0px;
 }
-.filtro_stelle input{
-	display:none;
+
+.filtro_stelle input {
+	display: none;
 }
-.pagination{
-	margin-left:20%;
-	width:60%;
-	height:20%;
+
+.pagination {
+	margin-left: 20%;
+	width: 60%;
+	height: 20%;
 }
-.pagination a{
-	width:100%;
-	height:100%;
+
+.pagination a {
+	width: 100%;
+	height: 100%;
 }
-#trip_advisor h5{
-	text-transform :none;
-	color:#c3c3c3;
-	font-size:20px;
-	font-weight: 400; 
-	font-style:italic;
+
+#trip_advisor h5 {
+	text-transform: none;
+	color: #c3c3c3;
+	font-size: 20px;
+	font-weight: 400;
+	font-style: italic;
 }
-#img_trip_advisor{
+
+#img_trip_advisor {
 	margin-left: 50%;
-	padding-top:25%;
-	width:50%;
-	height:auto;
+	padding-top: 25%;
+	width: 50%;
+	height: auto;
+}
+
+.propic {
+	height: 150px;
+	width: 150px;
+}
+
+#outputDiv {
+	margin-top: 2%;
+	overflow: auto;
+	max-height: 210px;
 }
