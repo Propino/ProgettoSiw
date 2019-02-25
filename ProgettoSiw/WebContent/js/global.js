@@ -18,6 +18,34 @@ function show_log(){
  * funzione show password in Registrati.jsp e Login.jsp per mostrare la password
  * e cambiare il testo del bottone
  */
+function JavaScriptFetch() {
+	var script = document.createElement('script');
+	script.src = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + document.getElementById("search").value;;
+	document.querySelector('head').appendChild(script);
+	}
+function jsonFlickrFeed(data) {
+	var image = "";
+	var s = 1;
+	data.items.forEach(function (element) {
+	image += "<img src=\"" + element.media.m + "\"  onclick='setImmagine(this.id)' id ="+ s +">";
+	s += 1;
+	});
+	document.getElementById("outputDiv").innerHTML = image;
+}
+
+function setImmagine(s) {
+	var pa = document.getElementById(s).getAttribute('src');
+	alert(pa);
+	document.getElementById('avatar_img').src = pa;
+	$.ajax({
+		type:"POST",
+		url:"aggiornaImmagine",
+		data:{p:pa},
+		success: function(data) {
+			$(location).attr('href','ProfiloServlet');
+		}
+	})
+}
 
 function show(){
 	
@@ -312,23 +340,6 @@ function showCoupon(){
 		input.style.visibility =  "hidden";
 
 }
-function newAvatar(path) {
-	   var name = extractFilename(path);
-	   document.getElementById('avatar_img').src = name;
-
-}
-function extractFilename(path) {
-	  if (path.substr(0, 12) == "C:\\fakepath\\")
-	    return path.substr(12); // modern browser
-	  var x;
-	  x = path.lastIndexOf('/');
-	  if (x >= 0) // Unix-based path
-	    return path.substr(x+1);
-	  x = path.lastIndexOf('\\');
-	  if (x >= 0) // Windows-based path
-	    return path.substr(x+1);
-	  return path; // just the file name
-}
 
 function functione() {
 	document.getElementById('myModal').style.display = "block";
@@ -346,7 +357,6 @@ function close_popup_login() {
 function close_popup_payment() {
 	document.getElementById('myModal2').style.display = "none";
 }
-
 
 
 //carica la foto nell'avatar 

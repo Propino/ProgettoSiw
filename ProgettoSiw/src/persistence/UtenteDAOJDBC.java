@@ -67,6 +67,7 @@ public class UtenteDAOJDBC  {
 	            utente.setEmail(rs.getString("email"));
 	            utente.setData(rs.getString("data"));
 	            utente.setTelefono(rs.getString("telefono"));
+	            utente.setImmagineProfilo(rs.getString("immagineprofilo"));
 	            utente.seteLoggato(true);
 			}
 		}  catch (Exception ex) {
@@ -96,7 +97,28 @@ public class UtenteDAOJDBC  {
 	           }
 	        }
 		return utente;
-}
+}	
+	public void aggiornaImmagine(String path, Utente u) {
+		Connection connection = this.datasource.getConnection();
+		String query = "update utente set immagineprofilo = ? where username = ?";
+		PreparedStatement ps = null;
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, path);
+			ps.setString(2, u.getUsername());
+			ps.executeUpdate();
+		} catch(SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			if (connection != null) {
+	              try {
+	            	  connection.close();
+	              } catch (SQLException e) {
+	            	  throw new PersistenceException(e.getMessage());
+	           }	
+			}
+		}
+	}
 	
 	public Utente cercaPerUsername(String username) {
 		Utente utente = new Utente();
