@@ -33,7 +33,9 @@ public class indexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
 		ArrayList<Recensione> recensioni = r.getAll();
+		if(recensioni.size() != 0) {
 		request.setAttribute("recensioni",recensioni);
+		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

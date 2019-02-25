@@ -220,19 +220,19 @@
 								"titles" : [],
 								"dataProvider" : [ {
 									"category" : "5 Stelle",
-									"column-1" : "58"
+									"column-1" : "${recensioni[4]}"
 								}, {
 									"category" : "4 Stelle",
-									"column-1" : "20"
+									"column-1" : "${recensioni[3]}"
 								}, {
 									"category" : "3 Stelle",
-									"column-1" : "14"
+									"column-1" : "${recensioni[2]}"
 								}, {
 									"category" : "2 Stelle",
-									"column-1" : "6"
+									"column-1" : "${recensioni[1]}"
 								}, {
 									"category" : "1 Stella",
-									"column-1" : "2"
+									"column-1" : "${recensioni[0]}"
 								} ]
 							});
 		</script>

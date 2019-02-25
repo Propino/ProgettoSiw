@@ -34,6 +34,30 @@ public class RecensioneDAOJDBC {
 			}
 		}
 	}
+	public int[] recensioniPerStelle() {
+		int recensioni[] = new int [5];
+		for(int i = 0; i < 5; i++) {
+			recensioni[i] = 0;
+		}
+		ArrayList<Recensione> r = getAll();
+		if(!(r.isEmpty())) {
+		for(Recensione s : r) {
+			if(s.getStelle() == 1) {
+				recensioni[0]++;
+			} else if(s.getStelle() == 2) {
+				recensioni[1]++;
+			} else if(s.getStelle() == 3) {
+				recensioni[2]++;
+			} else if(s.getStelle() == 4) {
+				recensioni[3]++;
+			} else if(s.getStelle() == 5) {
+				recensioni[4]++;
+			}
+		}
+		}
+	return recensioni;
+	}
+	
 	public String numeroRecensioniPerUtente(Utente u) {
 		Connection connection = this.dataSource.getConnection();
 		ResultSet rs = null;

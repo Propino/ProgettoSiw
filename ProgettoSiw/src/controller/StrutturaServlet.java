@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Utente;
-import persistence.UtenteDAOJDBC;
+import persistence.RecensioneDAOJDBC;
 
 /**
- * Servlet implementation class aggiornaImmagine
+ * Servlet implementation class StrutturaServlet
  */
-@WebServlet("/aggiornaImmagine")
-public class aggiornaImmagine extends HttpServlet {
+@WebServlet("/StrutturaServlet")
+public class StrutturaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public aggiornaImmagine() {
+    public StrutturaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +28,18 @@ public class aggiornaImmagine extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		int recensioni[] = r.recensioniPerStelle();
+		request.setAttribute("recensioni",recensioni);
+		request.getRequestDispatcher("LaStruttura.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utente u = (Utente) request.getSession().getAttribute("user");
-		String path = request.getParameter("p");
-		UtenteDAOJDBC t = new UtenteDAOJDBC();
-		t.aggiornaImmagine(path,u);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

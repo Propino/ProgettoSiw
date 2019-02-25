@@ -38,7 +38,7 @@
 			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a class="nav_text_button" href="LaStruttura.jsp">La
+					<li><a class="nav_text_button" href="StrutturaServlet">La
 							Struttura</a></li>
 					<li><a class="nav_text_button" href="Prenota.jsp">Prenota</a></li>
 					<li><a class="nav_text_button" href="Contatti.jsp">Contatti</a></li>
@@ -111,6 +111,7 @@
 	<h2 class=text-center>
 		<a href="recensioni.jsp">Le recensioni dei nostri clienti</a>
 	</h2>
+	<c:if test="${recensioni!=null}">
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">
@@ -143,7 +144,7 @@
 			</div>
 		</div>
 	</div>
-
+	</c:if>
 	<script>
 		let options = {
 			'speed' : 3000,
