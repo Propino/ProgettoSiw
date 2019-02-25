@@ -854,44 +854,39 @@ keyframes round { 25%{
 
 40%{
 opacity
-
-
 :
-
-
 0;
 }
 }
-
 .rating-css {
-  cursor: pointer;
-  height: 30px;
-  font-size: 0;
-  margin: 20px 0;
+	cursor: pointer;
+	height: 30px;
+	font-size: 0;
+	margin: 20px 0;
 }
 
 .rating-css input {
-  display: none;
+	display: none;
 }
 
-.rating-css input + label {
-  text-align: center;
-  font-size: 24px;
-  color: #FFC107;
-  cursor: pointer;
+.rating-css input+label {
+	text-align: center;
+	font-size: 24px;
+	color: #FFC107;
+	cursor: pointer;
 }
 
-.rating-css input:checked + label ~ label {
-  color: #555;
+.rating-css input:checked+label ~ label {
+	color: #555;
 }
 
-.rating-css.hover-effect input:checked + label ~ label,
-.rating-css.hover-effect:hover input:hover + label ~ label {
-  opacity: 0.5;
+.rating-css.hover-effect input:checked+label ~ label, .rating-css.hover-effect:hover input:hover+label 
+	~ label {
+	opacity: 0.5;
 }
 
-.rating-css.hover-effect:hover input + label ~ label {
-  opacity: 1;
+.rating-css.hover-effect:hover input+label ~ label {
+	opacity: 1;
 }
 
 .rew {
@@ -905,23 +900,38 @@ opacity
 #intestazione_review {
 	width: 100%;
 	height: 40px;
-	padding:0;
+	padding-bottom:4%;
 }
 
 #recensione_log {
 	width: 80%;
-	height: 100px;
+	height: 150px;
 }
 
 #corpo_review {
 	width: 100%;
-	height: 60px;
-	overflow:auto;
+	height: 110px;
+	overflow: auto;
 }
-#stelle_Recensione_log{
+
+.nome_recensitore {
+	font-weight: bold;
+}
+#stelline{
+	
 	display:inline;
-	padding-left:60%;
+	padding-left:70%;
 }
-.nome_recensitore{
-	padding-left:3%;
+.piene {
+	text-align: center;
+	font-size: 18px;
+	color: #FFC107;
+}
+.vuote{
+	text-align: center;
+	font-size: 18px;
+	color: #555;
+}
+#stelline input{
+	display:none;
 }
