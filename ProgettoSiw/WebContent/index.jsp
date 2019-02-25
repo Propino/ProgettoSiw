@@ -60,7 +60,7 @@
 							<ul class="dropdown-menu">
 								<li><a id="to_profilo" href="ProfiloServlet">Vai al
 										profilo utente</a></li>
-										<li class="divider"></li>
+								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i
 											class="fa fa-sign-out-alt"></i>
@@ -108,7 +108,9 @@
 			</div>
 		</div>
 	</div>
-	<h2 class=text-center>Le recensioni dei nostri clienti</h2>
+	<h2 class=text-center>
+		<a href="recensioni.jsp">Le recensioni dei nostri clienti</a>
+	</h2>
 	<div>
 		<div class="rbd-core-ui">
 			<div class="rbd-review-slider">

@@ -934,3 +934,38 @@ opacity
 #stelline input{
 	display:none;
 }
+.filtri{
+	padding-left:10px;
+	display:inline;
+	text-decoration:underline;
+	cursor:pointer;
+}
+.filtro_stelle{
+	margin-bottom:2%;
+	padding-left:0px;
+}
+.filtro_stelle input{
+	display:none;
+}
+.pagination{
+	margin-left:20%;
+	width:60%;
+	height:20%;
+}
+.pagination a{
+	width:100%;
+	height:100%;
+}
+#trip_advisor h5{
+	text-transform :none;
+	color:#c3c3c3;
+	font-size:20px;
+	font-weight: 400; 
+	font-style:italic;
+}
+#img_trip_advisor{
+	margin-left: 50%;
+	padding-top:25%;
+	width:50%;
+	height:auto;
+}
