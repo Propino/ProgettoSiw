@@ -209,28 +209,22 @@
 								</div>
 							</div>
 						</div>
-						<!-- <div class="col-md-12">
+						
+						<div class="col-md-12">
 							<h2 class=text-center>Le mie recensioni</h2>
 							<ul class="list-group" id="recensione_log">
+							<c:forEach items="${recensioniUtente}" var="value">
 								<li class="list-group-item text-muted" id="intestazione_review"><span
-									class="nome_recensitore">Nome_utente</span>
+									class="nome_recensitore">${value.getUtente().getUsername()}</span>
 								<div class="starrr" data-rating="0" id="stelle_Recensione_log"></div>
 								</li>
 								<li class="list-group-item text-right" id="corpo_review"><span
-									class="pull-left"><strong>Test_recensione</strong></span></li>
+									class="pull-left"><strong>${value.getTesto()}</strong></span></li>
+							</c:forEach>
 							</ul>
 						</div>
+						
 						<hr>
-						<div class="col-md-12">
-							<ul class="list-group" id="recensione_log">
-								<li class="list-group-item text-muted" id="intestazione_review"><span
-									class="nome_recensitore">Nome_utente</span>
-								<div class="starrr" data-rating="0" id="stelle_Recensione_log"></div>
-								</li>
-								<li class="list-group-item text-right" id="corpo_review"><span
-									class="pull-left"><strong>Test_recensione</strong></span></li>
-							</ul>
-						</div>-->
 					</div>
 				</div>
 			</div>

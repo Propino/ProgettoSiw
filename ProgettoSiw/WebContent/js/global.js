@@ -51,8 +51,25 @@ function validaData() {
 	document.getElementById("erroreData").innerHTML ='';
 }
 function inviaRecensione() {
-	
-	
+	var texto = $("#new-review").val();
+	var radioValue = $("input[name='rating3']:checked").val();
+	if(texto == "") {
+		$("#avviso").empty();
+		$("#avviso").html("Devi inserire una recensione");
+	}
+	else if(texto != ""){
+		$.ajax({
+			type:"POST",
+			url:"InserisciRecensione",
+			data:{testo:texto,stelle:radioValue},
+			success: function(data) {
+				alert("Success!");
+				$("#avviso").empty();
+				$("#avviso").html(data);
+				$(location).attr('href','ProfiloServlet');
+			}
+		})
+	}
 }
 /*
  * funzione che controlla tramite chiamata Ajax se in fase di registrazione
@@ -71,10 +88,12 @@ function controllaUtente() {
 		success: function(data) {
 			$("#errore").empty();
 			$("#errore").html(data);
+			
 		}		
 	});
 	}
 }
+
 /* script per validazione form registrazione con jQuery e Ajax */
 function validaRegistrazione() {
 	var user = $("#input_username").val();
