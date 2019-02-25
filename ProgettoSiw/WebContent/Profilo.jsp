@@ -215,7 +215,7 @@
 						<div class="col-md-3"></div>
 
 						<div class="col-md-12">
-							<h2 class=text-center>Le mie recensioni</h2>
+							<h2 class=text-center>Le mie recensioni  </h2>
 						</div>
 						<c:forEach items="${recensioniUtente}" var="value">
 							<div class="col-md-12">
