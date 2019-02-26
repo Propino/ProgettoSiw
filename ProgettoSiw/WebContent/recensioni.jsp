@@ -158,7 +158,7 @@
 											<label class="mdi mdi-star vuote"></label>
 								</c:forEach>
 							</div></li>
-						<li class="list-group-item text-right" id="corpo_review"><span
+						<li class="list-group-item" id="corpo_review"><span
 							id="text_rec" class="pull-left">${value.getTesto()}</span></li>
 					</ul>
 					</c:forEach>
