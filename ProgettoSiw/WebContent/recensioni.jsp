@@ -126,7 +126,7 @@
 					for="1s">1 stelle</label>
 			</div>
 			<div id="mostra_tutti" class="stelle_nel_filtro">
-				<input type="button" value="6" id="6s" onclick="cerca(this.id)"><label
+				<input type="button" value="6" id="6s" onclick="cercaTutte()"><label
 					style="padding-left: 0;" class="filtri" for="6s">Mostra
 					tutte </label>
 			</div>

@@ -36,11 +36,13 @@ public class aggiornaImmagine extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utente u = (Utente) request.getSession().getAttribute("user");
+		
 		String path = request.getParameter("p");
+		((Utente) request.getSession().getAttribute("user")).setImmagineProfilo(path);
+		//System.out.println(path);
 		UtenteDAOJDBC t = new UtenteDAOJDBC();
-		t.aggiornaImmagine(path,u);
-		request.getSession().setAttribute("user",u);
+		t.aggiornaImmagine(path,(Utente)request.getSession().getAttribute("user"));
+		//request.getSession().setAttribute("user",u);
 	}
 
 }

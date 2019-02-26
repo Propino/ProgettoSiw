@@ -36,6 +36,25 @@ function cerca(id) {
 		}
 	})	
 }
+function cercaTutte() {
+	$.ajax({
+		type:"GET",
+		url:"recensioniTutte",
+		success: function(data) {
+			$("#contenitore").empty();
+			for(var i = 0; i < data.length; i++) {
+				var stars = ("");
+				for(var k = 0;k<data[i].stelle;k++){
+					stars = stars + '<label class="mdi mdi-star piene"></label>';
+				}
+				for(var k = 0;k<5-data[i].stelle;k++){
+					stars = stars + '<label class="mdi mdi-star vuote"></label>';
+					}
+				$("#contenitore").append('<ul class="list-group" id="recensione_log"><li class="list-group-item text-muted" id="intestazione_review"><span id="nome_recensitore">'+data[i].utente+'</span><div id="stelline">'+stars+'</div></li><li class="list-group-item text-right" id="corpo_review"><span id="text_rec" class="pull-left">'+data[i].testo+'</span></li></ul>');
+		}
+		}
+	})
+}
 /*
  * funzione show password in Registrati.jsp e Login.jsp per mostrare la password
  * e cambiare il testo del bottone
@@ -56,16 +75,14 @@ function jsonFlickrFeed(data) {
 }
 
 function setImmagine(s) {
-	/*
 	var pa = document.getElementById(s).getAttribute('src');
 	document.getElementById('avatar_img').src = pa;
-	*/
 	$.ajax({
 		type:"POST",
 		url:"aggiornaImmagine",
 		data:{p:pa},
 		success: function(data) {
-			alert("success");
+			$(location).attr('href','ProfiloServlet');
 		}
 	})
 }
@@ -114,7 +131,6 @@ function inviaRecensione() {
 			url:"InserisciRecensione",
 			data:{testo:texto,stelle:radioValue},
 			success: function(data) {
-				alert("Success!");
 				$("#avviso").empty();
 				$("#avviso").html(data);
 				$(location).attr('href','ProfiloServlet');
