@@ -14,36 +14,24 @@ function show_log(){
 		$('#pass_popup_login_show').addClass('fa fa-eye');
 	}
 }
+
 function cerca(id) {
-	var s;
-	if(id == "5s") {
-		s = 5;
-		alert(s);
+	var s = document.getElementById(id).value;
+	var stars = ("");
+	for(var k = 0;k<s;k++){
+		stars = stars + '<label class="mdi mdi-star piene"></label>';
 	}
-	else if(id == "4s") {
-		s = 4;
-		alert(s);
-	}
-	else if(id == "3s") {
-		s = 3;
-		alert(s);
-	} 
-	else if(id == "2s") {
-		s = 2;
-		alert(s);
-	}
-	else if(id == "1s") {
-		s = 1;
-		alert(s);
+	for(k = 0;k<5-s;k++){
+		stars = stars + '<label class="mdi mdi-star vuote"></label>';
 	}
 	$.ajax({
 		type:"GET",
 		url:"recensioniPerStelle",
 		data:{stelle:s},
 		success: function(data) {
+			$("#contenitore").empty();
 			for(var i = 0; i < data.length; i++) {
-				//aggiungere stampa a video della recensione
-				alert(data[i].utente);
+					$("#contenitore").append('<ul class="list-group" id="recensione_log"><li class="list-group-item text-muted" id="intestazione_review"><span id="nome_recensitore">'+data[i].utente+'</span><div id="stelline">'+stars+'</div></li><li class="list-group-item text-right" id="corpo_review"><span id="text_rec" class="pull-left">'+data[i].testo+'</span></li></ul>');
 			}
 		}
 	})	
@@ -68,15 +56,16 @@ function jsonFlickrFeed(data) {
 }
 
 function setImmagine(s) {
+	/*
 	var pa = document.getElementById(s).getAttribute('src');
-	alert(pa);
 	document.getElementById('avatar_img').src = pa;
+	*/
 	$.ajax({
 		type:"POST",
 		url:"aggiornaImmagine",
 		data:{p:pa},
 		success: function(data) {
-			$(location).attr('href','aggiornaImmagine');
+			alert("success");
 		}
 	})
 }

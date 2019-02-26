@@ -918,7 +918,7 @@ opacity
 	overflow: auto;
 }
 
-.nome_recensitore {
+#nome_recensitore {
 	font-weight: bold;
 }
 

@@ -126,7 +126,7 @@
 					for="1s">1 stelle</label>
 			</div>
 			<div id="mostra_tutti" class="stelle_nel_filtro">
-				<input type="button" value="6" id="6s"><label
+				<input type="button" value="6" id="6s" onclick="cerca(this.id)"><label
 					style="padding-left: 0;" class="filtri" for="6s">Mostra
 					tutte </label>
 			</div>
@@ -143,14 +143,14 @@
 	</div>
 
 
-		<div class="col-md-12 recensioni_in_page">
+		<div id="magna" class="col-md-12 recensioni_in_page">
 			<div class="col-md-3"></div>
 			<div class="col-md-6 box_log" id = "contenitore">
 			<c:if test="${rec != null }">
 				<c:forEach items="${rec}" var="value">
 					<ul class="list-group" id="recensione_log">
 						<li class="list-group-item text-muted" id="intestazione_review"><span
-							class="nome_recensitore">${value.getUtente().getUsername()}</span>
+							id="nome_recensitore">${value.getUtente().getUsername()}</span>
 							<div id="stelline">
 								<c:forEach begin="1" end="${value.getStelle()}" varStatus="loop">
 											<label class="mdi mdi-star piene"></label>
@@ -160,7 +160,7 @@
 								</c:forEach>
 							</div></li>
 						<li class="list-group-item text-right" id="corpo_review"><span
-							class="pull-left">${value.getTesto()}</span></li>
+							id="text_rec" class="pull-left">${value.getTesto()}</span></li>
 					</ul>
 					</c:forEach>
 			</c:if>
