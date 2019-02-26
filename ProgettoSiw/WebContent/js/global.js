@@ -367,7 +367,7 @@ function removeFromLista(num_ombrellone){
 	}
 }
 
-function show_alert() {
+function show_alert () {
 	alert("Devi eseguire il login prima!");
 }
 function showCoupon(){
