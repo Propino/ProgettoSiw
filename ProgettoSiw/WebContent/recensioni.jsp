@@ -146,7 +146,6 @@
 		<div id="magna" class="col-md-12 recensioni_in_page">
 			<div class="col-md-3"></div>
 			<div class="col-md-6 box_log" id = "contenitore">
-			<c:if test="${rec != null }">
 				<c:forEach items="${rec}" var="value">
 					<ul class="list-group" id="recensione_log">
 						<li class="list-group-item text-muted" id="intestazione_review"><span
@@ -163,7 +162,6 @@
 							id="text_rec" class="pull-left">${value.getTesto()}</span></li>
 					</ul>
 					</c:forEach>
-			</c:if>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
