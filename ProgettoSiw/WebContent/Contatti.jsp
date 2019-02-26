@@ -30,12 +30,13 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id ="nav_collassata">
+			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="nav_text_button"><a href="indexServlet">Home</a></li>
 					<li><a class="nav_text_button" href="StrutturaServlet">La
@@ -60,7 +61,7 @@
 							<ul class="dropdown-menu">
 								<li><a id="to_profilo" href="ProfiloServlet">Vai al
 										profilo utente</a></li>
-										<li class="divider"></li>
+								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i
 											class="fa fa-sign-out-alt"></i>
@@ -90,8 +91,10 @@
 						</p>
 						<div id="hotel" name="hotel">
 							<ul>
-								<li style ="list-style-type:none;">&#8226 Ashley Hotel, via Cafarone 31, 340123456.
-								<li style ="list-style-type:none;">&#8226 B&B San Carlo, via Scolastico 17, 333444555.
+								<li style="list-style-type: none;">&#8226 Ashley Hotel, via
+									Cafarone 31, 340123456.
+								<li style="list-style-type: none;">&#8226 B&B San Carlo,
+									via Scolastico 17, 333444555.
 							</ul>
 						</div>
 					</div>
@@ -106,7 +109,7 @@
 			<div class="riquadri_contatti">
 				<h3>Prenotazioni</h3>
 				<div class="contact-item">
-					<p>Per telefonare</p>
+					<p>Per contattarci</p>
 					<p>(+39) 348100****</p>
 				</div>
 			</div>
@@ -125,6 +128,7 @@
 				</div>
 			</div>
 		</div>
+		<p>flamingobeachclub@libero.it</p>
 	</div>
 
 	<jsp:include page="footer.jsp"></jsp:include>
