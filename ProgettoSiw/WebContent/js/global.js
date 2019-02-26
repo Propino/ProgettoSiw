@@ -68,15 +68,16 @@ function jsonFlickrFeed(data) {
 }
 
 function setImmagine(s) {
+	/*
 	var pa = document.getElementById(s).getAttribute('src');
-	alert(pa);
 	document.getElementById('avatar_img').src = pa;
+	*/
 	$.ajax({
 		type:"POST",
 		url:"aggiornaImmagine",
 		data:{p:pa},
 		success: function(data) {
-			$(location).attr('href','aggiornaImmagine');
+			alert("success");
 		}
 	})
 }
