@@ -9,14 +9,11 @@
 <meta charset="UTF-8">
 <title>Flamingo Beach Club</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 	<div class="container">
 		<header class="heading"> Reimposta la password </header>
-
 		<form method="post" action="RegistrationServlet">
-			<!-----Per Email---->
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
@@ -28,10 +25,9 @@
 					</div>
 				</div>
 			</div>
-			<!-----Pulsante Invia---->
 			<div class="col-sm-12">
 				<div class="row">
-					
+
 					<div class="col-xs-4">
 						<p id="link_login">
 							<a href="Login.jsp">Hai già un account? Accedi!</a>
@@ -43,9 +39,7 @@
 				</div>
 			</div>
 		</form>
-
 	</div>
-
 	<script src="js/global.js"></script>
 </body>
 </html>

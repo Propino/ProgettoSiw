@@ -1,5 +1,4 @@
 @charset "ISO-8859-1";
-/*-----Background-----*/
 body, html{
 	background-image: url("../img/sfondoregister.jpg");
 	background-repeat: no-repeat;
@@ -10,7 +9,6 @@ body, html{
 	min-height : 600px;
 }
 
-/*-----for border----*/
 .container {
 	background-image: url("../img/sfondo_nero_register.jpg");
 	margin: 0 auto;
@@ -23,7 +21,6 @@ body, html{
 }
 
 
-/*---for heading-----*/
 .heading {
 	font-family: 'Raleway', sans-serif !important;
 	text-rendering: optimizeLegibility !important;
@@ -76,7 +73,6 @@ body, html{
 	color: white;
 	margin-top: 15px;
 }
-/*------------For submit button---------*/
 #submit{
 	float:right;
 	width:100%;

@@ -14,6 +14,12 @@
 	href="fonts/font-awesome/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
+<script type="text/javascript"
+	src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript"
+	src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script type="text/javascript"
+	src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
 <!-- Font ================================================== -->
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
@@ -30,12 +36,13 @@
 	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collassata">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#nav_collassata">
 				<span class="sr-only"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id ="nav_collassata">
+			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="nav_text_button"><a href="indexServlet">Home</a></li>
 					<li class="active"><a href="#">La Struttura</a></li>
@@ -59,7 +66,7 @@
 							<ul class="dropdown-menu">
 								<li><a id="to_profilo" href="ProfiloServlet">Vai al
 										profilo utente</a></li>
-										<li class="divider"></li>
+								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i
 											class="fa fa-sign-out-alt"></i>
@@ -81,7 +88,7 @@
 						<p>Il lido Flamingo Beach Club è rinomato in tutta la regione
 							per la qualità dei servizi che offre. Al suo interno troverete
 							infatti meravigliose spiagge di sabbia fine, sia sul bagnasciuga
-							che per i primi metri in acqua. Un grande numero di omrelloni
+							che per i primi metri in acqua. Un grande numero di ombrelloni
 							liberi, gazebo e zone di sosta sono a tua dispozione per
 							consentirti di prenderti una pausa tra un tuffo e l'altro.
 							L'acqua cristallina e la biodiversità che il nostro mare ospita
@@ -138,106 +145,54 @@
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>
 	</div>
-	<div class="col-sm-6">
-		<h3 style="color: white;">AFFLUENZA MEDIA MENSILE</h3>
-		<!-- amCharts javascript sources -->
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/pie.js"></script>
-		<script type="text/javascript"
-			src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
-
-
-		<!-- amCharts javascript code -->
-		<script type="text/javascript">
-			AmCharts
-					.makeChart(
-							"chartdiv",
-							{
-								"type" : "pie",
-								"balloonText" : "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-								"innerRadius" : 0,
-								"labelRadius" : 3,
-								"colors" : [ "grey", "black", "white" ],
-								"hoverAlpha" : 0,
-								"titleField" : "category",
-								"valueField" : "column-1",
-								"theme" : "chalk",
-								"allLabels" : [],
-								"balloon" : {},
-								"legend" : {
-									"enabled" : true,
-									"align" : "center",
-									"markerType" : "circle"
-								},
-								"titles" : [],
-								"dataProvider" : [ {
-									"category" : "Maggio",
-									"column-1" : "12"
-								}, {
-									"category" : "Giugno",
-									"column-1" : "21"
-								}, {
-									"category" : "Luglio",
-									"column-1" : "24"
-								}, {
-									"category" : "Agosto",
-									"column-1" : "28"
-								}, {
-									"category" : "Settembre",
-									"column-1" : "15"
-								} ]
-							});
-		</script>
-		<div id="chartdiv"
-			style="width: 100%; height: 400px; background-color: #282828;"></div>
-	</div>
-	<div class="col-sm-6">
-		<h3 style="color: white;">IMPRESSIONI DELLA CLIENTELA</h3>
-		<!-- amCharts javascript code -->
-		<script type="text/javascript">
-			AmCharts
-					.makeChart(
-							"chartdiv1",
-							{
-								"type" : "pie",
-								"balloonText" : "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-								"innerRadius" : 0,
-								"labelRadius" : 3,
-								"colors" : [ "grey", "black", "white" ],
-								"hoverAlpha" : 0,
-								"titleField" : "category",
-								"valueField" : "column-1",
-								"theme" : "chalk",
-								"allLabels" : [],
-								"balloon" : {},
-								"legend" : {
-									"enabled" : true,
-									"align" : "center",
-									"markerType" : "circle"
-								},
-								"titles" : [],
-								"dataProvider" : [ {
-									"category" : "5 Stelle",
-									"column-1" : "${recensioni[4]}"
-								}, {
-									"category" : "4 Stelle",
-									"column-1" : "${recensioni[3]}"
-								}, {
-									"category" : "3 Stelle",
-									"column-1" : "${recensioni[2]}"
-								}, {
-									"category" : "2 Stelle",
-									"column-1" : "${recensioni[1]}"
-								}, {
-									"category" : "1 Stella",
-									"column-1" : "${recensioni[0]}"
-								} ]
-							});
-		</script>
-		<div id="chartdiv1"
-			style="width: 100%; height: 400px; background-color: #282828;"></div>
+	<div class="col-sm-12">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<h3 style="color: white;">IMPRESSIONI DELLA CLIENTELA</h3>
+			<script type="text/javascript">
+				AmCharts
+						.makeChart(
+								"chartdiv1",
+								{
+									"type" : "pie",
+									"balloonText" : "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+									"innerRadius" : 0,
+									"labelRadius" : 3,
+									"colors" : [ "grey", "black", "white" ],
+									"hoverAlpha" : 0,
+									"titleField" : "category",
+									"valueField" : "column-1",
+									"theme" : "chalk",
+									"allLabels" : [],
+									"balloon" : {},
+									"legend" : {
+										"enabled" : true,
+										"align" : "center",
+										"markerType" : "circle"
+									},
+									"titles" : [],
+									"dataProvider" : [ {
+										"category" : "5 Stelle",
+										"column-1" : "${recensioni[4]}"
+									}, {
+										"category" : "4 Stelle",
+										"column-1" : "${recensioni[3]}"
+									}, {
+										"category" : "3 Stelle",
+										"column-1" : "${recensioni[2]}"
+									}, {
+										"category" : "2 Stelle",
+										"column-1" : "${recensioni[1]}"
+									}, {
+										"category" : "1 Stella",
+										"column-1" : "${recensioni[0]}"
+									} ]
+								});
+			</script>
+			<div id="chartdiv1"
+				style="width: 100%; height: 400px; background-color: #282828;"></div>
+		</div>
+		<div class="col-sm-3"></div>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 
@@ -246,7 +201,6 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>
 	<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-	<script type="text/javascript" src="js/contact_me.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

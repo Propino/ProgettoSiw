@@ -137,7 +137,6 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>
 	<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-	<script type="text/javascript" src="js/contact_me.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script src="js/global.js"></script>
 

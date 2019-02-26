@@ -9,17 +9,13 @@
 <meta charset="UTF-8">
 <title>Flamingo Beach Club</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 	<div id="prova" class="container">
-		<!---heading---->
 		<header class="heading">Effettua l'accesso</header>
 		<hr></hr>
 		<form name="loginForm" method="post" action="LoginServlet">
-			<!---Form starting---->
 			<div class="row ">
-				<!-----Per Username---->
 				<p id="errore" color="red"></p>
 				<div class="col-sm-12">
 					<div class="row">
@@ -32,8 +28,6 @@
 						</div>
 					</div>
 				</div>
-
-				<!-----Per Password---->
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-xs-4">
@@ -48,7 +42,6 @@
 						</div>
 					</div>
 				</div>
-				<!-----Pulsante Invia---->
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-xs-4">
@@ -71,28 +64,5 @@
 			</div>
 		</form>
 	</div>
-	
-	<script>
-		var input = document.getElementById("input_password");
-		input.addEventListener("keydown", function(event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				document.getElementById("submit").click();
-			}
-		});
-	</script>
-
-	<script>
-		var input2 = document.getElementById("input_username");
-		input2.addEventListener("keydown", function(event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				document.getElementById("submit").click();
-			}
-		});
-	</script>
-
-
-
 </body>
 </html>

@@ -9,11 +9,9 @@
 <meta charset="UTF-8">
 <title>Flamingo Beach Club</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 	<div class="container">
-		<!---heading---->
 		<header class="heading"> Registrazione effettuata! </header>
 		<hr></hr>
 		<div id="conferma_after_registrazione">

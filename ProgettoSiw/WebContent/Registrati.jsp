@@ -9,13 +9,10 @@
 <meta charset="UTF-8">
 <title>Flamingo Beach Club</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 	<div class="container">
-		<!---heading---->
 		<header class="heading"> Registrati </header>
-		<!---Form starting---->
 		<form method="post" action="RegistrationServlet">
 			<!-----Per Username---->
 			<div class="col-sm-12">
@@ -31,7 +28,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!-----Per Password---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -47,7 +43,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!-----Per Email---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -72,7 +67,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!--- Per Cognome---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -85,8 +79,6 @@
 					</div>
 				</div>
 			</div>
-
-
 			<!-----Per Data---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -100,7 +92,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!-----Per Telefono---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -114,8 +105,6 @@
 					</div>
 				</div>
 			</div>
-
-
 			<!-----Pulsante Invia---->
 			<div class="col-sm-12">
 				<div class="row">
@@ -124,15 +113,14 @@
 							<a href="Login.jsp">Hai già un account? Accedi!</a>
 						</p>
 					</div>
-						<div class="col-xs-6 da_alzare">
-							<input type="button" id="submit" value="Invia"
-								onclick="validaRegistrazione()">
-						</div>
+					<div class="col-xs-6 da_alzare">
+						<input type="button" id="submit" value="Invia"
+							onclick="validaRegistrazione()">
 					</div>
 				</div>
+			</div>
 		</form>
 	</div>
 	<script src="js/global.js"></script>
-
 </body>
 </html>

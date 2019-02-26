@@ -1,82 +1,88 @@
-
 html {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .ombrelloni {
-  width: 300px;
-  margin-left : 10%;
+	padding-left: 5%;
+	padding-top: 35%;
+	margin-top: 6%;
+	width: 100%;
+	overflow: auto;
+	height: auto;
+	border: none;
+	background-image: url("../img/sfondomappa.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .seats {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
 }
 
 .seat {
-  display: flex;
-  flex: 0 0 14%;
-  padding: 5px;
-  position: relative;
-  
+	width: 10%;
+	height: 55px;
+	padding: 5px;
+	position: relative;
 }
+
 .seat:nth-child(4) {
-  margin-right: 14%;
+	margin-right: 14%;
 }
+
 .seat input[type=checkbox] {
-	
-  	position: absolute;
-	display:none;
+	position: absolute;
+	display: none;
 }
+
 .seat label {
-	  
-  background-image: url("../img/ombrfree.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  
-  display: block;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  
-  color : black;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.5rem;
-  padding: 4px 0;
-    border-radius: 5px;
-  
-  animation-duration: 300ms;
-  animation-fill-mode: both;
-  cursor : pointer;
+	background-image: url("../img/ombrfree.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 89%;
+	color: black;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.5rem;
+	padding: 4px 0;
+	border-radius: 5px;
+	animation-duration: 300ms;
+	animation-fill-mode: both;
+	cursor: pointer;
 }
+
 .seat label:hover {
-  cursor: pointer;
-  box-shadow: 0 0 0px 2px #5C6AFF;
+	cursor: pointer;
+	box-shadow: 0 0 0px 2px #5C6AFF;
 }
 
-input:checked + .checker {
-	border :solid 2px blue;
+input:checked+.checker {
+	border: solid 2px blue;
 }
 
-.seat input[type=checkbox]:disabled +label{
+.seat input[type=checkbox]:disabled+label {
 	background-image: url("../img/ombreocc.png") !important;
-	cursor : not-allowed;
+	cursor: not-allowed;
 }
-.seat input[type=checkbox]:checked + label {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
-  animation-duration: 300ms;
-  animation-fill-mode: both;
+
+.seat input[type=checkbox]:checked+label {
+	-webkit-animation-name: rubberBand;
+	animation-name: rubberBand;
+	animation-duration: 300ms;
+	animation-fill-mode: both;
 }
 
 @-webkit-keyframes rubberBand {

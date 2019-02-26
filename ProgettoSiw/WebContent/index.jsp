@@ -112,40 +112,40 @@
 		<a href="paginaRecensioni">Le recensioni dei nostri clienti</a>
 	</h2>
 	<c:if test="${recensioni!=null}">
-	<div>
-		<div class="rbd-core-ui">
-			<div class="rbd-review-slider">
-				<div class="rbd-review-container">
-					<div class="rbd-review review1.1 rbd-curr">
-						<h3 class="rbd-heading">${recensioni.get(0).getUtente().getUsername()}</h3>
-						<c:forEach var="i" begin="1"
-							end="${recensioni.get(0).getStelle()}">
-							<i class="fa fa-star fa-fw" data-icon="star"></i>
-						</c:forEach>
-						<div class="rbd-content">
-							<img class="rbd-gravatar" src="img/avatar.png">${recensioni.get(0).getTesto()}
-						</div>
-					</div>
-					<c:forEach items="${recensioni}" var="value" begin="1">
-					<c:if test="${value.getStelle()>3}">
-						<div class="rbd-review review1.2 rbd-next">
-							<h3 class="rbd-heading">${value.getUtente().getUsername()}</h3>
-							<c:forEach var="i" begin="1" end="${value.getStelle()}">
+		<div>
+			<div class="rbd-core-ui">
+				<div class="rbd-review-slider">
+					<div class="rbd-review-container">
+						<div class="rbd-review review1.1 rbd-curr">
+							<h3 class="rbd-heading">${recensioni.get(0).getUtente().getUsername()}</h3>
+							<c:forEach var="i" begin="1"
+								end="${recensioni.get(0).getStelle()}">
 								<i class="fa fa-star fa-fw" data-icon="star"></i>
 							</c:forEach>
-							<c:forEach var="i" begin="1" end="${5-value.getStelle()}">
-								<i class="fa fa-star-o fa-fw" data-icon="star"></i>
-							</c:forEach>
 							<div class="rbd-content">
-								<img class="rbd-gravatar" src="img/avatar.png">${value.getTesto()}
+								<img class="rbd-gravatar" src="img/avatar.png">${recensioni.get(0).getTesto()}
 							</div>
 						</div>
-					</c:if>
-					</c:forEach>
+						<c:forEach items="${recensioni}" var="value" begin="1">
+							<c:if test="${value.getStelle()>3}">
+								<div class="rbd-review review1.2 rbd-next">
+									<h3 class="rbd-heading">${value.getUtente().getUsername()}</h3>
+									<c:forEach var="i" begin="1" end="${value.getStelle()}">
+										<i class="fa fa-star fa-fw" data-icon="star"></i>
+									</c:forEach>
+									<c:forEach var="i" begin="1" end="${5-value.getStelle()}">
+										<i class="fa fa-star-o fa-fw" data-icon="star"></i>
+									</c:forEach>
+									<div class="rbd-content">
+										<img class="rbd-gravatar" src="img/avatar.png">${value.getTesto()}
+									</div>
+								</div>
+							</c:if>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</c:if>
 	<script>
 		let options = {
@@ -207,28 +207,13 @@
 							}, options.speed);
 						}, true);
 	</script>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="footer.jsp"></jsp:include>
-
 	<script type="text/javascript" src="js/global.js"></script>
 	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/SmoothScroll.js"></script>
 	<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-	<script type="text/javascript" src="js/contact_me.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 </body>
