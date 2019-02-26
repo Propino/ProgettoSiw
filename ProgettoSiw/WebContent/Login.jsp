@@ -64,5 +64,24 @@
 			</div>
 		</form>
 	</div>
+	<script>
+	<!--funzioni per sottomettere i campi premendo "invio"-->
+		var input = document.getElementById("input_password");
+		input.addEventListener("keydown", function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				document.getElementById("submit").click();
+			}
+		});
+	</script>
+	<script>
+		var input2 = document.getElementById("input_username");
+		input2.addEventListener("keydown", function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				document.getElementById("submit").click();
+			}
+		});
+	</script>
 </body>
 </html>
