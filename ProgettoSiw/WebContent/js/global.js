@@ -14,7 +14,40 @@ function show_log(){
 		$('#pass_popup_login_show').addClass('fa fa-eye');
 	}
 }
-
+function cerca(id) {
+	var s;
+	if(id == "5s") {
+		s = 5;
+		alert(s);
+	}
+	else if(id == "4s") {
+		s = 4;
+		alert(s);
+	}
+	else if(id == "3s") {
+		s = 3;
+		alert(s);
+	} 
+	else if(id == "2s") {
+		s = 2;
+		alert(s);
+	}
+	else if(id == "1s") {
+		s = 1;
+		alert(s);
+	}
+	$.ajax({
+		type:"GET",
+		url:"recensioniPerStelle",
+		data:{stelle:s},
+		success: function(data) {
+			for(var i = 0; i < data.length; i++) {
+				//aggiungere stampa a video della recensione
+				alert(data[i].utente);
+			}
+		}
+	})	
+}
 /*
  * funzione show password in Registrati.jsp e Login.jsp per mostrare la password
  * e cambiare il testo del bottone
@@ -43,7 +76,7 @@ function setImmagine(s) {
 		url:"aggiornaImmagine",
 		data:{p:pa},
 		success: function(data) {
-			$(location).attr('href','ProfiloServlet');
+			$(location).attr('href','aggiornaImmagine');
 		}
 	})
 }

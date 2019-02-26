@@ -86,15 +86,15 @@
 				<c:forEach begin="1" end="5">
 					<label class="mdi mdi-star piene"></label>
 				</c:forEach>
-				<input type="button" value="5" id="5s"><label class="filtri"
-					for="5s" onclick="cerca(this.id)">5 stelle</label>
+				<input type="button" value="5" id="5s" onclick="cerca(this.id)"><label class="filtri"
+					for="5s" >5 stelle</label>
 			</div>
 			<div id="4stelle" class="stelle_nel_filtro">
 				<c:forEach begin="1" end="4">
 					<label class="mdi mdi-star piene"></label>
 				</c:forEach>
 				<label class="mdi mdi-star vuote"></label> <input type="button"
-					value="4" id="4s"><label class="filtri" for="4s">4
+					value="4" id="4s" onclick="cerca(this.id)"><label class="filtri" for="4s">4
 					stelle</label>
 			</div>
 			<div id="3stelle" class="stelle_nel_filtro">
@@ -104,7 +104,7 @@
 				<c:forEach begin="1" end="2">
 					<label class="mdi mdi-star vuote"></label>
 				</c:forEach>
-				<input type="button" value="3" id="3s"><label class="filtri"
+				<input type="button" value="3" id="3s" onclick="cerca(this.id)"><label class="filtri"
 					for="3s">3 stelle</label>
 			</div>
 			<div id="2stelle" class="stelle_nel_filtro">
@@ -114,7 +114,7 @@
 				<c:forEach begin="1" end="3">
 					<label class="mdi mdi-star vuote"></label>
 				</c:forEach>
-				<input type="button" value="2" id="2s"><label class="filtri"
+				<input type="button" value="2" id="2s" onclick="cerca(this.id)"><label class="filtri"
 					for="2s">2 stelle</label>
 			</div>
 			<div id="1stelle" class="stelle_nel_filtro">
@@ -122,7 +122,7 @@
 				<c:forEach begin="1" end="4">
 					<label class="mdi mdi-star vuote"></label>
 				</c:forEach>
-				<input type="button" value="1" id="1s"><label class="filtri"
+				<input type="button" value="1" id="1s" onclick="cerca(this.id)"><label class="filtri"
 					for="1s">1 stelle</label>
 			</div>
 			<div id="mostra_tutti" class="stelle_nel_filtro">
@@ -145,7 +145,7 @@
 
 		<div class="col-md-12 recensioni_in_page">
 			<div class="col-md-3"></div>
-			<div class="col-md-6 box_log">
+			<div class="col-md-6 box_log" id = "contenitore">
 			<c:if test="${rec != null }">
 				<c:forEach items="${rec}" var="value">
 					<ul class="list-group" id="recensione_log">

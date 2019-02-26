@@ -58,6 +58,7 @@ public class ProfiloServlet extends HttpServlet {
 		request.setAttribute("posti",posti);
 		request.setAttribute("recensioni",recensioni);
 		request.setAttribute("recensioniUtente",recensioniUtente);
+		request.setAttribute("user",username);
 		request.getRequestDispatcher("Profilo.jsp").forward(request, response);
 	}	 
 

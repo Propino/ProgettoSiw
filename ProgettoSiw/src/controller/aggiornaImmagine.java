@@ -40,6 +40,7 @@ public class aggiornaImmagine extends HttpServlet {
 		String path = request.getParameter("p");
 		UtenteDAOJDBC t = new UtenteDAOJDBC();
 		t.aggiornaImmagine(path,u);
+		request.getSession().setAttribute("user",u);
 	}
 
 }
