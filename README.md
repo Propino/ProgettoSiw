@@ -1,17 +1,19 @@
 Progetto Web Computing - Giovanni Zarola(182865) / Paolo Falvo(182959)
 
 Credenziali registrate:  
+  <br>
   username: Esame  
-  password: esame /  
+  password: Esame   
   <br>
   username: Giovanni  
-  password: giovanni /  
+  password: giovanni   
   <br>
   username: Paolo  
   password: paolo  
-  
+    <br>
+
 Date popolate:  
-  15/08/2019 /  
+  15/08/2019   
   08/06/2019  
 <br>
 Sono state anche inserite delle recensioni da parte degli utenti gia registrati.  
