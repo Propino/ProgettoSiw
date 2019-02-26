@@ -31,7 +31,7 @@ function cerca(id) {
 		success: function(data) {
 			$("#contenitore").empty();
 			for(var i = 0; i < data.length; i++) {
-					$("#contenitore").append('<ul class="list-group" id="recensione_log"><li class="list-group-item text-muted" id="intestazione_review"><span id="nome_recensitore">'+data[i].utente+'</span><div id="stelline">'+stars+'</div></li><li class="list-group-item text-right" id="corpo_review"><span id="text_rec" class="pull-left">'+data[i].testo+'</span></li></ul>');
+					$("#contenitore").append('<ul class="list-group" id="recensione_log"><li class="list-group-item text-muted" id="intestazione_review"><span id="nome_recensitore">'+data[i].utente+'</span><div id="stelline">'+stars+'</div></li><li class="list-group-item" id="corpo_review"><span id="text_rec" class="pull-left">'+data[i].testo+'</span></li></ul>');
 			}
 		}
 	})	

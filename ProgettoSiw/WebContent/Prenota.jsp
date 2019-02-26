@@ -705,17 +705,17 @@
 						placeholder="Inserisci il codice coupon" class="form-control">
 					<input type="button" value="Inserisci" id="button_input_coupon"
 						onclick="controllaCoupon()"> <br>
-					<h3>Totale &nbsp : &nbsp &#8364;0</h3>
+					<h3>Totale  : &#8364;0</h3>
 					<input type=text style="display: none" id=tott name=tott value=0
 						disabled>
 
 					<c:if test="${user != null}">
 						<input type="button" id="prosegui_pagamento"
-							onclick="functione_pay()" value="Prosegui con il Pagamento">
+							onclick="functione_pay()" value="Vai al Pagamento">
 					</c:if>
 					<c:if test="${user == null}">
 						<input type="button" onclick="functione()" id="prosegui_pagamento"
-							value="Prosegui con il Pagamento">
+							value="Vai al Pagamento">
 					</c:if>
 				</div>
 			</div>

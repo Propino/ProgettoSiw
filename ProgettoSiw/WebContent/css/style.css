@@ -400,11 +400,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 }
 
 #mappa_prenotabile {
-	margin-top: 5%;
-	width: 100%;
+	width: 90%;
 	overflow: auto;
 	height: 600px;
-	margin-bottom: 10%;
+	margin: 5% 5% 10% 5%;
 	padding-top: 30%;
 	border-style: solid;
 	border-color: white;
@@ -424,6 +423,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 }
 
 #column_payment {
+		width: 90%;
+	
 	padding: 0px;
 	margin: 0px 5% 30px 5%;
 }
@@ -655,10 +656,28 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 }
 
 /* Modal Content */
-.modal-content {
-	width: 30%;
-	background-color: white;
-	margin: auto;
+@media screen and (min-width: 1039px) {
+	.modal-content {
+		width: 30%;
+		background-color: white;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 1039px) and (min-width : 500px) {
+	.modal-content {
+		width: 50%;
+		background-color: white;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.modal-content {
+		width: 80%;
+		background-color: white;
+		margin: auto;
+	}
 }
 /* The Close Button */
 .close {
@@ -721,20 +740,13 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 	display: table-row;
 }
 
-@media screen and (max-width: 1022) {
-	.credit-card-box .display-td {
-		display: none;
-	}
+.credit-card-box .display-td {
+	display: table-cell;
+	vertical-align: middle;
+	width: 40%;
 }
 
-@media screen and (min-width: 1023) {
-	.credit-card-box .display-td {
-		display: table-cell;
-		vertical-align: middle;
-		width: 40%;
-	}
 }
-
 .panel {
 	margin: 6%;
 }
@@ -775,12 +787,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus,
 }
 
 .rbd-review-slider .rbd-review.rbd-prev {
-	transform: translate3d(-100px, 0, -50px);
 	display: inline-block;
 }
 
 .rbd-review-slider .rbd-review.rbd-next {
-	transform: translate3d(100px, 0, -50px);
 	display: inline-block;
 }
 
@@ -856,7 +866,15 @@ keyframes round { 25%{
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0;
@@ -994,4 +1012,25 @@ opacity
 	margin-top: 2%;
 	overflow: auto;
 	max-height: 210px;
+}
+
+@media screen and (min-width: 1005px) {
+	#whatguestthink {
+		margin-top: 6%;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 1005px) and (min-width : 520px) {
+	#whatguestthink {
+		margin-top: 12%;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	#whatguestthink {
+		margin-top: 20%;
+		text-align: center;
+	}
 }

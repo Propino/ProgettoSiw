@@ -47,12 +47,12 @@ public class GetPrezzoPosto extends HttpServlet {
 		response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");
 		response.getOutputStream().println("<input type=\"button\" value=\"Inserisci\" id=\"button_input_coupon\" onclick=\"controllaCoupon()\">");
 		response.getOutputStream().println("<br>");
-		response.getOutputStream().println("<h3>Totale : &#8364 "+ prezzoTotale +"</h3>");
+		response.getOutputStream().println("<h3>Totale:&#8364 "+ prezzoTotale +"</h3>");
 		response.getOutputStream().println("<input type=text style=\"display:none\" id=tott name=tott value="+prezzoTotale+">");
 		if(request.getSession().getAttribute("user")!=null) {
-		response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione_pay()\" value=\"Prosegui con il Pagamento\">");
+		response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione_pay()\" value=\"Vai al Pagamento\">");
 		} else {
-		response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione()\" value=\"Prosegui con il Pagamento\">");
+			response.getOutputStream().println("<input type =\"button\" id=\"prosegui_pagamento\" onclick=\"functione()\" value=\"Vai al Pagamento\">");
 		}
 
 	}

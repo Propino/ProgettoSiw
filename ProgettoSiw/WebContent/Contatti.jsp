@@ -128,7 +128,6 @@
 				</div>
 			</div>
 		</div>
-		<p>flamingobeachclub@libero.it</p>
 	</div>
 
 	<jsp:include page="footer.jsp"></jsp:include>

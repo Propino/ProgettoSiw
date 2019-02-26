@@ -78,7 +78,7 @@
 	</nav>
 
 
-	<h2 style="margin-top: 6%; text-align: center;">Cosa ne pensano i
+	<h2 id="whatguestthink">Cosa ne pensano i
 		nostri clienti !</h2>
 	<div class="col-md-12">
 		<div class="col-md-4 filtro_stelle">

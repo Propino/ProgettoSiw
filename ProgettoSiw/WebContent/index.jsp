@@ -127,6 +127,7 @@
 						</div>
 					</div>
 					<c:forEach items="${recensioni}" var="value" begin="1">
+					<c:if test="${value.getStelle()>3}">
 						<div class="rbd-review review1.2 rbd-next">
 							<h3 class="rbd-heading">${value.getUtente().getUsername()}</h3>
 							<c:forEach var="i" begin="1" end="${value.getStelle()}">
@@ -139,6 +140,7 @@
 								<img class="rbd-gravatar" src="img/avatar.png">${value.getTesto()}
 							</div>
 						</div>
+					</c:if>
 					</c:forEach>
 				</div>
 			</div>
