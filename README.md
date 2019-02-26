@@ -6,7 +6,7 @@ Credenziali registrate:
   username: Giovanni
   password: giovanni /
   username: Paolo
-  password: ciccillo
+  password: paolo
   
 Date popolate:
   15/08/2019 /
