@@ -15,7 +15,7 @@
 		<header class="heading"> Password aggiornata con successo! </header>
 		<hr></hr>
 		<div id="conferma_after_registrazione">
-			<a href="index.jsp">Torna alla home</a>
+			<a href="indexServlet">Torna alla home</a>
 		</div>
 	</div>
 </body>

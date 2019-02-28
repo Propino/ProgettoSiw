@@ -119,7 +119,27 @@ public class UtenteDAOJDBC  {
 			}
 		}
 	}
-	
+	public void cambiaPassword(String username, String password) {
+		Connection connection = this.datasource.getConnection();
+		String query = "update utente set password = ? where username = ?";
+		PreparedStatement ps = null;
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, password);
+			ps.setString(2, username);
+			ps.executeUpdate();
+		} catch(SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			if (connection != null) {
+	              try {
+	            	  connection.close();
+	              } catch (SQLException e) {
+	            	  throw new PersistenceException(e.getMessage());
+	           }	
+			}
+		}
+	}
 	public Utente cercaPerUsername(String username) {
 		Utente utente = new Utente();
 		String query = "select * from utente where username= ?";

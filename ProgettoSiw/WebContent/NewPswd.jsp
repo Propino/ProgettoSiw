@@ -13,7 +13,8 @@
 <body>
 	<div class="container">
 		<header class="heading"> Reimposta la password </header>
-		<form method="post" action="RegistrationServlet">
+		<p id = "avviso"></p>
+		<form method="post">
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
@@ -43,7 +44,7 @@
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<div class="col-xs-6 da_alzare">
-						<input type="submit" id="submit" value="Invia">
+						<input type="button" id="submit" value="Invia" onclick="cambioEffettivoPassword()">
 					</div>
 				</div>
 			</div>
