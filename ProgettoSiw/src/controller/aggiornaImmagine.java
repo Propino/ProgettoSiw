@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Utente;
+import persistence.UtenteDAO;
 import persistence.UtenteDAOJDBC;
 
 /**
@@ -40,7 +41,7 @@ public class aggiornaImmagine extends HttpServlet {
 		String path = request.getParameter("p");
 		((Utente) request.getSession().getAttribute("user")).setImmagineProfilo(path);
 		//System.out.println(path);
-		UtenteDAOJDBC t = new UtenteDAOJDBC();
+		UtenteDAO t = new UtenteDAOJDBC();
 		t.aggiornaImmagine(path,(Utente)request.getSession().getAttribute("user"));
 		//request.getSession().setAttribute("user",u);
 	}

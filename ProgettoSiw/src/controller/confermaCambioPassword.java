@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import persistence.UtenteDAO;
 import persistence.UtenteDAOJDBC;
 
 /**
@@ -38,7 +39,7 @@ public class confermaCambioPassword extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("input_username");
 		String password = request.getParameter("input_password");
-		UtenteDAOJDBC u = new UtenteDAOJDBC();
+		UtenteDAO u = new UtenteDAOJDBC();
 		u.cambiaPassword(username,password);
 		
 	}

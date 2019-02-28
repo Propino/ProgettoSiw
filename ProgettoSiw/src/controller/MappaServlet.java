@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Ombrellone;
+import persistence.PrenotazioneDAO;
 import persistence.PrenotazioneDAOJDBC;
 
 @WebServlet("/MappaServlet")
@@ -25,7 +26,7 @@ public class MappaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String data = request.getParameter("input_data");
-		PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
+		PrenotazioneDAO p = new PrenotazioneDAOJDBC();
 		Ombrellone[] ombrelloniPrenotati = p.getOmbrelloniPrenotati(data);
 		//HttpSession session = request.getSession();
 		request.setAttribute("dataview",data);

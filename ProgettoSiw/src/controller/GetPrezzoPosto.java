@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import persistence.OmbrelloneDAO;
 import persistence.OmbrelloneDAOJDBC;
 
 /**
@@ -38,7 +39,7 @@ public class GetPrezzoPosto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String posti [] = request.getParameterValues("posto");
 		String tot = request.getParameter("tott");
-		OmbrelloneDAOJDBC o = new OmbrelloneDAOJDBC();
+		OmbrelloneDAO o = new OmbrelloneDAOJDBC();
 		int prezzoTotale = Integer.parseInt(tot);
 		for(int i = 0; i < posti.length; i++) {
 			prezzoTotale += o.getPrezzoPerOmbrellone(Integer.parseInt(posti[i]));			

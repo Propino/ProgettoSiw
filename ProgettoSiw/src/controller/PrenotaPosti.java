@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Ombrellone;
 import model.Utente;
+import persistence.PrenotazioneDAO;
 import persistence.PrenotazioneDAOJDBC;
 
 /**
@@ -42,7 +43,7 @@ public class PrenotaPosti extends HttpServlet {
 				while(st.hasMoreTokens()) {
 					postii.add(new Ombrellone(Integer.parseInt(st.nextToken())));
 				}
-				PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
+				PrenotazioneDAO p = new PrenotazioneDAOJDBC();
 				Utente u = (Utente)request.getSession().getAttribute("user");
 				p.inserisciPrenotazione(u, data, postii);
 				//request.getSession().removeAttribute("data");

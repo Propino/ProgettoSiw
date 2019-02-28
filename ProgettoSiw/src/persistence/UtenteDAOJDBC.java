@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import model.Utente;
 
-public class UtenteDAOJDBC  {
+public class UtenteDAOJDBC implements UtenteDAO{
 
 	DataSource datasource = null;
 	
