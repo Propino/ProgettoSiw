@@ -45,15 +45,15 @@
 			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="nav_text_button"><a href="indexServlet">Home</a></li>
-					<li class="active"><a href="#">La Struttura</a></li>
-					<li><a class="nav_text_button" href="Prenota.jsp">Prenota</a></li>
-					<li><a class="nav_text_button" href="Contatti.jsp">Contatti</a></li>
+					<li class="active"><a href="#">La Structure</a></li>
+					<li><a class="nav_text_button" href="Prenota.jsp">Livre</a></li>
+					<li><a class="nav_text_button" href="Contatti.jsp">Contacts</a></li>
 				</ul>
 				<c:if test="${user == null}">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="nav_bar_button_text_login" href="Login.jsp">Login</a></li>
 						<li><a class="nav_bar_button_text_login"
-							href="Registrati.jsp">Registrati</a></li>
+							href="Registrati.jsp">Inscription</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${user != null}">
@@ -61,11 +61,10 @@
 						<div class="dropdown">
 							<button id="welcome" class="btn btn-primary dropdown-toggle"
 								type="button" data-toggle="dropdown" aria-expanded="true">
-								Benvenuto,${user.getUsername()}! <span class="caret"></span>
+								Bienvenue,${user.getUsername()}! <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<li><a id="to_profilo" href="ProfiloServlet">Vai al
-										profilo utente</a></li>
+								<li><a id="to_profilo" href="ProfiloServlet">Aller au profil</a></li>
 								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i

@@ -48,7 +48,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="nav_bar_button_text_login" href="Login.jsp">Login</a></li>
 						<li><a class="nav_bar_button_text_login"
-							href="Registrati.jsp">Inscrivoir</a></li>
+							href="Registrati.jsp">Inscription</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${user != null}">
@@ -60,7 +60,7 @@
 							</button>
 							<ul class="dropdown-menu">
 								<li><a id="to_profilo" href="ProfiloServlet">Aller au
-										profil utilisateur</a></li>
+										profil </a></li>
 								<li class="divider"></li>
 								<li><form method="get" action="LogoutServlet">
 										<input id="logout" type="submit" value="Logout"><i
