@@ -13,37 +13,29 @@
 <body>
 	<div class="container">
 		<header class="heading"> Reset your password </header>
+		<p id = "conferma"></p>
 		<form method="post" action="RegistrationServlet">
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-4">
-						<label class="username">Username :</label>
+						<label class="mail">E-mail :</label>
 					</div>
 					<div class="col-xs-6">
-						<input type="text" name="input_username" id="input_username"
-							placeholder="Insert the username" class="form-control">
+						<input type="email" name="input_email" id="input_email"
+							placeholder="Insert your e-mail" class="form-control">
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-12">
 				<div class="row">
+
 					<div class="col-xs-4">
-						<label class="pass">New Password :</label>
+						<p id="link_login">
+							<a href="Login_EN.jsp">Do you already have an account? Log in!</a>
+						</p>
 					</div>
-					<div class="col-xs-6">
-						<input type="password" name="input_password" id="input_password"
-							placeholder="Insert your new password" class="form-control">
-					</div>
-					<div class="col-xs-2">
-						<input type="button" id="show_hide" onclick="show()" value="show">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<div class="row">
-					<div class="col-xs-4"></div>
 					<div class="col-xs-6 da_alzare">
-						<input type="submit" id="submit" value="Send">
+						<input type="button" id="submit" value="Send" onclick="cambioPassword()">
 					</div>
 				</div>
 			</div>
