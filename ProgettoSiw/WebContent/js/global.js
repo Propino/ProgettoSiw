@@ -221,7 +221,7 @@ function controllaLogin() {
 			data: {input_username: user, input_password: pws},
 			success: function(data) {
 				if(data == "True") {
-					$(location).attr('href','index.jsp');
+					$(location).attr('href','indexServlet');
 				} else {
 					$("#errore").html(data);
 				}
