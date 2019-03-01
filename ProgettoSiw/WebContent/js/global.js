@@ -305,7 +305,42 @@ function controllaCoupon() {
 		}
 	});
 }
-
+/*funzione utilizzata per la richiesta di cambio password
+ * 
+ */
+function cambioPassword() {
+	var email = $("#input_email").val();
+	$.ajax({
+		type: "POST",
+		url: "cambioPassword",
+		data: {input_email:email},
+		success: function(data) {
+			$("#conferma").empty();
+			$("#conferma").html("<font color = green> Email inviata con successo.</font>");
+		}
+	});
+}
+/*
+ * funzione utilizzata per il cambio effettivo della password
+ */
+function cambioEffettivoPassword() {
+	var email = $("#input_username").val();
+	var pass = $("#input_password").val();
+	if(email== "" || pass == "") {
+		$("#avviso").empty();
+		$("#avviso").html("<font color = red> Completa tutti i campi.</font>");
+	}
+	else {
+		$.ajax({
+			type: "POST",
+			url: "confermaCambioPassword",
+			data: {input_username:email,input_password:pass},
+			success: function(data) {
+				$(location).attr('href','ConfirmedPassword.jsp');
+			}
+		});
+	}
+}
 /* Funzione per mostrare la lista di hotel presente in Contatti.jsp */
 function showHotel(){
 	if (hotel.style.visibility == "hidden")

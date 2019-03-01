@@ -85,7 +85,7 @@
 				<div class="col-sm-5 col-md-offset-1">
 					<div class="about-text">
 						<h2>Il Lido</h2>
-						<p>Il lido Flamingo Beach Club è rinomato in tutta la regione
+						<p style="text-align: justify">Il lido Flamingo Beach Club è rinomato in tutta la regione
 							per la qualità dei servizi che offre. Al suo interno troverete
 							infatti meravigliose spiagge di sabbia fine, sia sul bagnasciuga
 							che per i primi metri in acqua. Un grande numero di ombrelloni
@@ -105,7 +105,7 @@
 				<div class="col-sm-5 col-md-offset-1">
 					<div class="about-text">
 						<h2>Il Ristorante</h2>
-						<p>Il ristorante del lido è a dispozione dei clienti che ne
+						<p style="text-align: justify">Il ristorante del lido è a disposizione dei clienti che ne
 							hanno fatto richiesta, ma anche dei forestieri che passano di lì,
 							con una piccola sovratassa. Disponiamo di eccellenti Chef e
 							ingredienti di primissima qualità, ovviamente a km 0 quando
@@ -126,7 +126,7 @@
 				<div class="col-sm-5 col-md-offset-1">
 					<div class="about-text">
 						<h2>Il Bar</h2>
-						<p>Il bar del lido, come il ristorante, è aperto a chiunque si
+						<p style="text-align: justify">Il bar del lido, come il ristorante, è aperto a chiunque si
 							trovi nei paraggi. Offre una possibilità di scelta davvero ampia,
 							potendo accontentare sia dei placidi apertivi pomeridiani, sia
 							l'ampia richiesta di cocktail dei giovani durante le sere estive.

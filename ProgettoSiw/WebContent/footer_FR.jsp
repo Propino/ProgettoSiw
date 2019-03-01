@@ -6,7 +6,7 @@
 			</p>
 			<div class="social">
 				<ul>
-					<li><a href="index_FR.jsp"><img src="img/fr.png" class ="bandiere"></a></li>
+					<li><a href="index.jsp"><img src="img/it.png" class ="bandiere"></a></li>
 					<li><a href="index_EN.jsp"><img src="img/en.png"  class ="bandiere"></a></li>
 					<li><a href="https://www.instagram.com/flamingobeachclub_/" class="fa fa-instagram"></a></li>
 				</ul>
