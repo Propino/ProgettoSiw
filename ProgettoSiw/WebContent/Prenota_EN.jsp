@@ -40,16 +40,16 @@
 
 			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
-					<li class="nav_text_button"><a href="indexServlet">Home</a></li>
-					<li><a class="nav_text_button" href="StrutturaServlet">The structure</a></li>
+					<li class="nav_text_button"><a href="index_EN.sp">Home</a></li>
+					<li><a class="nav_text_button" href="LaStruttura_EN.sp">The structure</a></li>
 					<li class="active"><a href="#">Book</a></li>
-					<li><a class="nav_text_button" href="Contatti.jsp">Contacts</a></li>
+					<li><a class="nav_text_button" href="Contatti_EN.jsp">Contacts</a></li>
 				</ul>
 				<c:if test="${user == null}">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="nav_bar_button_text_login" href="Login.jsp">Login</a></li>
+						<li><a class="nav_bar_button_text_login" href="Login_EN.jsp">Login</a></li>
 						<li><a class="nav_bar_button_text_login"
-							href="Registrati.jsp">Sign up</a></li>
+							href="Registrati_EN.jsp">Sign up</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${user != null}">

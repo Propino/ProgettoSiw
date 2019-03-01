@@ -44,16 +44,16 @@
 
 			<div class="collapse navbar-collapse" id="nav_collassata">
 				<ul class="nav navbar-nav navbar-left">
-					<li class="nav_text_button"><a href="indexServlet">Home</a></li>
+					<li class="nav_text_button"><a href="index_FR.jsp">Home</a></li>
 					<li class="active"><a href="#">La Structure</a></li>
-					<li><a class="nav_text_button" href="Prenota.jsp">Livre</a></li>
-					<li><a class="nav_text_button" href="Contatti.jsp">Contacts</a></li>
+					<li><a class="nav_text_button" href="Prenota_FR.jsp">Livre</a></li>
+					<li><a class="nav_text_button" href="Contatti_FR.jsp">Contacts</a></li>
 				</ul>
 				<c:if test="${user == null}">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="nav_bar_button_text_login" href="Login.jsp">Login</a></li>
+						<li><a class="nav_bar_button_text_login" href="Login_FR.jsp">Login</a></li>
 						<li><a class="nav_bar_button_text_login"
-							href="Registrati.jsp">Inscription</a></li>
+							href="Registrati_FR.jsp">Inscription</a></li>
 					</ul>
 				</c:if>
 				<c:if test="${user != null}">
