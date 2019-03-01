@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import persistence.RecensioneDAO;
 import persistence.RecensioneDAOJDBC;
 
 /**
@@ -28,7 +29,7 @@ public class StrutturaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		RecensioneDAO r = new RecensioneDAOJDBC();
 		int recensioni[] = r.recensioniPerStelle();
 		request.setAttribute("recensioni",recensioni);
 		request.getRequestDispatcher("LaStruttura.jsp").forward(request, response);

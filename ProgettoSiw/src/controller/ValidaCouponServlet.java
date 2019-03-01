@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import persistence.CouponDAO;
 import persistence.CouponDAOJDBC;
 
 /**
@@ -32,7 +33,7 @@ public class ValidaCouponServlet extends HttpServlet {
 		String coupon = request.getParameter("input_coupon");
 		int prezzoTotale = Integer.parseInt(t);	
 		int couponDaValidare = Integer.parseInt(coupon);
-		CouponDAOJDBC c = new CouponDAOJDBC();
+		CouponDAO c = new CouponDAOJDBC();
 		if(prezzoTotale == 0) {
 			response.getOutputStream().println("<p id = coupon> <font color = red> Seleziona almeno un posto e/o inserisci un coupon. </font> </p>");
 			response.getOutputStream().println("<input type=\"text\" name=\"input_coupon\" id=\"input_coupon\"placeholder=\"Inserisci il codice coupon\" class=\"form-control\">");

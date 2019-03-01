@@ -9,7 +9,7 @@ import model.Ombrellone;
 import model.Prenotazione;
 import model.Utente;
 
-public class PrenotazioneDAOJDBC {
+public class PrenotazioneDAOJDBC implements PrenotazioneDAO{
 
 	DataSource dataSource;
 	

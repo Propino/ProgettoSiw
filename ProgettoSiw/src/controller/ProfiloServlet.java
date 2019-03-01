@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import model.Prenotazione;
 import model.Recensione;
 import model.Utente;
+import persistence.PrenotazioneDAO;
 import persistence.PrenotazioneDAOJDBC;
+import persistence.RecensioneDAO;
 import persistence.RecensioneDAOJDBC;
 
 /**
@@ -34,9 +36,9 @@ public class ProfiloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrenotazioneDAOJDBC p = new PrenotazioneDAOJDBC();
+		PrenotazioneDAO p = new PrenotazioneDAOJDBC();
 		Utente username = (Utente) request.getSession().getAttribute("user");
-		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		RecensioneDAO r = new RecensioneDAOJDBC();
 		String recensioni = r.numeroRecensioniPerUtente(username);
 		ArrayList<Recensione> recensioniUtente = r.recensioniPerUtente(username);
 		ArrayList<String> prenotazioni = p.getPrenotazioniPerUtente(username.getUsername());

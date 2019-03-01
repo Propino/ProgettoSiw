@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import model.Ombrellone;
 
-public class OmbrelloneDAOJDBC {
+public class OmbrelloneDAOJDBC implements OmbrelloneDAO{
 
 	DataSource dataSource;
 	

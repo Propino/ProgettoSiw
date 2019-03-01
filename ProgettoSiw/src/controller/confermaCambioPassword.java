@@ -7,21 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Utente;
 import persistence.UtenteDAO;
 import persistence.UtenteDAOJDBC;
 
 /**
- * Servlet implementation class aggiornaImmagine
+ * Servlet implementation class confermaCambioPassword
  */
-@WebServlet("/aggiornaImmagine")
-public class aggiornaImmagine extends HttpServlet {
+@WebServlet("/confermaCambioPassword")
+public class confermaCambioPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public aggiornaImmagine() {
+    public confermaCambioPassword() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +29,19 @@ public class aggiornaImmagine extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter("input_username");
+		String password = request.getParameter("input_password");
+		UtenteDAO u = new UtenteDAOJDBC();
+		u.cambiaPassword(username,password);
 		
-		String path = request.getParameter("p");
-		((Utente) request.getSession().getAttribute("user")).setImmagineProfilo(path);
-		//System.out.println(path);
-		UtenteDAO t = new UtenteDAOJDBC();
-		t.aggiornaImmagine(path,(Utente)request.getSession().getAttribute("user"));
-		//request.getSession().setAttribute("user",u);
 	}
 
 }

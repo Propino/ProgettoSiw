@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Utente;
+import persistence.UtenteDAO;
 import persistence.UtenteDAOJDBC;
 
 /**
@@ -30,7 +31,7 @@ public class GetUtenteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("input_username");
-		UtenteDAOJDBC u = new UtenteDAOJDBC();
+		UtenteDAO u = new UtenteDAOJDBC();
 		Utente utente = u.cercaPerUsername(username);
 		if(utente.getUsername()!=null) {
 			response.getOutputStream().println("<font color = red> Username gia' esistente");

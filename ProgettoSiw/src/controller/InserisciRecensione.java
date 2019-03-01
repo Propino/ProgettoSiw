@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Recensione;
 import model.Utente;
+import persistence.RecensioneDAO;
 import persistence.RecensioneDAOJDBC;
 
 /**
@@ -41,7 +42,7 @@ public class InserisciRecensione extends HttpServlet {
 		Utente u = (Utente) request.getSession().getAttribute("user");
 		String testo = request.getParameter("testo");
 		String stelle = request.getParameter("stelle");
-		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		RecensioneDAO r = new RecensioneDAOJDBC();
 		Recensione re = new Recensione();
 		re.setUtente(u);
 		re.setTesto(testo);

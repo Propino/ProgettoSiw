@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import model.Recensione;
 import model.Utente;
 
-public class RecensioneDAOJDBC {
+public class RecensioneDAOJDBC implements RecensioneDAO {
 	
 	DataSource dataSource;
 	public RecensioneDAOJDBC() {

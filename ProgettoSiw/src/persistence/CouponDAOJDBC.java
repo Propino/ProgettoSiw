@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import model.Coupon;
 
-public class CouponDAOJDBC {
+public class CouponDAOJDBC implements CouponDAO {
 	
 	DataSource dataSource;
 	

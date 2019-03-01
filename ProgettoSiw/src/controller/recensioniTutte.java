@@ -14,6 +14,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import model.Recensione;
+import persistence.RecensioneDAO;
 import persistence.RecensioneDAOJDBC;
 
 /**
@@ -35,7 +36,7 @@ public class recensioniTutte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RecensioneDAOJDBC r = new RecensioneDAOJDBC();
+		RecensioneDAO r = new RecensioneDAOJDBC();
 		ArrayList<Recensione> recensioni = r.getAll();
 		JsonArray jarray = new JsonArray();
 		for(Recensione x : recensioni) {

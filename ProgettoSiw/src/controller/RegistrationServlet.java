@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Utente;
 import persistence.PersistenceException;
+import persistence.UtenteDAO;
 import persistence.UtenteDAOJDBC;
 
 /**
@@ -38,7 +39,7 @@ public class RegistrationServlet extends HttpServlet {
 		String data = request.getParameter("input_compleanno");
 		String numero = request.getParameter("input_telefono");
 		Utente utente = new Utente(username,password,email,nome,cognome,data,numero);
-		UtenteDAOJDBC u = new UtenteDAOJDBC();
+		UtenteDAO u = new UtenteDAOJDBC();
 		u.registraUtente(utente);	
 		response.getWriter().write("True");
 		} catch(PersistenceException e) {
